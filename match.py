@@ -1,3 +1,6 @@
+import datetime
+
+
 class Match:
     """Match"""
 
@@ -8,6 +11,9 @@ class Match:
             raise ValueError("A match must have exactly 2 scores.")
         self.players = players
         self.scores = scores
+        self.name = "Round 1"
+        self.start = datetime.datetime.now()
+        self.end = datetime.datetime.now()
 
     def __str__(self):
         return f"Match: {self.players[0]} vs {self.players[1]}, Scores: {self.scores[0]}-{self.scores[1]}"

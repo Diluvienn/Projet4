@@ -1,26 +1,19 @@
-import datetime
+from formatvalidator import validate_date_format
 
 
 class Player:
     """Player"""
 
-    def __init__(self, lastname: str, firstname: str, birth: str):
-        if not lastname.isalpha():
-            raise ValueError("Lastname must contain only letters without accent or hypen.")
+    def __init__(self, firstname: str, lastname: str, birth: str):
         if not firstname.isalpha():
             raise ValueError("Firstname must contain only letters without accent or hypen..")
-        if not self.validate_date_format(birth):
+        if not lastname.isalpha():
+            raise ValueError("Lastname must contain only letters without accent or hypen.")
+        if not validate_date_format(birth):
             raise ValueError("Invalid date format. Please use 'dd-mm-yyyy' format.")
-        self.lastname = lastname.capitalize()
         self.firstname = firstname.capitalize()
+        self.lastname = lastname.capitalize()
         self.birth = birth
-
-    def validate_date_format(self, date_string: str) -> bool:
-        try:
-            datetime.datetime.strptime(date_string, '%d-%m-%Y')
-            return True
-        except ValueError:
-            return False
 
 
 if __name__ == "__main__":
