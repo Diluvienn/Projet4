@@ -1,6 +1,7 @@
 import random
 from match import Match
 
+
 class TournamentController:
     """Contrôleur du tournoi"""
 
@@ -18,9 +19,6 @@ class TournamentController:
         if len(players) % 2 != 0:
             raise ValueError("Le nombre de joueurs doit être pair pour former des paires de matchs.")
 
-        # Créez des paires de joueurs et des matchs correspondants
-        for i in range(0, len(players), 2):
-            player1 = players[i]
-            player2 = players[i + 1]
-            match = Match(player1, player2)
-            self.tournament.add_match(match)
+
+if __name__ == "__main__":
+    pass
