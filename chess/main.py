@@ -1,5 +1,5 @@
 from view.viewmain import main_user_choice
-from view.viewnewtournament import create_tournament_from_cli, add_player_from_cli
+from view.viewnewtournament import create_tournament_from_cli, add_player_to_tournament_from_cli, add_player_from_cli
 from model.tournament import TournamentRepository
 from control.roundcontroller import RoundController
 from model.player import PlayerRepository
@@ -44,13 +44,16 @@ def main():
                 print("Le tournoi spécifié n'existe pas.")
                 print("*" * 100)
 
-        # choix 4 : Ajouter un niuveau joueur à la liste déjà existante
+        # choix 4 : Ajouter un nouveau joueur à la liste déjà existante
         elif choice == "4":
-            pass
+            player_repository = PlayerRepository()
+            new_player = add_player_from_cli()
+            print(f"new_player {new_player}")
+            player_repository.add_player(new_player)
 
         # choix 5 Créer et jouer un nouveau tournoi
         elif choice == "5":
-            players_list_objects, players_list_names = add_player_from_cli()
+            players_list_objects, players_list_names = add_player_to_tournament_from_cli()
             new_tournament = create_tournament_from_cli()
 
             for player_name in players_list_names:
@@ -95,7 +98,7 @@ def main():
 
                     # Print the scores of all players.
                     print(new_tournament.get_all_scores())
-                    print("-" * 50)
+                    print("*" * 100)
                 else:
                     break
 
@@ -109,6 +112,8 @@ def main():
             print("Les 3 meilleurs joueurs du tournoi :")
             for player, score in top_three_players:
                 print(f"Joueur : {player}, Score : {score}")
+            print("*" * 100)
+
 
         # choix 6 : quitter le logiciel
         elif choice == "6":

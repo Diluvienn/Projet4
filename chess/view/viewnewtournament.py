@@ -42,6 +42,50 @@ def create_tournament_from_cli():
     return tournament
 
 def add_player_from_cli():
+
+    while True:
+        # Validate player's firstname format
+        while True:
+            firstname = input("Prénom du joueur : ").capitalize()
+            if firstname.isalpha():
+                break
+            print("Le prénom ne doit contenir que des lettres, sans accents ni tiret")
+
+        # Validate player's lastname format
+        while True:
+            lastname = input("Nom de famille du joueur : ").capitalize()
+            if lastname.isalpha():
+                break
+            print("Le nom de famille ne doit contenir que des lettres, sans accents ni tiret")
+
+        # Validate birthday format
+        while True:
+            birth = input("Date de naissance du joueur (format DD-MM-YYYY) : ")
+            if validate_date_format(birth):
+                break
+            print("Erreur : Format de date invalide. Veuillez saisir une date au format DD-MM-YYYY.")
+
+        # Validate national chess id format
+        while True:
+            national_chess_id = input("Identifiant national d'échecs : ")
+            if validate_national_chess_id_format(national_chess_id):
+                break
+            print("Erreur : Le numéro national d'échecs doit être du format AB12345.")
+
+        print("Toutes les données ont été saisies avec succès.")
+        break
+    # Créer une instance de la classe Player avec les données fournies
+    new_player = Player(firstname, lastname, birth, national_chess_id)
+    print(f"Le joueur {new_player.firstname} {new_player.lastname} a été ajouté avec succès.")
+    print("-" * 50)
+
+    return new_player
+
+    # Ajouter le nouveau joueur au référentiel des joueurs
+
+
+
+def add_player_to_tournament_from_cli():
     player_repository = PlayerRepository()
     players = player_repository.load_players()
     selected_players = []
@@ -71,50 +115,56 @@ def add_player_from_cli():
 
 
         elif user_choice_for_add_player == "2":
-            while True:
-                # Validate player's firstname format
-                while True:
-                    firstname = input("Prénom du joueur : ").capitalize()
-                    if firstname.isalpha():
-                        break
-                    print("Le prénom ne doit contenir que des lettres, sans accents ni tiret")
-
-                # Validate player's lastname format
-                while True:
-                    lastname = input("Nom de famille du joueur : ").capitalize()
-                    if lastname.isalpha():
-                        break
-                    print("Le nom de famille ne doit contenir que des lettres, sans accents ni tiret")
-
-
-                # Validate birthday format
-                while True:
-                    birth = input("Date de naissance du joueur (format DD-MM-YYYY) : ")
-                    if validate_date_format(birth):
-                        break
-                    print("Erreur : Format de date invalide. Veuillez saisir une date au format DD-MM-YYYY.")
-
-                # Validate national chess id format
-                while True:
-                    national_chess_id = input("Identifiant national d'échecs : ")
-                    if validate_national_chess_id_format(national_chess_id):
-                        break
-                    print("Erreur : Le numéro national d'échecs doit être du format AB12345.")
-
-                print("Toutes les données ont été saisies avec succès.")
-                break
-            # Créer une instance de la classe Player avec les données fournies
-            new_player = Player(firstname, lastname, birth, national_chess_id)
-            print(f"Le joueur {new_player.firstname} {new_player.lastname} a été ajouté avec succès.")
-            print("-" * 50)
-
+            new_player = add_player_from_cli()
             # Ajouter le nouveau joueur à la liste des joueurs sélectionnés
             selected_players.append(new_player)
 
             # Ajouter le nouveau joueur au référentiel des joueurs
             player_repository.add_player(new_player)
-
-
+        #     while True:
+        #         # Validate player's firstname format
+        #         while True:
+        #             firstname = input("Prénom du joueur : ").capitalize()
+        #             if firstname.isalpha():
+        #                 break
+        #             print("Le prénom ne doit contenir que des lettres, sans accents ni tiret")
+        #
+        #         # Validate player's lastname format
+        #         while True:
+        #             lastname = input("Nom de famille du joueur : ").capitalize()
+        #             if lastname.isalpha():
+        #                 break
+        #             print("Le nom de famille ne doit contenir que des lettres, sans accents ni tiret")
+        #
+        #
+        #         # Validate birthday format
+        #         while True:
+        #             birth = input("Date de naissance du joueur (format DD-MM-YYYY) : ")
+        #             if validate_date_format(birth):
+        #                 break
+        #             print("Erreur : Format de date invalide. Veuillez saisir une date au format DD-MM-YYYY.")
+        #
+        #         # Validate national chess id format
+        #         while True:
+        #             national_chess_id = input("Identifiant national d'échecs : ")
+        #             if validate_national_chess_id_format(national_chess_id):
+        #                 break
+        #             print("Erreur : Le numéro national d'échecs doit être du format AB12345.")
+        #
+        #         print("Toutes les données ont été saisies avec succès.")
+        #         break
+        #     # Créer une instance de la classe Player avec les données fournies
+        #     new_player = Player(firstname, lastname, birth, national_chess_id)
+        #     print(f"Le joueur {new_player.firstname} {new_player.lastname} a été ajouté avec succès.")
+        #     print("-" * 50)
+        #
+        #     # Ajouter le nouveau joueur à la liste des joueurs sélectionnés
+        #     selected_players.append(new_player)
+        #
+        #     # Ajouter le nouveau joueur au référentiel des joueurs
+        #     player_repository.add_player(new_player)
+        #
+        #
         elif user_choice_for_add_player == "3":
             break
         else:
@@ -134,7 +184,7 @@ def add_player_from_cli():
 
 if __name__ == "__main__":
 
-    players_list = add_player_from_cli()
+    players_list = add_player_to_tournament_from_cli()
     tournament = create_tournament_from_cli(players_list)
 
     # Affichage de tous les attributs du tournoi

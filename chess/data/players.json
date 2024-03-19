@@ -154,5 +154,17 @@
         "lastname": "Zuck",
         "birth": "14-05-1984",
         "national chess ID": "NO33579"
+    },
+    {
+        "firstname": "Albus",
+        "lastname": "Dumbledore",
+        "birth": "11-11-1881",
+        "national chess ID": "OR48621"
+    },
+    {
+        "firstname": "Albert",
+        "lastname": "Einstein",
+        "birth": "14-03-1879",
+        "national chess ID": "QI15099"
     }
 ]
