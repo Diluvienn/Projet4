@@ -1,0 +1,13 @@
+# Ignorer les fichiers générés par Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignorer les fichiers d'environnement virtuel
+venv/
+
+# Ignorer les fichiers de configuration spécifiques à PyCharm
+.idea/
+
+# Ignorer les fichiers de création aléatoire de joueurs/tournois
+random_data.py
