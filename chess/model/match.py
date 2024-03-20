@@ -25,7 +25,8 @@ class Match:
 
         Args:
             players (list): A list containing exactly two Player objects representing the players in the match.
-            scores (list, optional): A list containing exactly two integers representing the initial scores of the players. Defaults to [0, 0].
+            scores (list, optional): A list containing exactly two integers representing the initial scores of the
+            players. Defaults to [0, 0].
 
         Raises:
             ValueError: If the length of the 'players' list is not 2 or if the length of the 'scores' list is not 2.

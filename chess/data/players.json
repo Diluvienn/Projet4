@@ -166,5 +166,11 @@
         "lastname": "Einstein",
         "birth": "14-03-1879",
         "national chess ID": "QI15099"
+    },
+    {
+        "firstname": "Emma",
+        "lastname": "Watson",
+        "birth": "15-04-1990",
+        "national chess ID": "hg19735"
     }
 ]

@@ -1,3 +1,19 @@
+"""
+Module for managing rounds in a tournament.
+
+This module provides a RoundController class that handles the generation and playing of rounds
+in a tournament. It also defines a Match class for representing individual matches.
+
+Classes:
+    - RoundController: Controller for managing rounds in a tournament.
+    - Match: Represents an individual match between two players.
+
+Dependencies:
+    - model.match.Match: Class representing individual matches.
+    - typing.List: Used for type hints in defining lists.
+    - random.shuffle: Function for shuffling player lists to generate random matches.
+"""
+
 import random
 from model.match import Match
 from typing import List
@@ -65,7 +81,12 @@ class RoundController:
         print("-" * 50)
 
     def get_current_round_matches(self):
-        """Récupère les matches du round en cours."""
+        """Get the matches of the current round.
+
+        Returns:
+            List[Match]: List of Match objects representing the matches of the current round.
+                         If there are no matches in the current round, an empty list is returned.
+        """
         if self.current_round is not None:
             return self.current_round.get_matches()
         else:

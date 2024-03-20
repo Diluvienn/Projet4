@@ -1,20 +1,13 @@
 """
-This module contains the definition of the Player class, which represents a player
-with a first name, last name, birth date, and score. It also includes a function
-to validate the format of a date string.
+Module for managing player information and storage.
+
+This module defines a Player class representing individual chess players and a PlayerRepository class
+for managing player data storage and retrieval.
 
 Classes:
-    Player: A class representing a player with a first name, last name, birth date, and score.
-
-Functions:
-    validate_date_format: Validate the format of a date string in 'dd-mm-yyyy' format.
-
-Usage:
-    from formatvalidator import validate_date_format
-    from player import Player
-
-    # Create a player instance
-    player = Player("John", "Doe", "01-01-1990", "AB12345")
+    - Player: Represents a chess player with attributes including first name, last name, date of birth,
+      and national chess ID.
+    - PlayerRepository: Manages the storage and retrieval of player information.
 """
 import os
 import json
@@ -41,6 +34,12 @@ class Player:
         self.score = 0
 
     def to_json(self):
+        """Converts player data to a JSON-compatible dictionary.
+
+        Returns:
+            dict: A dictionary containing player information in a JSON-compatible format.
+                  Keys include 'firstname', 'lastname', 'birth', and 'national chess ID'.
+        """
         return {
             'firstname': self.firstname,
             'lastname': self.lastname,
@@ -50,48 +49,91 @@ class Player:
 
 
 class PlayerRepository:
+    """Repository for managing player data storage and retrieval."""
+
     def __init__(self, filename='players.json'):
+        """Initialize the PlayerRepository.
+
+        Args:
+            filename (str, optional): Name of the JSON file to store player data. Defaults to 'players.json'.
+        """
         data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
         self.filename = os.path.join(data_dir, filename)
 
-
     def add_player(self, player):
-        # Chargez d'abord les joueurs existants depuis le fichier
-        players = self.load_players()
+        """Add a player to the repository.
 
-        # Ajoutez le nouveau joueur à la liste
+        Args:
+            player (Player): The player object to be added.
+
+        Notes:
+            This method first loads existing players from the JSON file,
+            adds the new player to the list, and then writes the updated list
+            back to the JSON file.
+
+        Args:
+            player (Player): The player object to be added to the repository.
+        """
+
+        players = self.load_players()
         players.append(player.to_json())
 
-        # Écrivez la liste mise à jour dans le fichier JSON
+        # Écriture de la liste mise à jour dans le fichier JSON
         with open(self.filename, 'w') as file:
             json.dump(players, file, indent=4)
 
     def load_players(self):
-        # Si le fichier n'existe pas encore, retournez une liste vide
+        """Load players from the JSON file.
+
+        Returns:
+            List[dict]: A list of dictionaries containing player information loaded from the JSON file.
+                        If the file does not exist, an empty list is returned.
+        """
         if not os.path.exists(self.filename):
             return []
 
-        # Chargez les joueurs à partir du fichier JSON
         with open(self.filename, 'r') as file:
             players = json.load(file)
         return players
 
-    # Méthode pour récupérer un joueur spécifique à partir de son index dans la liste
     def get_player_by_index(self, index):
+        """Get a player from the repository by index.
+
+        Args:
+            index (int): The index of the player in the repository.
+
+        Returns:
+            Player: The player object corresponding to the given index.
+
+        Note:
+            This method retrieves player data from the repository by index,
+            creates a Player object from the data, and returns the Player instance.
+
+        """
         players = self.load_players()
         player_data = players[index]
-        print(player_data)
         player_instance = Player(player_data['firstname'], player_data['lastname'], player_data['birth'],
                                  player_data['national chess ID'])
         return player_instance
 
     def get_player_by_alphabetical_order(self):
+        """Get players from the repository sorted alphabetically by last name.
+
+       Returns:
+           List[str]: A list of formatted strings representing player information sorted alphabetically
+                      by last name.
+
+       Note:
+           This method retrieves player data from the repository, sorts the players alphabetically
+           by last name, formats the player information, and returns a list of formatted strings.
+       """
         players = self.load_players()
         sorted_players = sorted(players, key=lambda x: x['lastname'])
         formatted_output = []
         for player_data in sorted_players:
             formatted_output.append(
-                f"{player_data['lastname']} {player_data['firstname']}, {player_data['birth']}, {player_data['national chess ID']}")
+                f"{player_data['lastname']} {player_data['firstname']}, {player_data['birth']}, "
+                f"{player_data['national chess ID']}")
         return formatted_output
 
 

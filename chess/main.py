@@ -2,10 +2,12 @@ from view.viewmain import main_user_choice
 from view.viewnewtournament import create_tournament_from_cli, add_player_to_tournament_from_cli, add_player_from_cli
 from model.tournament import TournamentRepository
 from control.roundcontroller import RoundController
+from control.tournamentcontroller import add_director_notes_to_tournament
 from model.player import PlayerRepository
 
 
 def main():
+    """Main function to run the chess tournament management system."""
     while True:
         choice = main_user_choice()
 
@@ -48,7 +50,6 @@ def main():
         elif choice == "4":
             player_repository = PlayerRepository()
             new_player = add_player_from_cli()
-            print(f"new_player {new_player}")
             player_repository.add_player(new_player)
 
         # choix 5 Créer et jouer un nouveau tournoi
@@ -58,16 +59,14 @@ def main():
 
             for player_name in players_list_names:
                 new_tournament.players_list.append(player_name)
-            print(f"Players_list {new_tournament.players_list}")
             for player_name in new_tournament.players_list:
                 new_tournament.players_score[player_name] = 0
-            print(f"Players_score {new_tournament.players_score}")
 
             tournament_repository = TournamentRepository()
             tournament_repository.add_tournament(new_tournament)
 
-
             # Affichage de tous les attributs du tournoi
+            print("*" * 100)
             print("Attributs du tournoi :")
             for attribute, value in vars(new_tournament).items():
                 if attribute == 'players_list':
@@ -80,7 +79,7 @@ def main():
                     print(f"{attribute}: {value}")
 
             # Loop until the tournament reaches round 5.
-            while new_tournament.current_round < 5:
+            while new_tournament.current_round <= new_tournament.rounds:
                 # Ask the user if they want to start the current round.
                 new_round_choice = input(f"Voulez-vous faire le {new_tournament.current_round} round ? (y/n) : ")
 
@@ -114,7 +113,6 @@ def main():
                 print(f"Joueur : {player}, Score : {score}")
             print("*" * 100)
 
-
         # choix 6 : quitter le logiciel
         elif choice == "6":
             break
@@ -127,5 +125,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
