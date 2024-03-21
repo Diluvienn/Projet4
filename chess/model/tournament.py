@@ -159,6 +159,28 @@ class TournamentRepository:
             tournaments = json.load(file)
         return tournaments
 
+    def update_tournament_scores(self, tournament):
+        """Update the scores of a specific tournament.
+
+        Args:
+            tournament_name (str): The name of the tournament to update.
+            new_scores (dict): The new scores for the tournament players.
+                This should be a dictionary where keys are player names and values are their scores.
+
+        """
+        # Chargez tous les tournois existants
+        tournaments = self.load_tournaments()
+
+        # Recherchez le tournoi spécifique par son nom
+        for index, stored_tournament in enumerate(tournaments):
+            if stored_tournament['name'] == tournament.name:
+                # Mettez à jour les scores du tournoi spécifique
+                tournaments[index] = tournament.tournament_to_json()
+                break
+
+        # Écrivez la liste mise à jour des tournois dans le fichier JSON
+        with open(self.filename, 'w') as file:
+            json.dump(tournaments, file, indent=4)
     def get_tournaments_by_alphabetical_order(self):
         """Get tournaments from the repository sorted alphabetically by name.
 
@@ -177,23 +199,40 @@ class TournamentRepository:
         return formatted_output
 
     def get_tournament_details(self):
-        """Get details of tournaments from the repository.
+        """Get details of the tournaments including players and their scores, sorted by name.
 
         Returns:
-            List[str]: A list of formatted strings containing details of tournaments.
-
-        Note:
-            This method retrieves tournament data from the repository, sorts the tournaments alphabetically
-            by name, formats the tournament details, and returns a list of formatted strings.
+            List[dict]: A list of dictionaries containing details of the tournaments including players and their scores, sorted by name.
         """
         tournaments = self.load_tournaments()
-        sorted_tournaments = sorted(tournaments, key=lambda x: x['name'])
         formatted_output = []
+
+        # Trier les tournois par ordre alphabétique du nom
+        sorted_tournaments = sorted(tournaments, key=lambda x: x["name"])
+
         for tournament_data in sorted_tournaments:
-            formatted_output.append(
-                f"Name: {tournament_data['name']}, Place: {tournament_data['place']}, "
-                f"Date Start: {tournament_data['date_start']}, Date End: {tournament_data['date_end']}")
+            tournament_details = {
+                "name": tournament_data["name"],
+                "place": tournament_data["place"],
+                "date_start": tournament_data["date_start"],
+                "date_end": tournament_data["date_end"],
+                "director_note": tournament_data["director_note"]
+            }
+
+            players_scores = []
+            for player in tournament_data["players_list"]:
+                player_score = {
+                    "name": player,
+                    "score": tournament_data.get("players_score", {}).get(player, 0)
+                    # Get player's score or default to 0 if not found
+                }
+                players_scores.append(player_score)
+
+            tournament_details["players_scores"] = players_scores
+            formatted_output.append(tournament_details)
+
         return formatted_output
+
 
 
 if __name__ == "__main__":

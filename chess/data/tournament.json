@@ -14,7 +14,14 @@
             "James Wallace",
             "Brandon Greene"
         ],
-        "player_score": {},
+        "players_score": {
+            "Bryan Hodge": 1,
+            "Jake Douglas": 1.5,
+            "Heidi Miller": 2,
+            "Patrick Quinn": 2.5,
+            "James Wallace": 3,
+            "Brandon Greene": 0
+        },
         "director_note": ""
     },
     {
@@ -32,7 +39,14 @@
             "Frank Rivera",
             "Wanda Armstrong"
         ],
-        "player_score": {},
+        "players_score": {
+            "Stacey Burns": 0,
+            "Erin Williams": 5,
+            "Michael Schmidt": 1.5,
+            "Nicole Jones": 2,
+            "Frank Rivera": 2,
+            "Wanda Armstrong": 1
+        },
         "director_note": ""
     },
     {
@@ -50,7 +64,14 @@
             "Cody Davis",
             "Kathy Mcdowell"
         ],
-        "player_score": {},
+        "players_score": {
+            "Christine Murphy": 4,
+            "Micheal Haley": 2,
+            "Pamela Edwards": 0,
+            "Brandy Short": 3.5,
+            "Cody Davis": 3,
+            "Kathy Mcdowell": 0
+        },
         "director_note": ""
     },
     {
@@ -68,7 +89,14 @@
             "James Wallace",
             "Brandon Greene"
         ],
-        "player_score": {},
+        "players_score": {
+            "Bryan Hodge": 2,
+            "Jake Douglas": 2,
+            "Heidi Miller": 1.5,
+            "Patrick Quinn": 0,
+            "James Wallace": 3,
+            "Brandon Greene": 1
+        },
         "director_note": ""
     },
     {
@@ -86,7 +114,14 @@
             "Frank Rivera",
             "Wanda Armstrong"
         ],
-        "player_score": {},
+        "players_score": {
+            "Stacey Burns": 5,
+            "Erin Williams": 4,
+            "Michael Schmidt": 2,
+            "Nicole Jones": 0,
+            "Frank Rivera": 1,
+            "Wanda Armstrong": 0.5
+        },
         "director_note": ""
     },
     {
@@ -420,7 +455,7 @@
         "date_start": "09-09-2009",
         "date_end": "19-09-2009",
         "rounds": 4,
-        "current_round": "Tournois tr\u00e8s prometteur !",
+        "current_round": 1,
         "players_list": [
             "Frank Rivera",
             "Wanda Armstrong",
@@ -437,7 +472,7 @@
             "Pamela Edwards": 0,
             "Brandy Short": 0
         },
-        "director_note": ""
+        "director_note": "\"Tournois tr\\u00e8s prometteur !\""
     },
     {
         "name": "Polonais",
@@ -445,7 +480,7 @@
         "date_start": "10-10-2010",
         "date_end": "11-10-2010",
         "rounds": 4,
-        "current_round": "Future capitale des \u00e9checs ",
+        "current_round": 1,
         "players_list": [
             "Bryan Hodge",
             "Jake Douglas",
@@ -462,40 +497,31 @@
             "James Wallace": 0,
             "Brandon Greene": 0
         },
-        "director_note": ""
+        "director_note": "\"Future capitale des \\u00e9checs \""
     },
     {
-        "name": "",
-        "place": "1",
-        "date_start": "11-11-1111",
-        "date_end": "11-11-1111",
+        "name": "Finlandais",
+        "place": "Helsinki",
+        "date_start": "11-11-2011",
+        "date_end": "11-11-2011",
         "rounds": 4,
-        "current_round": "jrgnk,l",
+        "current_round": 3,
         "director_note": "",
         "players_list": [
+            "Patrick Quinn",
+            "Heidi Miller",
+            "Jake Douglas",
             "Bryan Hodge",
-            "Jake Douglas"
+            "James Wallace",
+            "Brandon Greene"
         ],
         "players_score": {
-            "Bryan Hodge": 0,
-            "Jake Douglas": 0
-        }
-    },
-    {
-        "name": "1",
-        "place": "1",
-        "date_start": "11-11-1111",
-        "date_end": "11-11-1111",
-        "rounds": 4,
-        "current_round": 1,
-        "director_note": "ygfc",
-        "players_list": [
-            "Bryan Hodge",
-            "Jake Douglas"
-        ],
-        "players_score": {
-            "Bryan Hodge": 0,
-            "Jake Douglas": 0
+            "Bryan Hodge": 1.5,
+            "Jake Douglas": 1.5,
+            "Heidi Miller": 1,
+            "Patrick Quinn": 0.5,
+            "James Wallace": 0.5,
+            "Brandon Greene": 1
         }
     }
 ]

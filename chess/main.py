@@ -1,10 +1,8 @@
 from view.viewmain import main_user_choice
 from view.viewnewtournament import create_tournament_from_cli, add_player_to_tournament_from_cli, add_player_from_cli
-from model.tournament import TournamentRepository
+from model.tournament import TournamentRepository, Tournament
 from control.roundcontroller import RoundController
-from control.tournamentcontroller import add_director_notes_to_tournament
 from model.player import PlayerRepository
-
 
 def main():
     """Main function to run the chess tournament management system."""
@@ -29,19 +27,30 @@ def main():
                 print(tournament)
             print("*" * 100)
 
-        # choix 3 : Voir toutes les informations d'un tournoi donné
         elif choice == "3":
             tournament_repository = TournamentRepository()
             tournaments = tournament_repository.get_tournament_details()
-            user_tournament_choice = (input("Indiquez le nom du tournoi dont vous souhaitez les informations : ")
-                                      .capitalize())
+
+            user_tournament_choice = input(
+                "Indiquez le nom du tournoi dont vous souhaitez les informations : ").capitalize()
+
+            found = False
             for tournament_info in tournaments:
-                if user_tournament_choice in tournament_info:
+                if user_tournament_choice == tournament_info['name']:
                     print("*" * 100)
-                    print(tournament_info)
+                    print("Tournament:", tournament_info['name'])
+                    print("Place:", tournament_info['place'])
+                    print("Start date:", tournament_info['date_start'])
+                    print("End date:", tournament_info['date_end'])
+                    print("Director's note:", tournament_info['director_note'])
+                    print("Players and Scores:")
+                    for player_score in tournament_info['players_scores']:
+                        print(f"- {player_score['name']}: {player_score['score']}")
                     print("*" * 100)
+                    found = True
                     break
-            else:
+
+            if not found:
                 print("*" * 100)
                 print("Le tournoi spécifié n'existe pas.")
                 print("*" * 100)
@@ -81,7 +90,8 @@ def main():
             # Loop until the tournament reaches round 5.
             while new_tournament.current_round <= new_tournament.rounds:
                 # Ask the user if they want to start the current round.
-                new_round_choice = input(f"Voulez-vous faire le {new_tournament.current_round} round ? (y/n) : ")
+                new_round_choice = (input(f"Voulez-vous faire le {new_tournament.current_round} round ? (y/n) : ")
+                                    .lower())
 
                 # If the user chooses to start the round, proceed.
                 if new_round_choice == "y":
@@ -98,8 +108,17 @@ def main():
                     # Print the scores of all players.
                     print(new_tournament.get_all_scores())
                     print("*" * 100)
-                else:
+
+                    # Mettre à jour les scores dans le repository du tournoi
+                    tournament_repository.update_tournament_scores(new_tournament)
+
+                elif new_round_choice == "n":
+                    tournament_repository.update_tournament_scores(new_tournament)
+                    print("Les données du tournoi ont été sauvegardées")
                     break
+
+                else:
+                    print("Veuillez indiquer un choix valide (y ou n)")
 
             # Triez le dictionnaire player_score par valeur (score) en ordre décroissant
             sorted_scores = sorted(new_tournament.players_score.items(), key=lambda x: x[1], reverse=True)
@@ -121,7 +140,6 @@ def main():
             print("-" * 50)
             print("Veuillez indiquer un choix valide")
             print("-" * 50)
-
 
 if __name__ == "__main__":
     main()
