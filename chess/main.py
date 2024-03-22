@@ -59,12 +59,13 @@ def main():
         elif choice == "4":
             player_repository = PlayerRepository()
             new_player = add_player_from_cli()
-            player_repository.add_player(new_player)
+            if new_player is not None:
+                player_repository.add_player(new_player)
 
         # choix 5 Créer et jouer un nouveau tournoi
         elif choice == "5":
-            players_list_objects, players_list_names = add_player_to_tournament_from_cli()
             new_tournament = create_tournament_from_cli()
+            players_list_objects, players_list_names = add_player_to_tournament_from_cli()
 
             for player_name in players_list_names:
                 new_tournament.players_list.append(player_name)

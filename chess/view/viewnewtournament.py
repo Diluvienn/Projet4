@@ -23,6 +23,7 @@ def create_tournament_from_cli():
         by prompting for necessary information via the command-line interface.
         It validates the entered data and returns the created tournament object.
     """
+    print("*" * 100)
     print("Création d'un nouveau tournoi:")
     name = input("Nom du tournoi : ")
     place = input("Lieu du tournoi : ")
@@ -95,6 +96,16 @@ def add_player_from_cli():
                 break
             print("Le nom de famille ne doit contenir que des lettres, sans accents ni tiret")
 
+        player_repository = PlayerRepository()
+        players = player_repository.load_players()
+
+        # Vérifier si le joueur existe déjà dans la base de données
+        for player in players:
+            if player['firstname'] == firstname and player['lastname'] == lastname:
+                print(f"Le joueur {firstname} {lastname} existe déjà dans la base de données.")
+                print("*" * 100)
+                return None
+
         # Validate birthday format
         while True:
             birth = input("Date de naissance du joueur (format DD-MM-YYYY) : ")
@@ -102,19 +113,41 @@ def add_player_from_cli():
                 break
             print("Erreur : Format de date invalide. Veuillez saisir une date au format DD-MM-YYYY.")
 
-        # Validate national chess id format
         while True:
-            national_chess_id = input("Identifiant national d'échecs : ")
-            if validate_national_chess_id_format(national_chess_id):
-                break
-            print("Erreur : Le numéro national d'échecs doit être du format AB12345.")
+            # Validate national chess id format
+            while True:
+                national_chess_id = input("Identifiant national d'échecs : ")
+                if validate_national_chess_id_format(national_chess_id):
+                    break
+                print("Erreur : Le numéro national d'échecs doit être du format AB12345.")
+
+            for player in players:
+                if player['national chess ID'] == national_chess_id:
+                    print(f"Le national chess ID {national_chess_id} est déjà attribué à un autre joueur : "
+                          f"{player['firstname']} {player['lastname']}")
+
+                    # Offer choices to the user
+                    while True:
+                        choix = input("Voulez-vous indiquer un autre national chess ID (1) ou "
+                                      "arrêter l'ajout du joueur (2) ? ")
+                        if choix == "1":
+                            break  # Re-enter a new national chess ID
+                        elif choix == "2":
+                            return None  # Stop adding the player
+                        else:
+                            print("Veuillez indiquer un choix valide.")
+                    break  # Exit the loop if a choice is made
+            else:
+                break  # Exit the loop if a unique national chess ID is entered
 
         print("Toutes les données ont été saisies avec succès.")
         break
 
+
+
     # Créer une instance de la classe Player avec les données fournies
     new_player = Player(firstname, lastname, birth, national_chess_id)
-    print(f"Le joueur {new_player.firstname} {new_player.lastname} a été ajouté avec succès.")
+    print(f"Le joueur {new_player.firstname} {new_player.lastname} a été ajouté à la base de donnée avec succès.")
     print("-" * 50)
 
     return new_player
@@ -143,26 +176,39 @@ def add_player_to_tournament_from_cli():
 
     # Affichage de la liste des joueurs avec leurs informations dans la console
     print("*" * 100)
-    print("Liste des joueurs déjà enregistrés :")
+    print("Liste des joueurs déjà enregistrés dans la base de données :")
     for i, player in enumerate(players):
         print(f"{i + 1}. {player['firstname']} {player['lastname']}")
+    print("*" * 100)
 
     # Demande à l'utilisateur de sélectionner un joueur
+    print("Nombre de joueur minium pour un tournoi : 6. Il faut un nombre pair de joueur")
     while True:
-        user_choice_for_add_player = input("souhaitez-vous ajouter un joueur au tournoi depuis la liste (1), "
+        if len(selected_players) >= 6 and len(selected_players) % 2 == 0:
+            user_choice_for_add_player = input("souhaitez-vous ajouter un joueur au tournoi depuis la liste (1), "
                                            "ajouter un nouveau joueur (2) "
                                            "ou arrêter l'ajout de joueurs (3) ?: ")
+        else:
+            user_choice_for_add_player = input("souhaitez-vous ajouter un joueur au tournoi depuis la liste (1) "
+                                               " ou ajouter un nouveau joueur (2) ?: ")
         if user_choice_for_add_player == "1":
             while True:
                 try:
                     selection = int(input("Sélectionnez un joueur en entrant son numéro : "))
-                    selected_player = player_repository.get_player_by_index(
-                        selection - 1)  # -1 pour convertir le numéro de base 1 en index de base 0
-                    selected_players.append(selected_player)
-                    break
+                    selected_player = player_repository.get_player_by_index(selection - 1)
+                    if (selected_player.firstname, selected_player.lastname) not in [(p.firstname, p.lastname) for p in
+                                                                                     selected_players]:
+                        selected_players.append(selected_player)
+                        print(f"Ajout du joueur {selected_player.firstname} {selected_player.lastname}")
+                        print("Joueurs inscrits dans le tournoi:")
+                        for player in selected_players:
+                            print(f"- {player.firstname} {player.lastname}")
+                        break
+                    else:
+                        print(
+                            f"Le joueur {selected_player.firstname} {selected_player.lastname} a déjà été ajouté au tournoi.")
                 except (ValueError, IndexError):
                     print("Veuillez entrer un numéro valide.")
-            print(f"Ajout du joueur {selected_player.firstname} {selected_player.lastname}")
             print("-" * 50)
 
         elif user_choice_for_add_player == "2":
@@ -173,8 +219,14 @@ def add_player_to_tournament_from_cli():
             # Ajouter le nouveau joueur au référentiel des joueurs
             player_repository.add_player(new_player)
 
+            for player in selected_players:
+                print(f"- {player.firstname} {player.lastname}")
+
         elif user_choice_for_add_player == "3":
-            break
+            if len(selected_players) >= 6 and len(selected_players) % 2 == 0:
+                break
+            else:
+                print("Le nombre d'inscrits doit être pair et au moins égal à 6.")
         else:
             print("Veuillez indiquer un choix valide")
 

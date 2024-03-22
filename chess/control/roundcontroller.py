@@ -80,17 +80,17 @@ class RoundController:
         self.tournament.current_round += 1
         print("-" * 50)
 
-    def get_current_round_matches(self):
-        """Get the matches of the current round.
-
-        Returns:
-            List[Match]: List of Match objects representing the matches of the current round.
-                         If there are no matches in the current round, an empty list is returned.
-        """
-        if self.current_round is not None:
-            return self.current_round.get_matches()
-        else:
-            return []
+    # def get_current_round_matches(self):
+    #     """Get the matches of the current round.
+    #
+    #     Returns:
+    #         List[Match]: List of Match objects representing the matches of the current round.
+    #                      If there are no matches in the current round, an empty list is returned.
+    #     """
+    #     if self.current_round is not None:
+    #         return self.current_round.get_matches()
+    #     else:
+    #         return []
 
 
 if __name__ == "__main__":
