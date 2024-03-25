@@ -20,37 +20,44 @@ possible_score = [(0, 1), (0.5, 0.5), (1, 0)]
 class Match:
     """A class representing a match in a chess tournament."""
 
-    def __init__(self, players: list, scores: list = [0, 0]):
-        """Initialize a Match object with the given players and scores.
+    def __init__(self, players):
 
-        Args:
-            players (list): A list containing exactly two Player objects representing the players in the match.
-            scores (list, optional): A list containing exactly two integers representing the initial scores of the
-            players. Defaults to [0, 0].
-
-        Raises:
-            ValueError: If the length of the 'players' list is not 2 or if the length of the 'scores' list is not 2.
-        """
-        if len(players) != 2:
-            raise ValueError("A match must have exactly 2 players.")
-        if len(scores) != 2:
-            raise ValueError("A match must have exactly 2 scores.")
-        self.players: list = players
-        self.scores: list = scores
-        self.name: str = "Round 1"
-        self.start: str = datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
-        self.end: str = datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+        self.players = players
+        self.result = None
 
     def __str__(self):
-        """Return a string representation of the Match object."""
-        return f"Match: {self.players[0]} vs {self.players[1]}, Scores: {self.scores[0]}-{self.scores[1]}"
+        player1_name = f"{list(self.players.keys())[0].firstname} {list(self.players.keys())[0].lastname}"
+        player2_name = f"{list(self.players.keys())[1].firstname} {list(self.players.keys())[1].lastname}"
+        return (f"Match: {player1_name} vs {player2_name}, Scores: {self.players[list(self.players.keys())[0]]}-"
+                f"{self.players[list(self.players.keys())[1]]}")
 
     def play_match(self):
-        """Simulate the playing of the match by randomly selecting scores."""
-        random.shuffle(possible_score)
-        score = random.choice(possible_score)
-        self.scores = score
+        # Génération aléatoire du résultat du match
+        result = random.choice(["win", "loss", "draw"])
+        # Assign the match result to the instance variable self.result
+        self.result = result
+        for player, score in self.players.items():
 
+        # Mise à jour des scores des joueurs en fonction du résultat
+            if result == "win":
+                winning_player = max(self.players, key=self.players.get)  # Trouver le joueur avec le score le plus élevé
+                self.players[winning_player] += 1  # Incrémenter le score du joueur gagnant
+            elif result == "loss":
+                losing_player = min(self.players, key=self.players.get)  # Trouver le joueur avec le score le plus bas
+                self.players[losing_player] += 1  # Incrémenter le score du joueur perdant
+            elif result == "draw":
+                for player in self.players:
+                    self.players[player] += 0.5  # Ajouter 0.5 aux scores de tous les joueurs
+
+            # # Enregistrement du résultat du match dans la variable match.result
+            # for player, score in self.players.items():
+            #     print(f"Joueur : {player.firstname} {player.lastname}, Score : {score}")
+
+            return result
+
+    def has_player(self, player):
+        """Check if the given player is participating in this match."""
+        return player in self.players
 
 if __name__ == "__main__":
     pass

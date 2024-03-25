@@ -1,8 +1,12 @@
+from datetime import datetime
+
 from view.viewmain import main_user_choice
 from view.viewnewtournament import create_tournament_from_cli, add_player_to_tournament_from_cli, add_player_from_cli
-from model.tournament import TournamentRepository, Tournament
-from control.roundcontroller import RoundController
+from model.tournament import TournamentRepository, Tournament, calculate_leaderboard
+from model.round import Round
+
 from model.player import PlayerRepository
+
 
 def main():
     """Main function to run the chess tournament management system."""
@@ -62,79 +66,61 @@ def main():
             if new_player is not None:
                 player_repository.add_player(new_player)
 
-        # choix 5 Créer et jouer un nouveau tournoi
         elif choice == "5":
-            new_tournament = create_tournament_from_cli()
-            players_list_objects, players_list_names = add_player_to_tournament_from_cli()
+            # Récupérer les informations du tournoi et les joueurs sélectionnés depuis la fonction
+            tournament_info = create_tournament_from_cli()
+            selected_players, players_names = add_player_to_tournament_from_cli()
 
-            for player_name in players_list_names:
-                new_tournament.players_list.append(player_name)
-            for player_name in new_tournament.players_list:
-                new_tournament.players_score[player_name] = 0
+            # Créer le tournoi avec les informations fournies, y compris le nombre de rounds
+            tournament = Tournament(tournament_info[0], tournament_info[1], tournament_info[2], tournament_info[3],
+                                    tournament_info[4])
+            num_rounds = tournament_info[-2]  # Récupérer le dernier élément de la liste, qui est le nombre de rounds
 
-            tournament_repository = TournamentRepository()
-            tournament_repository.add_tournament(new_tournament)
+            for i in range(num_rounds):
+                round_name = f"Round {i + 1}"
+                tournament.rounds.append(Round(tournament, round_name))
 
-            # Affichage de tous les attributs du tournoi
-            print("*" * 100)
-            print("Attributs du tournoi :")
-            for attribute, value in vars(new_tournament).items():
-                if attribute == 'players_list':
-                    players_names = ", ".join(new_tournament.players_list)
-                    print(f"{attribute}: {players_names}")
-                elif attribute == 'players_score':
-                    player_score_str = ', '.join([f"{name}: {score}" for name, score in value.items()])
-                    print(f"{attribute}: {player_score_str}")
-                else:
-                    print(f"{attribute}: {value}")
+            # Ajouter les joueurs sélectionnés au tournoi
+            tournament.players_list = selected_players
+            tournament.players_score = {f"{player.firstname} {player.lastname}": 0 for player in selected_players}
 
-            # Loop until the tournament reaches round 5.
-            while new_tournament.current_round <= new_tournament.rounds:
-                # Ask the user if they want to start the current round.
-                new_round_choice = (input(f"Voulez-vous faire le {new_tournament.current_round} round ? (y/n) : ")
-                                    .lower())
+            while tournament.current_round < len(tournament.rounds):
+                current_round = tournament.rounds[tournament.current_round]
+                print("*" * 100)
+                print(f"Round {tournament.current_round + 1} :")
+                # Définir l'heure de début du round
+                tournament.rounds[tournament.current_round].start_time = datetime.now()
 
-                # If the user chooses to start the round, proceed.
-                if new_round_choice == "y":
-                    # Create a new round and generate matches.
-                    round_controller = RoundController(new_tournament)
-                    round_controller.generate_matches()
-                    round_controller.play_round()
+                # Générer les paires de matchs pour ce round
+                tournament.generate_pairs_for_round()
 
-                    # Update scores for each match in the round.
+                # Mettre à jour les paires déjà jouées
+                tournament.update_played_pairs()
 
-                    for match in round_controller.matches:
-                        new_tournament.update_scores(match)
+                for match in current_round.matches:
+                    player1 = list(match.players.keys())[0]  # Premier joueur du match
+                    player2 = list(match.players.keys())[1]  # Deuxième joueur du match
+                    player1_name = f"{player1.firstname} {player1.lastname}"
+                    player2_name = f"{player2.firstname} {player2.lastname}"
+                    score1 = match.players[player1]  # Score du premier joueur
+                    score2 = match.players[player2]  # Score du deuxième joueur
+                    print(f"Match: {player1_name} vs {player2_name}, Scores: {score1}-{score2}")
+                    # print(f"Start Time: {current_round.start_time}, End Time: {current_round.end_time}")
 
-                    # Print the scores of all players.
-                    print(new_tournament.get_all_scores())
-                    print("*" * 100)
+                # Calculer et afficher le classement provisoire
+                calculate_leaderboard(tournament)
 
-                    # Mettre à jour les scores dans le repository du tournoi
-                    tournament_repository.update_tournament_scores(new_tournament)
+                # Demander si vous voulez jouer le prochain round
+                if tournament.current_round < (len(tournament.rounds) - 1):
+                    play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")
+                    if play_next_round.lower() != "y":
+                        break  # Sortir de la boucle si la réponse n'est pas "y"
 
-                elif new_round_choice == "n":
-                    tournament_repository.update_tournament_scores(new_tournament)
-                    print("Les données du tournoi ont été sauvegardées")
-                    break
-
-                else:
-                    print("Veuillez indiquer un choix valide (y ou n)")
-
-            # Triez le dictionnaire player_score par valeur (score) en ordre décroissant
-            sorted_scores = sorted(new_tournament.players_score.items(), key=lambda x: x[1], reverse=True)
-
-            # Sélectionnez les trois premiers éléments (joueurs avec les scores les plus élevés)
-            top_three_players = sorted_scores[:3]
-
-            # Affichez les trois meilleurs joueurs et leurs scores
-            print("Les 3 meilleurs joueurs du tournoi :")
-            for player, score in top_three_players:
-                print(f"Joueur : {player}, Score : {score}")
-            print("*" * 100)
+                tournament.current_round += 1
 
         # choix 6 : quitter le logiciel
         elif choice == "6":
+            print("A bientôt !")
             break
 
         else:
@@ -144,3 +130,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+ 

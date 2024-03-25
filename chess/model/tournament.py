@@ -11,15 +11,21 @@ Classes:
 """
 import os
 import json
+import random
+import itertools
 
-from typing import List, Dict
+from typing import Set, Tuple, Dict, List
+
+from model.round import Round
+from model.match import Match
+from model.player import Player
 
 
 class Tournament:
     """A class representing a chess tournament."""
 
     def __init__(self, name: str, place: str, date_start: str, date_end: str, rounds: int = 4, director_notes: str = "",
-                 current_round: int = 1):
+                 current_round: int = 0):
         """Initialize a Tournament object.
 
        Args:
@@ -38,11 +44,14 @@ class Tournament:
         self.place: str = place
         self.date_start: str = date_start
         self.date_end: str = date_end
-        self.rounds: int = rounds
+        # self.rounds: int = rounds
+        self.rounds = []
         self.director_notes: str = director_notes
         self.current_round: int = current_round
-        self.players_list: List[str] = []
         self.players_score: Dict[str, int] = {}
+        self.players_list: List[str] = list(self.players_score.keys())
+        self.rounds_list = []
+        self.played_pairs: Set[Tuple[Player, Player]] = set()
 
     def tournament_to_json(self):
         """Converts tournament data to a JSON-compatible dictionary.
@@ -73,51 +82,168 @@ class Tournament:
         """
         return self.players_list
 
+    def add_round(self, num_rounds):
+        num_rounds = int(num_rounds)  # Convertir en entier
+        for i in range(num_rounds):
+            round_name = f"Round {i + 1}"
+            round_instance = Round(self, round_name)  # Passer le nom du tour en tant qu'argument
+            self.rounds.append(round_instance)
 
-    def update_scores(self, match):
-        """Update the scores of players based on the match results.
+    import itertools
 
-        Args:
-            match (Match): The match object containing the match results.
+    def generate_pairs_for_round(self):
 
-        Returns:
-            None
-        """
-        players, scores = match.players, match.scores
-        # Mettre à jour les scores des joueurs
-        for player, score in zip(players, scores):
-            if player in self.players_score:
-                self.players_score[player] += score
-            else:
-                self.players_score[player] = score
+        # Générer les paires pour le premier round
+        if self.current_round == 0:
+            all_pairs = list(itertools.combinations(self.players_list, 2))
+            random.shuffle(all_pairs)  # Mélanger aléatoirement les paires
 
-    def get_player_score(self, player):
-        """Get the score of a player.
+            round_matches = []
+            paired_players = set()  # Pour suivre les joueurs déjà appariés
 
-       Args:
-           player (str): The name of the player.
+            for pair in all_pairs:
+                player1, player2 = pair
+                # Vérifier si les deux joueurs sont déjà appariés
+                if player1 in paired_players or player2 in paired_players:
+                    continue
 
-       Returns:
-           int: The score of the player. Returns 0 if the player is not found in the scores dictionary.
-       """
-        return self.players_score.get(player, 0)
+                match_instance = Match({player1: 0, player2: 0})
+                round_matches.append(match_instance)
+                # Jouer le match
+                result = match_instance.play_match()
 
-    def get_all_scores(self):
-        """Get all scores of players in the tournament.
+                # Mettre à jour les paires déjà jouées et les joueurs appariés
+                self.played_pairs.add((player1, player2))
+                self.played_pairs.add((player2, player1))
+                paired_players.add(player1)
+                paired_players.add(player2)
 
-        Returns:
-            str: A string containing the scores of all players in the tournament.
-        """
-        scores_string = "**********Tabelau des scores :**********\n"
+            # Enregistrez les paires de matchs générées pour ce round
+            self.rounds[self.current_round].matches.extend(round_matches)
+
+        else:
+            # Classer les joueurs par score
+            sorted_players = sorted(self.players_list, key=lambda x: x.score, reverse=True)
+
+            # Associer les joueurs pour les rounds suivants
+            round_matches = []
+            while len(sorted_players) >= 2:
+                player1 = sorted_players[0]
+
+                # Vérifier si les deux derniers joueurs peuvent former une paire
+                if len(sorted_players) == 2:
+                    player2 = sorted_players[1]
+                else:
+                    player2 = None
+                    # Chercher le joueur avec le score le plus proche
+                    min_diff = float('inf')
+                    for j in range(1, len(sorted_players)):
+                        if (player1, sorted_players[j]) not in self.played_pairs and \
+                                (sorted_players[j], player1) not in self.played_pairs:
+                            score_diff = abs(player1.score - sorted_players[j].score)
+                            if score_diff < min_diff:
+                                min_diff = score_diff
+                                player2 = sorted_players[j]
+                    if player2 is None:
+                        break  # Si aucun joueur n'a été trouvé, sortir de la boucle
+
+                match_instance = Match({player1: 0, player2: 0})
+                round_matches.append(match_instance)
+                result = match_instance.play_match()
+
+                # Mettre à jour les paires déjà jouées
+                self.played_pairs.add((player1, player2))
+                self.played_pairs.add((player2, player1))
+
+                # Retirer les joueurs associés de la liste des joueurs triés
+                sorted_players.remove(player1)
+                if len(sorted_players) > 0:
+                    sorted_players.remove(player2)
+
+            # Enregistrez les paires de matchs générées pour ce round
+            self.rounds[self.current_round].matches.extend(round_matches)
+
+    def update_played_pairs(self):
+        if self.current_round > 0:
+            previous_round_matches = self.rounds[self.current_round - 1].matches
+            for match in previous_round_matches:
+                player1 = list(match.players.keys())[0]
+                player2 = list(match.players.keys())[1]
+                # Ajouter la paire de joueurs à l'ensemble de paires jouées pour ce round
+                self.played_pairs.add((player1, player2))
+                self.played_pairs.add((player2, player1))
+
+
+
+    # Maintenant vous pouvez appeler display_leaderboard
+    # avec calculate_total_score défini au préalable.
+
+    def find_next_pair(self, round, paired_players):
+        # Sort players by points
+        sorted_players = sorted(self.players_list, key=lambda x: x.score, reverse=True)
+        for i in range(len(sorted_players)):
+            for j in range(i + 1, len(sorted_players)):
+                player1, player2 = sorted_players[i], sorted_players[j]
+                if not self.match_played(round, player1, player2):
+                    return player1, player2
+        # If all possible matches have been played, select randomly
+        return random.sample(self.players_list, 2)
+
+    def match_played(self, round, player1, player2):
+        for match in round.matches:
+            # players_in_match = [player_score[0] for player_score in match.players]
+            players_in_match = list(match.players.keys())
+            if player1 in players_in_match or player2 in players_in_match:
+                return True
+        return False
+
+    def update_scores(self, round_index, results):
+        self.print_scores()  # Afficher les scores avant la mise à jour
+
+        # Récupérer le round actuel à partir de l'index
+        tournament_round = self.rounds[round_index]
+
+        # Parcourir tous les matchs dans le round actuel
+        for i, match in enumerate(tournament_round.matches):
+            # Récupérer le résultat du match à partir de la liste de résultats
+            result = results[i]
+
+            # Mettre à jour les scores des joueurs dans le tournoi
+            player1, player2 = match.players.keys()
+            if result == "win":
+                self.players_score[f"{player1.firstname} {player1.lastname}"] += 1
+            elif result == "loss":
+                self.players_score[f"{player2.firstname} {player2.lastname}"] += 1
+            else:  # Si le match est un match nul
+                self.players_score[f"{player1.firstname} {player1.lastname}"] += 0.5
+                self.players_score[f"{player2.firstname} {player2.lastname}"] += 0.5
+
+        print("\nScores après la mise à jour dans update_score :")
+        self.print_scores()  # Afficher les scores après la mise à jour
+
+    def print_scores(self):
+        """Afficher les scores de tous les joueurs dans le tournoi."""
         for player_name, score in self.players_score.items():
-            scores_string += f"{player_name}: {score}\n"
-        return scores_string
+            print(f"{player_name} - Score : {score}")
 
     def __str__(self):
         """Return a string representation of the tournaments."""
         return (f"Tournament: {self.name}\nLocation: {self.place}\nStart: {self.date_start}\n"
                 f"End: {self.date_end}\nRounds: {self.rounds}\n"
                 f"Current Round: {self.current_round}\nDirector Notes: {self.director_notes}")
+
+
+def calculate_leaderboard(tournament):
+    # Créez une liste de tuples (joueur, score total)
+    leaderboard = [(player, player.calculate_total_score(tournament.rounds)) for player in tournament.players_list]
+    # Triez la liste en fonction du score total (en ordre décroissant)
+    sorted_leaderboard = sorted(leaderboard, key=lambda x: x[1], reverse=True)
+    # Affichez le classement
+    print(f"Classement fin du round {tournament.current_round +1} :")
+    for i, (player, score) in enumerate(sorted_leaderboard, start=1):
+        print(f"{i}. {player.firstname} {player.lastname} : {score} points")
+    print("*" * 100)
+
 
 
 class TournamentRepository:
@@ -160,14 +286,7 @@ class TournamentRepository:
         return tournaments
 
     def update_tournament_scores(self, tournament):
-        """Update the scores of a specific tournament.
 
-        Args:
-            tournament_name (str): The name of the tournament to update.
-            new_scores (dict): The new scores for the tournament players.
-                This should be a dictionary where keys are player names and values are their scores.
-
-        """
         # Chargez tous les tournois existants
         tournaments = self.load_tournaments()
 
@@ -181,6 +300,7 @@ class TournamentRepository:
         # Écrivez la liste mise à jour des tournois dans le fichier JSON
         with open(self.filename, 'w') as file:
             json.dump(tournaments, file, indent=4)
+
     def get_tournaments_by_alphabetical_order(self):
         """Get tournaments from the repository sorted alphabetically by name.
 
@@ -201,8 +321,8 @@ class TournamentRepository:
     def get_tournament_details(self):
         """Get details of the tournaments including players and their scores, sorted by name.
 
-        Returns:
-            List[dict]: A list of dictionaries containing details of the tournaments including players and their scores, sorted by name.
+        Returns: List[dict]: A list of dictionaries containing details of the tournaments including players and their
+        scores, sorted by name.
         """
         tournaments = self.load_tournaments()
         formatted_output = []
@@ -234,29 +354,5 @@ class TournamentRepository:
         return formatted_output
 
 
-
 if __name__ == "__main__":
     pass
-    # def add_player(self, player):
-    #     """Add a player to the tournament.
-    #
-    #     Args:
-    #         player (Player): The player object to be added to the tournament.
-    #
-    #     """
-    #     player_name = f"{player.firstname} {player.lastname}"
-    #     self.players_list.append(player_name)
-    #     print(f"self.players_list : {self.players_list}")
-    #     self.players_score[player_name] = 0
-    #     print(f"self.player_score : {self.players_score}")
-
-    # def add_director_notes(self, note):
-    #     """Add notes from the tournament director.
-    #
-    #     Args:
-    #         note (str): The note to be added.
-    #
-    #     Returns:
-    #         None
-    #     """
-    #     self.director_notes += note + "\n"

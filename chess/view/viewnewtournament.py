@@ -56,13 +56,14 @@ def create_tournament_from_cli():
 
     # Ajout des notes du directeur
     director_notes = add_director_notes_to_tournament()
-
-    tournament = Tournament(name, place, date_start, date_end, rounds, director_notes)
+    print("avant création tournament dns creat tournament")
+    # tournament = Tournament(name, place, date_start, date_end, rounds, director_notes)
 
     print("Toutes les données ont été saisies avec succès.")
-    print("Le tournoi a été créé avec succès.")
-    return tournament
-
+    # print("Le tournoi a été créé avec succès.")
+    # print(f"tournament {tournament}")
+    # return tournament
+    return name, place, date_start, date_end, rounds, director_notes
 
 def add_player_from_cli():
     """

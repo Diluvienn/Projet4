@@ -33,6 +33,14 @@ class Player:
         self.national_chess_id = national_chess_id
         self.score = 0
 
+    def calculate_total_score(self, rounds):
+        total_score = self.score  # Commencer par le score actuel du joueur
+        for round in rounds:
+            for match in round.matches:
+                if self in match.players:
+                    total_score += match.players[self]
+        return total_score
+
     def to_json(self):
         """Converts player data to a JSON-compatible dictionary.
 
