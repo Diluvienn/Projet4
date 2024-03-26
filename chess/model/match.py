@@ -25,6 +25,18 @@ class Match:
         self.players = players
         self.result = None
 
+    def to_json(self):
+        # Convertir les clés en chaînes de caractères pour les noms des joueurs
+        players_json = {f"{player.firstname} {player.lastname}": score for player, score in self.players.items()}
+
+        # Créer un dictionnaire contenant les données du match
+        match_json = {
+            "players": players_json,
+            "result": self.result
+        }
+
+        return match_json
+
     def __str__(self):
         player1_name = f"{list(self.players.keys())[0].firstname} {list(self.players.keys())[0].lastname}"
         player2_name = f"{list(self.players.keys())[1].firstname} {list(self.players.keys())[1].lastname}"
@@ -49,15 +61,9 @@ class Match:
                 for player in self.players:
                     self.players[player] += 0.5  # Ajouter 0.5 aux scores de tous les joueurs
 
-            # # Enregistrement du résultat du match dans la variable match.result
-            # for player, score in self.players.items():
-            #     print(f"Joueur : {player.firstname} {player.lastname}, Score : {score}")
-
             return result
 
-    def has_player(self, player):
-        """Check if the given player is participating in this match."""
-        return player in self.players
+
 
 if __name__ == "__main__":
     pass

@@ -76,47 +76,71 @@ def main():
                                     tournament_info[4])
             num_rounds = tournament_info[-2]  # Récupérer le dernier élément de la liste, qui est le nombre de rounds
 
-            for i in range(num_rounds):
-                round_name = f"Round {i + 1}"
-                tournament.rounds.append(Round(tournament, round_name))
+            # for i in range(num_rounds):
+            #     round_name = f"Round {i + 1}"
+            #     tournament.rounds.append(Round(tournament, round_name))
+            # Ajouter les rounds au tournoi en utilisant la méthode add_round
+            tournament.add_round(num_rounds)
 
             # Ajouter les joueurs sélectionnés au tournoi
             tournament.players_list = selected_players
             tournament.players_score = {f"{player.firstname} {player.lastname}": 0 for player in selected_players}
 
-            while tournament.current_round < len(tournament.rounds):
-                current_round = tournament.rounds[tournament.current_round]
-                print("*" * 100)
-                print(f"Round {tournament.current_round + 1} :")
-                # Définir l'heure de début du round
-                tournament.rounds[tournament.current_round].start_time = datetime.now()
+            while True:
+                # Demander si l'utilisateur veut jouer le premier round
+                play_first_round = input("Voulez-vous jouer le premier round ? (y/n): ").lower()
 
-                # Générer les paires de matchs pour ce round
-                tournament.generate_pairs_for_round()
+                # Si l'utilisateur ne veut pas jouer le premier round, sortir de la boucle principale
+                if play_first_round == "n":
+                    tournament_repository = TournamentRepository()
+                    tournament_repository.add_tournament(tournament)
+                    print("Le tournoi est enregistré.")
+                    break
+                elif play_first_round != "y" and play_first_round != "n":
+                    print("veuillez effectuer un choix valide")
+                else:
+                    while tournament.current_round < len(tournament.rounds):
+                        current_round = tournament.rounds[tournament.current_round]
+                        print("*" * 100)
+                        print(f"Round {tournament.current_round + 1} :")
+                        # Définir l'heure de début du round
+                        tournament.rounds[tournament.current_round].start_time = datetime.now()
 
-                # Mettre à jour les paires déjà jouées
-                tournament.update_played_pairs()
+                        # Générer les paires de matchs pour ce round
+                        tournament.generate_pairs_for_round()
 
-                for match in current_round.matches:
-                    player1 = list(match.players.keys())[0]  # Premier joueur du match
-                    player2 = list(match.players.keys())[1]  # Deuxième joueur du match
-                    player1_name = f"{player1.firstname} {player1.lastname}"
-                    player2_name = f"{player2.firstname} {player2.lastname}"
-                    score1 = match.players[player1]  # Score du premier joueur
-                    score2 = match.players[player2]  # Score du deuxième joueur
-                    print(f"Match: {player1_name} vs {player2_name}, Scores: {score1}-{score2}")
-                    # print(f"Start Time: {current_round.start_time}, End Time: {current_round.end_time}")
+                        # Mettre à jour les paires déjà jouées
+                        tournament.update_played_pairs()
 
-                # Calculer et afficher le classement provisoire
-                calculate_leaderboard(tournament)
+                        # Définir l'heure de début du round
+                        tournament.rounds[tournament.current_round].start_time = datetime.now()
 
-                # Demander si vous voulez jouer le prochain round
-                if tournament.current_round < (len(tournament.rounds) - 1):
-                    play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")
-                    if play_next_round.lower() != "y":
-                        break  # Sortir de la boucle si la réponse n'est pas "y"
+                        for match in current_round.matches:
+                            player1 = list(match.players.keys())[0]  # Premier joueur du match
+                            player2 = list(match.players.keys())[1]  # Deuxième joueur du match
+                            player1_name = f"{player1.firstname} {player1.lastname}"
+                            player2_name = f"{player2.firstname} {player2.lastname}"
+                            score1 = match.players[player1]  # Score du premier joueur
+                            score2 = match.players[player2]  # Score du deuxième joueur
+                            print(f"Match: {player1_name} vs {player2_name}, Scores: {score1}-{score2}")
+                            print(f"Start Time: {current_round.start_time}, End Time: {current_round.end_time}")
 
-                tournament.current_round += 1
+                        # Calculer et afficher le classement provisoire
+                        calculate_leaderboard(tournament)
+
+                        # Demander si vous voulez jouer le prochain round
+                        if tournament.current_round < (len(tournament.rounds) - 1):
+                            play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")
+                            if play_next_round == "n":
+                                tournament_repository = TournamentRepository()
+                                tournament_repository.add_tournament(tournament)
+                                break
+                            elif play_next_round != "y":
+                                # Si l'entrée de l'utilisateur n'est ni 'y' ni 'n', redemander
+                                print("Veuillez effectuer un choix valide.")
+                                continue
+
+                        tournament.current_round += 1
 
         # choix 6 : quitter le logiciel
         elif choice == "6":

@@ -127,21 +127,26 @@ class PlayerRepository:
     def get_player_by_alphabetical_order(self):
         """Get players from the repository sorted alphabetically by last name.
 
-       Returns:
-           List[str]: A list of formatted strings representing player information sorted alphabetically
-                      by last name.
+        Returns:
+            List[str]: A list of formatted strings representing player information sorted alphabetically
+                       by last name.
 
-       Note:
-           This method retrieves player data from the repository, sorts the players alphabetically
-           by last name, formats the player information, and returns a list of formatted strings.
-       """
+        Note:
+            This method retrieves player data from the repository, sorts the players alphabetically
+            by last name, formats the player information, and returns a list of formatted strings.
+        """
         players = self.load_players()
         sorted_players = sorted(players, key=lambda x: x['lastname'])
         formatted_output = []
         for player_data in sorted_players:
-            formatted_output.append(
-                f"{player_data['lastname']} {player_data['firstname']}, {player_data['birth']}, "
-                f"{player_data['national chess ID']}")
+            player_details = [
+                f"Nom: {player_data['lastname']} {player_data['firstname']}",
+                f"Date de naissance: {player_data['birth']}",
+                f"National chess ID: {player_data['national chess ID']}",
+                f"~" * 25
+            ]
+            formatted_output.extend(player_details)
+
         return formatted_output
 
 

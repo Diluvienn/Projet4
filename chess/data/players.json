@@ -123,25 +123,25 @@
         "firstname": "Romeo",
         "lastname": "Alonzo",
         "birth": "15-03-1974",
-        "national chess ID": "ry49563"
+        "national chess ID": "RY49563"
     },
     {
         "firstname": "John",
         "lastname": "Nojohn",
         "birth": "30-01-1982",
-        "national chess ID": "zr49653"
+        "national chess ID": "ZR49653"
     },
     {
         "firstname": "Leo",
         "lastname": "Meli",
         "birth": "11-11-2011",
-        "national chess ID": "er45782"
+        "national chess ID": "ER45782"
     },
     {
         "firstname": "Lola",
         "lastname": "Delagne",
         "birth": "13-12-1994",
-        "national chess ID": "nh75146"
+        "national chess ID": "NH75146"
     },
     {
         "firstname": "Beth",
@@ -171,7 +171,7 @@
         "firstname": "Emma",
         "lastname": "Watson",
         "birth": "15-04-1990",
-        "national chess ID": "hg19735"
+        "national chess ID": "HG19735"
     },
     {
         "firstname": "Lea",
@@ -184,5 +184,11 @@
         "lastname": "Roger",
         "birth": "02-01-2002",
         "national chess ID": "AG12345"
+    },
+    {
+        "firstname": "Laurie",
+        "lastname": "Darmon",
+        "birth": "21-02-1991",
+        "national chess ID": "IF78963"
     }
 ]

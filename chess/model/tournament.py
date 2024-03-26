@@ -44,7 +44,6 @@ class Tournament:
         self.place: str = place
         self.date_start: str = date_start
         self.date_end: str = date_end
-        # self.rounds: int = rounds
         self.rounds = []
         self.director_notes: str = director_notes
         self.current_round: int = current_round
@@ -61,12 +60,14 @@ class Tournament:
                   Keys include 'name', 'place', 'date_start', 'date_end', 'rounds', 'current_round',
                   'players_list', 'players_score', and 'director_note'.
         """
+        rounds_count = len(self.rounds)  # Calculer le nombre de tours
         return {
             'name': self.name,
             'place': self.place,
             'date_start': self.date_start,
             'date_end': self.date_end,
-            'rounds': self.rounds,
+            'rounds_count': rounds_count,
+            'rounds': [round.to_json() for round in self.rounds],
             'current_round': self.current_round,
             'director_note': self.director_notes,
             'players_list': self.players_list,
@@ -88,8 +89,6 @@ class Tournament:
             round_name = f"Round {i + 1}"
             round_instance = Round(self, round_name)  # Passer le nom du tour en tant qu'argument
             self.rounds.append(round_instance)
-
-    import itertools
 
     def generate_pairs_for_round(self):
 
@@ -175,57 +174,6 @@ class Tournament:
 
 
 
-    # Maintenant vous pouvez appeler display_leaderboard
-    # avec calculate_total_score défini au préalable.
-
-    def find_next_pair(self, round, paired_players):
-        # Sort players by points
-        sorted_players = sorted(self.players_list, key=lambda x: x.score, reverse=True)
-        for i in range(len(sorted_players)):
-            for j in range(i + 1, len(sorted_players)):
-                player1, player2 = sorted_players[i], sorted_players[j]
-                if not self.match_played(round, player1, player2):
-                    return player1, player2
-        # If all possible matches have been played, select randomly
-        return random.sample(self.players_list, 2)
-
-    def match_played(self, round, player1, player2):
-        for match in round.matches:
-            # players_in_match = [player_score[0] for player_score in match.players]
-            players_in_match = list(match.players.keys())
-            if player1 in players_in_match or player2 in players_in_match:
-                return True
-        return False
-
-    def update_scores(self, round_index, results):
-        self.print_scores()  # Afficher les scores avant la mise à jour
-
-        # Récupérer le round actuel à partir de l'index
-        tournament_round = self.rounds[round_index]
-
-        # Parcourir tous les matchs dans le round actuel
-        for i, match in enumerate(tournament_round.matches):
-            # Récupérer le résultat du match à partir de la liste de résultats
-            result = results[i]
-
-            # Mettre à jour les scores des joueurs dans le tournoi
-            player1, player2 = match.players.keys()
-            if result == "win":
-                self.players_score[f"{player1.firstname} {player1.lastname}"] += 1
-            elif result == "loss":
-                self.players_score[f"{player2.firstname} {player2.lastname}"] += 1
-            else:  # Si le match est un match nul
-                self.players_score[f"{player1.firstname} {player1.lastname}"] += 0.5
-                self.players_score[f"{player2.firstname} {player2.lastname}"] += 0.5
-
-        print("\nScores après la mise à jour dans update_score :")
-        self.print_scores()  # Afficher les scores après la mise à jour
-
-    def print_scores(self):
-        """Afficher les scores de tous les joueurs dans le tournoi."""
-        for player_name, score in self.players_score.items():
-            print(f"{player_name} - Score : {score}")
-
     def __str__(self):
         """Return a string representation of the tournaments."""
         return (f"Tournament: {self.name}\nLocation: {self.place}\nStart: {self.date_start}\n"
@@ -238,6 +186,9 @@ def calculate_leaderboard(tournament):
     leaderboard = [(player, player.calculate_total_score(tournament.rounds)) for player in tournament.players_list]
     # Triez la liste en fonction du score total (en ordre décroissant)
     sorted_leaderboard = sorted(leaderboard, key=lambda x: x[1], reverse=True)
+
+    tournament.players_score = {f"{player.firstname} {player.lastname}": score for player, score in sorted_leaderboard}
+
     # Affichez le classement
     print(f"Classement fin du round {tournament.current_round +1} :")
     for i, (player, score) in enumerate(sorted_leaderboard, start=1):
@@ -266,7 +217,10 @@ class TournamentRepository:
 
         """
         tournaments = self.load_tournaments()
-        tournaments.append(tournament.tournament_to_json())
+        tournament_data = tournament.tournament_to_json()
+        tournament_data["players_list"] = [player.to_json() for player in tournament.players_list]
+        tournament_data["rounds"] = [round.to_json() for round in tournament.rounds]
+        tournaments.append(tournament_data)
 
         with open(self.filename, 'w') as file:
             json.dump(tournaments, file, indent=4)

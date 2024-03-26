@@ -25,6 +25,16 @@ class Round:
         self.start_time = None
         self.end_time = None
 
+    def to_json(self):
+        start_time_str = str(self.start_time) if self.start_time else None
+        end_time_str = str(self.start_time) if self.start_time else None
+        return {
+            "name": self.name,
+            "matches": [match.to_json() for match in self.matches],
+            "start_time": start_time_str,
+            "end_time": end_time_str
+        }
+
     def add_match(self, match):
         """Ajoute un match à ce round."""
         self.matches.append(match)

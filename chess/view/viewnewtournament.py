@@ -56,13 +56,8 @@ def create_tournament_from_cli():
 
     # Ajout des notes du directeur
     director_notes = add_director_notes_to_tournament()
-    print("avant création tournament dns creat tournament")
-    # tournament = Tournament(name, place, date_start, date_end, rounds, director_notes)
 
     print("Toutes les données ont été saisies avec succès.")
-    # print("Le tournoi a été créé avec succès.")
-    # print(f"tournament {tournament}")
-    # return tournament
     return name, place, date_start, date_end, rounds, director_notes
 
 def add_player_from_cli():
@@ -117,7 +112,7 @@ def add_player_from_cli():
         while True:
             # Validate national chess id format
             while True:
-                national_chess_id = input("Identifiant national d'échecs : ")
+                national_chess_id = input("Identifiant national d'échecs : ").upper()
                 if validate_national_chess_id_format(national_chess_id):
                     break
                 print("Erreur : Le numéro national d'échecs doit être du format AB12345.")
