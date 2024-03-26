@@ -41,7 +41,7 @@ class Player:
                     total_score += match.players[self]
         return total_score
 
-    def to_json(self):
+    def to_json_full(self):
         """Converts player data to a JSON-compatible dictionary.
 
         Returns:
@@ -55,6 +55,17 @@ class Player:
             'national chess ID': self.national_chess_id
         }
 
+    def to_json_simple(self):
+        """Converts player data to a JSON-compatible dictionary.
+
+        Returns:
+            dict: A dictionary containing player information in a JSON-compatible format.
+                  Keys include 'firstname', 'lastname', 'birth', and 'national chess ID'.
+        """
+        return {
+            'firstname': self.firstname,
+            'lastname': self.lastname
+        }
 
 class PlayerRepository:
     """Repository for managing player data storage and retrieval."""

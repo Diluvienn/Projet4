@@ -35,6 +35,15 @@ class Round:
             "end_time": end_time_str
         }
 
+    @classmethod
+    def from_json(cls, round_data):
+        name = round_data["name"]
+        matches_data = round_data["matches"]
+        matches = [Match.from_json(match_data) for match_data in matches_data]
+        start_time = round_data.get("start_time")
+        end_time = round_data.get("end_time")
+        return cls(name, matches, start_time, end_time)
+
     def add_match(self, match):
         """Ajoute un match à ce round."""
         self.matches.append(match)

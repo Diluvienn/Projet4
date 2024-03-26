@@ -3,7 +3,6 @@ from datetime import datetime
 from view.viewmain import main_user_choice
 from view.viewnewtournament import create_tournament_from_cli, add_player_to_tournament_from_cli, add_player_from_cli
 from model.tournament import TournamentRepository, Tournament, calculate_leaderboard
-from model.round import Round
 
 from model.player import PlayerRepository
 
@@ -74,12 +73,8 @@ def main():
             # Créer le tournoi avec les informations fournies, y compris le nombre de rounds
             tournament = Tournament(tournament_info[0], tournament_info[1], tournament_info[2], tournament_info[3],
                                     tournament_info[4])
-            num_rounds = tournament_info[-2]  # Récupérer le dernier élément de la liste, qui est le nombre de rounds
+            num_rounds = tournament_info[-2]
 
-            # for i in range(num_rounds):
-            #     round_name = f"Round {i + 1}"
-            #     tournament.rounds.append(Round(tournament, round_name))
-            # Ajouter les rounds au tournoi en utilisant la méthode add_round
             tournament.add_round(num_rounds)
 
             # Ajouter les joueurs sélectionnés au tournoi
@@ -116,34 +111,42 @@ def main():
                         tournament.rounds[tournament.current_round].start_time = datetime.now()
 
                         for match in current_round.matches:
-                            player1 = list(match.players.keys())[0]  # Premier joueur du match
-                            player2 = list(match.players.keys())[1]  # Deuxième joueur du match
+                            player1 = list(match.players.keys())[0]
+                            player2 = list(match.players.keys())[1]
                             player1_name = f"{player1.firstname} {player1.lastname}"
                             player2_name = f"{player2.firstname} {player2.lastname}"
-                            score1 = match.players[player1]  # Score du premier joueur
-                            score2 = match.players[player2]  # Score du deuxième joueur
+                            score1 = match.players[player1]
+                            score2 = match.players[player2]
                             print(f"Match: {player1_name} vs {player2_name}, Scores: {score1}-{score2}")
                             print(f"Start Time: {current_round.start_time}, End Time: {current_round.end_time}")
 
                         # Calculer et afficher le classement provisoire
                         calculate_leaderboard(tournament)
 
-                        # Demander si vous voulez jouer le prochain round
-                        if tournament.current_round < (len(tournament.rounds) - 1):
-                            play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")
-                            if play_next_round == "n":
-                                tournament_repository = TournamentRepository()
-                                tournament_repository.add_tournament(tournament)
-                                break
-                            elif play_next_round != "y":
-                                # Si l'entrée de l'utilisateur n'est ni 'y' ni 'n', redemander
-                                print("Veuillez effectuer un choix valide.")
-                                continue
-
                         tournament.current_round += 1
+                        # Demander si vous voulez jouer le prochain round
 
-        # choix 6 : quitter le logiciel
+                        if tournament.current_round == len(tournament.rounds) - 1:
+                            break
+
+                        play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")
+                        if play_next_round == "n":
+                            tournament_repository = TournamentRepository()
+                            tournament_repository.add_tournament(tournament)
+                            break
+                        elif play_next_round != "y":
+                            print("Veuillez effectuer un choix valide.")
+                            continue
+
+
         elif choice == "6":
+            tournament_repository = TournamentRepository()
+            chosen_tournament = tournament_repository.resume_tournament()
+            tournament = Tournament.from_json(chosen_tournament)
+            tournament.play_tournament(tournament)
+
+        # choix 7 : quitter le logiciel
+        elif choice == "7":
             print("A bientôt !")
             break
 
@@ -152,6 +155,6 @@ def main():
             print("Veuillez indiquer un choix valide")
             print("-" * 50)
 
+
 if __name__ == "__main__":
     main()
- 

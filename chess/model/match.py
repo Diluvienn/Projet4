@@ -11,8 +11,9 @@ Usage:
     # Get the string representation of the match
 """
 
-import datetime
 import random
+
+from model.player import Player
 
 possible_score = [(0, 1), (0.5, 0.5), (1, 0)]
 
@@ -31,11 +32,29 @@ class Match:
 
         # Créer un dictionnaire contenant les données du match
         match_json = {
-            "players": players_json,
-            "result": self.result
+            "players": players_json
         }
 
         return match_json
+
+    @classmethod
+    def from_json(cls, match_data):
+        # Récupérer les données du match depuis le JSON
+        players_json = match_data["players"]
+
+        # Convertir les noms des joueurs en objets Player et récupérer les scores
+        players = {}
+        for player_name, score in players_json.items():
+            player_firstname, player_lastname = player_name.split()
+            player = Player(player_firstname, player_lastname)  # Supposons que vous avez une classe Player
+            players[player] = score
+
+        # Récupérer le résultat du match
+        result = match_data["result"]
+
+        # Créer une instance de Match avec les données récupérées
+        match_instance = cls(players, result)
+        return match_instance
 
     def __str__(self):
         player1_name = f"{list(self.players.keys())[0].firstname} {list(self.players.keys())[0].lastname}"
@@ -48,11 +67,12 @@ class Match:
         result = random.choice(["win", "loss", "draw"])
         # Assign the match result to the instance variable self.result
         self.result = result
-        for player, score in self.players.items():
+        for _, _ in self.players.items():
 
-        # Mise à jour des scores des joueurs en fonction du résultat
+            # Mise à jour des scores des joueurs en fonction du résultat
             if result == "win":
-                winning_player = max(self.players, key=self.players.get)  # Trouver le joueur avec le score le plus élevé
+                winning_player = max(self.players,
+                                     key=self.players.get)  # Trouver le joueur avec le score le plus élevé
                 self.players[winning_player] += 1  # Incrémenter le score du joueur gagnant
             elif result == "loss":
                 losing_player = min(self.players, key=self.players.get)  # Trouver le joueur avec le score le plus bas
@@ -62,7 +82,6 @@ class Match:
                     self.players[player] += 0.5  # Ajouter 0.5 aux scores de tous les joueurs
 
             return result
-
 
 
 if __name__ == "__main__":

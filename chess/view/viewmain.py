@@ -14,7 +14,8 @@ def main_user_choice():
           "3 : Obtenir des informations sur un tournoi spécifique\n"
           "4 : Ajouter un joueur à la liste des joueurs\n"
           "5 : Créer un nouveau tournoi\n"
-          "6 : Quitter")
+          "6 : Reprendre un tournoi non achevé\n"
+          "7 : Quitter")
 
-    return input("Mon choix (1, 2, 3, 4, 5 ou 6): ")
+    return input("Mon choix (1, 2, 3, 4, 5, 6 ou 7): ")
 
