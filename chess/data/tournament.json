@@ -626,27 +626,39 @@
         "players_list": [
             {
                 "firstname": "Lola",
-                "lastname": "Delagne"
+                "lastname": "Delagne",
+                "birth": "13-12-1994",
+                "national chess ID": "NH75146"
             },
             {
-                "firstname": "Stacy",
-                "lastname": "Williams"
+                "firstname": "Stacey",
+                "lastname": "Burns",
+                "birth": "28-12-1997",
+                "national chess ID": "OR50619"
             },
             {
                 "firstname": "Pamela",
-                "lastname": "Edwards"
+                "lastname": "Edwards",
+                "birth": "24-08-1976",
+                "national chess ID": "MS45742"
             },
             {
                 "firstname": "Christine",
-                "lastname": "Murphy"
+                "lastname": "Murphy",
+                "birth": "07-08-1994",
+                "national chess ID": "KY01632"
             },
             {
                 "firstname": "Nicole",
-                "lastname": "Jones"
+                "lastname": "Jones",
+                "birth": "04-04-1994",
+                "national chess ID": "AV04824"
             },
             {
                 "firstname": "Beth",
-                "lastname": "Harmon"
+                "lastname": "Harmon",
+                "birth": "02-11-1948",
+                "national chess ID": "AG76245"
             }
         ],
         "players_score": {

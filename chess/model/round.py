@@ -17,7 +17,7 @@ from .match import Match
 class Round:
     """Class representing a round in a tournament."""
 
-    def __init__(self, tournament, name):
+    def __init__(self, tournament, name, start_time, end_time):
         self.tournament = tournament
         self.played_pairs = set()
         self.name = name

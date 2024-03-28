@@ -39,22 +39,43 @@ class Match:
 
     @classmethod
     def from_json(cls, match_data):
-        # Récupérer les données du match depuis le JSON
-        players_json = match_data["players"]
+        # Récupérer les données des joueurs depuis le JSON
+        players_data = match_data["players"]
 
-        # Convertir les noms des joueurs en objets Player et récupérer les scores
+        # Créer un dictionnaire pour stocker les joueurs et leurs scores
         players = {}
-        for player_name, score in players_json.items():
-            player_firstname, player_lastname = player_name.split()
-            player = Player(player_firstname, player_lastname)  # Supposons que vous avez une classe Player
-            players[player] = score
 
-        # Récupérer le résultat du match
-        result = match_data["result"]
+        # Parcourir les données des joueurs
+        for player_name, score in players_data.items():
+            # Ajouter le joueur et son score au dictionnaire
+            players[player_name] = score
 
-        # Créer une instance de Match avec les données récupérées
-        match_instance = cls(players, result)
-        return match_instance
+        # Créer l'objet Match avec les joueurs et leurs scores
+        match = cls(players)
+
+        return match
+
+    # @classmethod
+    # def from_json(cls, match_data):
+    #     # Récupérer les données du match depuis le JSON
+    #     players_json = match_data["players"]
+    #
+    #     # Convertir les noms des joueurs en objets Player et récupérer les scores
+    #     players = {}
+    #     for player_name, score in players_json.items():
+    #         player_firstname, player_lastname = player_name.split()
+    #         player_data = players_json[player_name]
+    #         birth = player_data["birth"]
+    #         national_chess_id = player_data["national_chess_id"]
+    #         player = Player(player_firstname, player_lastname, birth, national_chess_id)
+    #         players[player] = score
+    #
+    #     # Récupérer le résultat du match
+    #     result = match_data["result"]
+    #
+    #     # Créer une instance de Match avec les données récupérées
+    #     match_instance = cls(players, result)
+    #     return match_instance
 
     def __str__(self):
         player1_name = f"{list(self.players.keys())[0].firstname} {list(self.players.keys())[0].lastname}"

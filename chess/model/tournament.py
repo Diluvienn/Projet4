@@ -236,8 +236,11 @@ class Tournament:
                 print(f"Match: {player1_name} vs {player2_name}, Scores: {score1}-{score2}")
                 print(f"Start Time: {current_round.start_time}, End Time: {current_round.end_time}")
 
+                # Récupérer les scores précédents à partir des données du tournoi
+                previous_scores = self.players_score if hasattr(self, 'players_score') else {}
+
             # Calculer et afficher le classement provisoire
-            calculate_leaderboard(self)
+            calculate_leaderboard(self, previous_scores)
 
             self.current_round += 1
             # Demander si vous voulez jouer le prochain round
@@ -279,6 +282,9 @@ class Tournament:
         # Créer les objets Round à partir des données JSON
         rounds = [Round.from_json(round_data) for round_data in rounds_data]
 
+        players_list_data = json_data['players_list']
+        players_list = [Player.from_json(player_data) for player_data in players_list_data]
+
         # Créer l'objet Tournament avec les données récupérées
         tournament = cls(name, place, date_start, date_end, rounds_count, director_notes, current_round)
         tournament.rounds = rounds
@@ -294,9 +300,10 @@ class Tournament:
                 f"Current Round: {self.current_round}\nDirector Notes: {self.director_notes}")
 
 
-def calculate_leaderboard(tournament):
+def calculate_leaderboard(tournament, previous_scores=None):
+    print(f"previous_scores dans calculate_leaderbord {previous_scores}")
     # Créez une liste de tuples (joueur, score total)
-    leaderboard = [(player, player.calculate_total_score(tournament.rounds)) for player in tournament.players_list]
+    leaderboard = [(player, player.calculate_total_score(tournament.rounds, previous_scores)) for player in tournament.players_list]
     # Triez la liste en fonction du score total (en ordre décroissant)
     sorted_leaderboard = sorted(leaderboard, key=lambda x: x[1], reverse=True)
 
@@ -330,7 +337,7 @@ class TournamentRepository:
         """
         tournaments = self.load_tournaments()
         tournament_data = tournament.to_json()
-        tournament_data["players_list"] = [player.to_json_simple() for player in tournament.players_list]
+        tournament_data["players_list"] = [player.to_json() for player in tournament.players_list]
         tournament_data["rounds"] = [round.to_json() for round in tournament.rounds]
         tournaments.append(tournament_data)
 

@@ -4,7 +4,7 @@ from view.viewmain import main_user_choice
 from view.viewnewtournament import create_tournament_from_cli, add_player_to_tournament_from_cli, add_player_from_cli
 from model.tournament import TournamentRepository, Tournament, calculate_leaderboard
 
-from model.player import PlayerRepository
+from model.player import PlayerRepository, Player
 
 
 def main():
@@ -138,12 +138,27 @@ def main():
                             print("Veuillez effectuer un choix valide.")
                             continue
 
-
         elif choice == "6":
             tournament_repository = TournamentRepository()
-            chosen_tournament = tournament_repository.resume_tournament()
-            tournament = Tournament.from_json(chosen_tournament)
-            tournament.play_tournament(tournament)
+            chosen_tournament_data = tournament_repository.resume_tournament()
+            print(f"chosen_tournament {chosen_tournament_data}")
+
+            # Extraire les scores précédemment enregistrés dans le JSON
+            previous_scores = chosen_tournament_data.get("players_score", {})
+
+            tournament = Tournament.from_json(chosen_tournament_data)
+            tournament.current_round += 1
+
+            # Calculer les scores totaux des joueurs en tenant compte des scores précédents
+            for player in tournament.players_list:
+                if isinstance(player, Player):  # Vérifiez si l'élément est une instance de Player
+                    total_score = player.calculate_total_score(tournament.rounds, previous_scores)
+                    print(f"Le score total de {player.full_name()} est : {total_score}")
+                else:
+                    print(f"Erreur : {player} n'est pas une instance de Player.")
+            print(f"previous_scores juste avant l'appel de play-tournament {previous_scores}")
+            tournament.play_tournament()
+
 
         # choix 7 : quitter le logiciel
         elif choice == "7":
