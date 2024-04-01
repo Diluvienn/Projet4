@@ -66,6 +66,7 @@ def main():
                 player_repository.add_player(new_player)
 
         elif choice == "5":
+
             # Récupérer les informations du tournoi et les joueurs sélectionnés depuis la fonction
             tournament_info = create_tournament_from_cli()
             selected_players, players_names = add_player_to_tournament_from_cli()
@@ -81,7 +82,8 @@ def main():
             tournament.players_list = selected_players
             tournament.players_score = {f"{player.firstname} {player.lastname}": 0 for player in selected_players}
 
-            while True:
+            play_main_menu = True  # Variable de contrôle pour revenir au menu principal
+            while play_main_menu:
                 # Demander si l'utilisateur veut jouer le premier round
                 play_first_round = input("Voulez-vous jouer le premier round ? (y/n): ").lower()
 
@@ -90,7 +92,9 @@ def main():
                     tournament_repository = TournamentRepository()
                     tournament_repository.add_tournament(tournament)
                     print("Le tournoi est enregistré.")
+                    play_main_menu = False
                     break
+
                 elif play_first_round != "y" and play_first_round != "n":
                     print("veuillez effectuer un choix valide")
                 else:
@@ -132,7 +136,10 @@ def main():
                         play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")
                         if play_next_round == "n":
                             tournament_repository = TournamentRepository()
+                            print("les attributs de tournament avant l'add dans le main")
+                            print(vars(tournament))
                             tournament_repository.add_tournament(tournament)
+                            play_main_menu = False
                             break
                         elif play_next_round != "y":
                             print("Veuillez effectuer un choix valide.")
@@ -147,6 +154,8 @@ def main():
             previous_scores = chosen_tournament_data.get("players_score", {})
 
             tournament = Tournament.from_json(chosen_tournament_data)
+            print("attribust de tournament, dans main, après re création de l'objet")
+            print(vars(tournament))
             tournament.current_round += 1
 
             # Calculer les scores totaux des joueurs en tenant compte des scores précédents
@@ -158,6 +167,7 @@ def main():
                     print(f"Erreur : {player} n'est pas une instance de Player.")
             print(f"previous_scores juste avant l'appel de play-tournament {previous_scores}")
             tournament.play_tournament()
+
 
 
         # choix 7 : quitter le logiciel

@@ -25,8 +25,8 @@ def create_tournament_from_cli():
     """
     print("*" * 100)
     print("Création d'un nouveau tournoi:")
-    name = input("Nom du tournoi : ")
-    place = input("Lieu du tournoi : ")
+    name = input("Nom du tournoi : ").capitalize()
+    place = input("Lieu du tournoi : ").capitalize()
 
     # Validation de la date de début
     while True:
@@ -59,6 +59,7 @@ def create_tournament_from_cli():
 
     print("Toutes les données ont été saisies avec succès.")
     return name, place, date_start, date_end, rounds, director_notes
+
 
 def add_player_from_cli():
     """
@@ -139,8 +140,6 @@ def add_player_from_cli():
         print("Toutes les données ont été saisies avec succès.")
         break
 
-
-
     # Créer une instance de la classe Player avec les données fournies
     new_player = Player(firstname, lastname, birth, national_chess_id)
     print(f"Le joueur {new_player.firstname} {new_player.lastname} a été ajouté à la base de donnée avec succès.")
@@ -182,8 +181,8 @@ def add_player_to_tournament_from_cli():
     while True:
         if len(selected_players) >= 6 and len(selected_players) % 2 == 0:
             user_choice_for_add_player = input("souhaitez-vous ajouter un joueur au tournoi depuis la liste (1), "
-                                           "ajouter un nouveau joueur (2) "
-                                           "ou arrêter l'ajout de joueurs (3) ?: ")
+                                               "ajouter un nouveau joueur (2) "
+                                               "ou arrêter l'ajout de joueurs (3) ?: ")
         else:
             user_choice_for_add_player = input("souhaitez-vous ajouter un joueur au tournoi depuis la liste (1) "
                                                " ou ajouter un nouveau joueur (2) ?: ")
@@ -202,7 +201,8 @@ def add_player_to_tournament_from_cli():
                         break
                     else:
                         print(
-                            f"Le joueur {selected_player.firstname} {selected_player.lastname} a déjà été ajouté au tournoi.")
+                            f"Le joueur {selected_player.firstname} {selected_player.lastname} a déjà été ajouté au "
+                            f"tournoi.")
                 except (ValueError, IndexError):
                     print("Veuillez entrer un numéro valide.")
             print("-" * 50)
@@ -226,9 +226,9 @@ def add_player_to_tournament_from_cli():
         else:
             print("Veuillez indiquer un choix valide")
 
-    # Initialiser les scores des joueurs sélectionnés à zéro
-    for player in selected_players:
-        player.player_score = 0
+    # # Initialiser les scores des joueurs sélectionnés à zéro
+    # for player in selected_players:
+    #     player.player_score = 0
 
     # Retourner à la fois les noms complets des joueurs en tant que chaînes de caractères et les objets Player
     return selected_players, [f"{player.firstname} {player.lastname}" for player in selected_players]

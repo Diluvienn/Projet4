@@ -124,7 +124,7 @@ class Tournament:
         num_rounds = int(num_rounds)  # Convertir en entier
         for i in range(num_rounds):
             round_name = f"Round {i + 1}"
-            round_instance = Round(self, round_name)  # Passer le nom du tour en tant qu'argument
+            round_instance = Round(round_name)  # Passer le nom du tour en tant qu'argument
             self.rounds.append(round_instance)
 
     def generate_pairs_for_round(self):
@@ -246,6 +246,8 @@ class Tournament:
             # Demander si vous voulez jouer le prochain round
 
             if self.current_round == len(self.rounds) - 1:
+                tournament_repository = TournamentRepository()
+                tournament_repository.add_tournament(self)
                 break
 
             play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")
@@ -290,6 +292,8 @@ class Tournament:
         tournament.rounds = rounds
         tournament.players_list = players_list
         tournament.players_score = players_score
+        print(f"attributs de tournament, dans from_json:")
+        print(vars(tournament))
 
         return tournament
 
@@ -339,6 +343,7 @@ class TournamentRepository:
         tournament_data = tournament.to_json()
         tournament_data["players_list"] = [player.to_json() for player in tournament.players_list]
         tournament_data["rounds"] = [round.to_json() for round in tournament.rounds]
+        print(f"tournament_data  : {tournament_data}")
         tournaments.append(tournament_data)
 
         with open(self.filename, 'w') as file:

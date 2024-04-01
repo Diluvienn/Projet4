@@ -1,555 +1,229 @@
 [
     {
-        "name": "Regional",
-        "place": "Caen",
-        "date_start": "01-01-2011",
-        "date_end": "10-01-2011",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Bryan Hodge",
-            "Jake Douglas",
-            "Heidi Miller",
-            "Patrick Quinn",
-            "James Wallace",
-            "Brandon Greene"
-        ],
-        "players_score": {
-            "Bryan Hodge": 1,
-            "Jake Douglas": 1.5,
-            "Heidi Miller": 2,
-            "Patrick Quinn": 2.5,
-            "James Wallace": 3,
-            "Brandon Greene": 0
-        },
-        "director_note": ""
-    },
-    {
-        "name": "D\u00e9partemental",
-        "place": "Rouen",
-        "date_start": "02-02-2012",
-        "date_end": "20-02-2012",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Stacey Burns",
-            "Erin Williams",
-            "Michael Schmidt",
-            "Nicole Jones",
-            "Frank Rivera",
-            "Wanda Armstrong"
-        ],
-        "players_score": {
-            "Stacey Burns": 0,
-            "Erin Williams": 5,
-            "Michael Schmidt": 1.5,
-            "Nicole Jones": 2,
-            "Frank Rivera": 2,
-            "Wanda Armstrong": 1
-        },
-        "director_note": ""
-    },
-    {
-        "name": "National",
-        "place": "Paris",
-        "date_start": "03-03-2013",
-        "date_end": "30-03-2013",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Christine Murphy",
-            "Micheal Haley",
-            "Pamela Edwards",
-            "Brandy Short",
-            "Cody Davis",
-            "Kathy Mcdowell"
-        ],
-        "players_score": {
-            "Christine Murphy": 4,
-            "Micheal Haley": 2,
-            "Pamela Edwards": 0,
-            "Brandy Short": 3.5,
-            "Cody Davis": 3,
-            "Kathy Mcdowell": 0
-        },
-        "director_note": ""
-    },
-    {
-        "name": "Europeen",
-        "place": "Londres",
-        "date_start": "04-04-2014",
-        "date_end": "14-04-2014",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Bryan Hodge",
-            "Jake Douglas",
-            "Heidi Miller",
-            "Patrick Quinn",
-            "James Wallace",
-            "Brandon Greene"
-        ],
-        "players_score": {
-            "Bryan Hodge": 2,
-            "Jake Douglas": 2,
-            "Heidi Miller": 1.5,
-            "Patrick Quinn": 0,
-            "James Wallace": 3,
-            "Brandon Greene": 1
-        },
-        "director_note": ""
-    },
-    {
-        "name": "Mondial",
-        "place": "New York",
-        "date_start": "05-05-2015",
-        "date_end": "15-05-2015",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Stacey Burns",
-            "Erin Williams",
-            "Michael Schmidt",
-            "Nicole Jones",
-            "Frank Rivera",
-            "Wanda Armstrong"
-        ],
-        "players_score": {
-            "Stacey Burns": 5,
-            "Erin Williams": 4,
-            "Michael Schmidt": 2,
-            "Nicole Jones": 0,
-            "Frank Rivera": 1,
-            "Wanda Armstrong": 0.5
-        },
-        "director_note": ""
-    },
-    {
-        "name": "International",
-        "place": "Shangai",
-        "date_start": "06-06-2016",
-        "date_end": "16-06-2016",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Nicole Jones",
-            "Frank Rivera",
-            "Wanda Armstrong",
-            "Christine Murphy",
-            "Micheal Haley",
-            "Pamela Edwards",
-            "Brandy Short"
-        ],
-        "players_score": {
-            "Nicole Jones": 0,
-            "Frank Rivera": 0,
-            "Wanda Armstrong": 0,
-            "Christine Murphy": 0,
-            "Micheal Haley": 0,
-            "Pamela Edwards": 0,
-            "Brandy Short": 0
-        },
-        "director_note": ""
-    },
-    {
-        "name": "Universel",
-        "place": "Moscou",
-        "date_start": "07-07-2017",
-        "date_end": "17-07-2017",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Nicole Jones",
-            "Frank Rivera",
-            "Wanda Armstrong",
-            "Christine Murphy",
-            "Micheal Haley",
-            "Pamela Edwards"
-        ],
-        "players_score": {
-            "Nicole Jones": 0,
-            "Frank Rivera": 0,
-            "Wanda Armstrong": 0,
-            "Christine Murphy": 0,
-            "Micheal Haley": 0,
-            "Pamela Edwards": 0
-        },
-        "director_note": ""
-    },
-    {
-        "name": "Intergalactique",
-        "place": "Pyongyang",
-        "date_start": "08-08-2018",
-        "date_end": "18-08-2018",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Bryan Hodge",
-            "Nicole Jones",
-            "Parker Castro",
-            "Leo Meli",
-            "Pamela Edwards",
-            "James Wallace"
-        ],
-        "players_score": {
-            "Bryan Hodge": 0,
-            "Nicole Jones": 0,
-            "Parker Castro": 0,
-            "Leo Meli": 0,
-            "Pamela Edwards": 0,
-            "James Wallace": 0
-        },
-        "director_note": ""
-    },
-    {
-        "name": "Br\u00e9silien",
-        "place": "Rio",
-        "date_start": "09-09-2019",
-        "date_end": "19-09-2019",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Jake Douglas",
-            "Wanda Armstrong",
-            "Parker Castro",
-            "John Nojohn",
-            "Micheal Haley",
-            "Patrick Quinn"
-        ],
-        "players_score": {
-            "Jake Douglas": 0,
-            "Wanda Armstrong": 0,
-            "Parker Castro": 0,
-            "John Nojohn": 0,
-            "Micheal Haley": 0,
-            "Patrick Quinn": 0
-        },
-        "director_note": ""
-    },
-    {
-        "name": "Argentin",
-        "place": "Buenos Aires",
-        "date_start": "10-10-2020",
-        "date_end": "10-10-2020",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Heidi Miller",
-            "Christine Murphy",
-            "Romeo Alonzo",
-            "Brandy Short",
-            "Brandon Greene",
-            "Stacey Burns"
-        ],
-        "players_score": {
-            "Heidi Miller": 0,
-            "Christine Murphy": 0,
-            "Romeo Alonzo": 0,
-            "Brandy Short": 0,
-            "Brandon Greene": 0,
-            "Stacey Burns": 0
-        },
-        "director_note": ""
-    },
-    {
-        "name": "P\u00e9ruvien",
-        "place": "Lima",
-        "date_start": "11-11-2021",
-        "date_end": "21-11-2021",
-        "rounds": 4,
-        "rounds_count": 4,
-        "current_round": 1,
-        "players_list": [
-            "Cody Davis",
-            "Kathy Mcdowell",
-            "Stacy Williams",
-            "Parker Castro",
-            "Stacy Williams",
-            "Parker Castro"
-        ],
-        "players_score": {
-            "Cody Davis": 0,
-            "Kathy Mcdowell": 0,
-            "Stacy Williams": 0,
-            "Parker Castro": 0
-        },
-        "director_note": ""
-    },
-    {
-        "name": "Uruguayen",
-        "place": "Montevideo",
-        "date_start": "13-01-2000",
-        "date_end": "23-01-2000",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Stacy Williams",
-            "Parker Castro",
-            "Romeo Alonzo",
-            "John Nojohn",
-            "Leo Meli",
-            "Lola Delagne"
-        ],
-        "players_score": {
-            "Stacy Williams": 0,
-            "Parker Castro": 0,
-            "Romeo Alonzo": 0,
-            "John Nojohn": 0,
-            "Leo Meli": 0,
-            "Lola Delagne": 0
-        },
-        "director_note": ""
-    },
-    {
-        "name": "Colombien",
-        "place": "Bogota",
-        "date_start": "12-02-2002",
-        "date_end": "22-02-2002",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Frank Rivera",
-            "Wanda Armstrong",
-            "Christine Murphy",
-            "Micheal Haley",
-            "Pamela Edwards",
-            "Brandy Short"
-        ],
-        "players_score": {
-            "Frank Rivera": 0,
-            "Wanda Armstrong": 0,
-            "Christine Murphy": 0,
-            "Micheal Haley": 0,
-            "Pamela Edwards": 0,
-            "Brandy Short": 0
-        },
-        "director_note": ""
-    },
-    {
-        "name": "Chilien",
-        "place": "Santiago",
-        "date_start": "13-03-2003",
-        "date_end": "23-03-2003",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Bryan Hodge",
-            "Jake Douglas",
-            "Heidi Miller",
-            "Patrick Quinn",
-            "James Wallace",
-            "Brandon Greene"
-        ],
-        "players_score": {
-            "Bryan Hodge": 0,
-            "Jake Douglas": 0,
-            "Heidi Miller": 0,
-            "Patrick Quinn": 0,
-            "James Wallace": 0,
-            "Brandon Greene": 0
-        },
-        "director_note": ""
-    },
-    {
-        "name": "Venezuelien",
-        "place": "Caracas",
-        "date_start": "14-04-2004",
-        "date_end": "24-04-2004",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Bryan Hodge",
-            "Jake Douglas",
-            "Heidi Miller",
-            "Patrick Quinn",
-            "James Wallace",
-            "Brandon Greene"
-        ],
-        "players_score": {
-            "Bryan Hodge": 0,
-            "Jake Douglas": 0,
-            "Heidi Miller": 0,
-            "Patrick Quinn": 0,
-            "James Wallace": 0,
-            "Brandon Greene": 0
-        },
-        "director_note": ""
-    },
-    {
-        "name": "Equatorien",
-        "place": "Quito",
-        "date_start": "14-04-2004",
-        "date_end": "24-04-2004",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Beth Harmon",
-            "James Wallace",
-            "Heidi Miller",
-            "Pamela Edwards",
-            "Lola Delagne",
-            "Mark Zuck"
-        ],
-        "players_score": {
-            "Beth Harmon": 0,
-            "James Wallace": 0,
-            "Heidi Miller": 0,
-            "Pamela Edwards": 0,
-            "Lola Delagne": 0,
-            "Mark Zuck": 0
-        },
-        "director_note": ""
-    },
-    {
-        "name": "Paraguayen",
-        "place": "Asuncion",
-        "date_start": "15-05-2005",
-        "date_end": "25-05-2005",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Parker Castro",
-            "Kathy Mcdowell",
-            "Cody Davis",
-            "Brandy Short",
-            "Pamela Edwards",
-            "Micheal Haley"
-        ],
-        "players_score": {
-            "Parker Castro": 0,
-            "Kathy Mcdowell": 0,
-            "Cody Davis": 0,
-            "Brandy Short": 0,
-            "Pamela Edwards": 0,
-            "Micheal Haley": 0
-        },
-        "director_note": ""
-    },
-    {
-        "name": "Ukrainien",
-        "place": "Kiev",
-        "date_start": "08-08-2008",
-        "date_end": "18-08-2008",
-        "rounds": 3,
-        "rounds_count": 4,
-        "current_round": 1,
-        "players_list": [
-            "Bryan Hodge",
-            "Jake Douglas",
-            "Heidi Miller",
-            "Patrick Quinn",
-            "James Wallace",
-            "Brandon Greene"
-        ],
-        "players_score": {
-            "Bryan Hodge": 0,
-            "Jake Douglas": 0,
-            "Heidi Miller": 0,
-            "Patrick Quinn": 0,
-            "James Wallace": 0,
-            "Brandon Greene": 0
-        },
-        "director_note": ""
-    },
-    {
-        "name": "Suedois",
-        "place": "Stockholm",
-        "date_start": "09-09-2009",
-        "date_end": "19-09-2009",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Frank Rivera",
-            "Wanda Armstrong",
-            "Christine Murphy",
-            "Micheal Haley",
-            "Pamela Edwards",
-            "Brandy Short"
-        ],
-        "players_score": {
-            "Frank Rivera": 0,
-            "Wanda Armstrong": 0,
-            "Christine Murphy": 0,
-            "Micheal Haley": 0,
-            "Pamela Edwards": 0,
-            "Brandy Short": 0
-        },
-        "director_note": "\"Tournois tr\\u00e8s prometteur !\""
-    },
-    {
-        "name": "Polonais",
-        "place": "Varsovie",
-        "date_start": "10-10-2010",
-        "date_end": "11-10-2010",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 1,
-        "players_list": [
-            "Bryan Hodge",
-            "Jake Douglas",
-            "Heidi Miller",
-            "Patrick Quinn",
-            "James Wallace",
-            "Brandon Greene"
-        ],
-        "players_score": {
-            "Bryan Hodge": 0,
-            "Jake Douglas": 0,
-            "Heidi Miller": 0,
-            "Patrick Quinn": 0,
-            "James Wallace": 0,
-            "Brandon Greene": 0
-        },
-        "director_note": "\"Future capitale des \\u00e9checs \""
-    },
-    {
-        "name": "Finlandais",
-        "place": "Helsinki",
-        "date_start": "11-11-2011",
-        "date_end": "11-11-2011",
-        "rounds_count": 4,
-        "rounds": 4,
-        "current_round": 3,
+        "name": "A",
+        "place": "Aa",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-2222",
         "director_note": "",
-        "players_list": [
-            "Patrick Quinn",
-            "Heidi Miller",
-            "Jake Douglas",
-            "Bryan Hodge",
-            "James Wallace",
-            "Brandon Greene"
+        "rounds_count": 4,
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Bryan Hodge": 1,
+                            "James Wallace": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Heidi Miller": 1,
+                            "Brandon Greene": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Jake Douglas": 1,
+                            "Patrick Quinn": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-01 20:43:21.927382",
+                "end_time": "2024-04-01 20:43:21.927382"
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Bryan Hodge": 0.5,
+                            "Jake Douglas": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Heidi Miller": 1,
+                            "Patrick Quinn": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "James Wallace": 1,
+                            "Brandon Greene": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-01 20:43:22.590985",
+                "end_time": "2024-04-01 20:43:22.590985"
+            },
+            {
+                "name": "Round 3",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            }
         ],
+        "current_round": 2,
         "players_score": {
+            "Heidi Miller": 2,
             "Bryan Hodge": 1.5,
             "Jake Douglas": 1.5,
-            "Heidi Miller": 1,
-            "Patrick Quinn": 0.5,
-            "James Wallace": 0.5,
-            "Brandon Greene": 1
-        }
+            "James Wallace": 1,
+            "Patrick Quinn": 0,
+            "Brandon Greene": 0
+        },
+        "players_list": [
+            {
+                "firstname": "Bryan",
+                "lastname": "Hodge",
+                "birth": "21-11-1988",
+                "national chess ID": "EB77714"
+            },
+            {
+                "firstname": "Jake",
+                "lastname": "Douglas",
+                "birth": "26-02-1992",
+                "national chess ID": "BC13361"
+            },
+            {
+                "firstname": "Heidi",
+                "lastname": "Miller",
+                "birth": "20-07-1981",
+                "national chess ID": "WU44295"
+            },
+            {
+                "firstname": "Patrick",
+                "lastname": "Quinn",
+                "birth": "05-05-1993",
+                "national chess ID": "EA39624"
+            },
+            {
+                "firstname": "James",
+                "lastname": "Wallace",
+                "birth": "24-03-1976",
+                "national chess ID": "KZ45488"
+            },
+            {
+                "firstname": "Brandon",
+                "lastname": "Greene",
+                "birth": "12-12-1986",
+                "national chess ID": "IM32836"
+            }
+        ]
     },
     {
-        "name": "Club med",
-        "place": "Hawai",
-        "date_start": "12-07-2035",
-        "date_end": "19-07-2035",
+        "name": "R\u00e9gional",
+        "place": "Caen",
+        "date_start": "01-01-2001",
+        "date_end": "10-01-2001",
+        "director_note": "",
+        "rounds_count": 4,
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Jake Douglas": 1,
+                            "Patrick Quinn": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Bryan Hodge": 0.5,
+                            "Brandon Greene": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Heidi Miller": 1,
+                            "James Wallace": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-01 20:52:10.256809",
+                "end_time": "2024-04-01 20:52:10.256809"
+            },
+            {
+                "name": "Round 2",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 3",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            }
+        ],
+        "current_round": 1,
+        "players_score": {
+            "Jake Douglas": 1,
+            "Heidi Miller": 1,
+            "Bryan Hodge": 0.5,
+            "Brandon Greene": 0.5,
+            "Patrick Quinn": 0,
+            "James Wallace": 0
+        },
+        "players_list": [
+            {
+                "firstname": "Bryan",
+                "lastname": "Hodge",
+                "birth": "21-11-1988",
+                "national chess ID": "EB77714"
+            },
+            {
+                "firstname": "Jake",
+                "lastname": "Douglas",
+                "birth": "26-02-1992",
+                "national chess ID": "BC13361"
+            },
+            {
+                "firstname": "Heidi",
+                "lastname": "Miller",
+                "birth": "20-07-1981",
+                "national chess ID": "WU44295"
+            },
+            {
+                "firstname": "Patrick",
+                "lastname": "Quinn",
+                "birth": "05-05-1993",
+                "national chess ID": "EA39624"
+            },
+            {
+                "firstname": "James",
+                "lastname": "Wallace",
+                "birth": "24-03-1976",
+                "national chess ID": "KZ45488"
+            },
+            {
+                "firstname": "Brandon",
+                "lastname": "Greene",
+                "birth": "12-12-1986",
+                "national chess ID": "IM32836"
+            }
+        ]
+    },
+    {
+        "name": "Bb",
+        "place": "Bbb",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-2222",
+        "director_note": "",
         "rounds_count": 5,
         "rounds": [
             {
@@ -557,50 +231,131 @@
                 "matches": [
                     {
                         "players": {
-                            "Pamela Edwards": 0.5,
-                            "Christine Murphy": 0.5
+                            "Erin Williams": 1,
+                            "Nicole Jones": 0
                         }
                     },
                     {
                         "players": {
-                            "Nicole Jones": 1,
-                            "Beth Harmon": 0
+                            "Stacey Burns": 0.5,
+                            "Michael Schmidt": 0.5
                         }
                     },
                     {
                         "players": {
-                            "Lola Delagne": 0.5,
-                            "Stacy Williams": 0.5
+                            "Frank Rivera": 0.5,
+                            "Wanda Armstrong": 0.5
                         }
                     }
                 ],
-                "start_time": "2024-03-26 21:39:26.795941",
-                "end_time": "2024-03-26 21:39:26.795941"
+                "start_time": "2024-04-01 21:04:00.532916",
+                "end_time": "2024-04-01 21:04:00.532916"
             },
             {
                 "name": "Round 2",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 3",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            }
+        ],
+        "current_round": 1,
+        "players_score": {
+            "Erin Williams": 1,
+            "Stacey Burns": 0.5,
+            "Michael Schmidt": 0.5,
+            "Frank Rivera": 0.5,
+            "Wanda Armstrong": 0.5,
+            "Nicole Jones": 0
+        },
+        "players_list": [
+            {
+                "firstname": "Stacey",
+                "lastname": "Burns",
+                "birth": "28-12-1997",
+                "national chess ID": "OR50619"
+            },
+            {
+                "firstname": "Erin",
+                "lastname": "Williams",
+                "birth": "27-09-1994",
+                "national chess ID": "CN32822"
+            },
+            {
+                "firstname": "Michael",
+                "lastname": "Schmidt",
+                "birth": "14-12-1997",
+                "national chess ID": "BV96896"
+            },
+            {
+                "firstname": "Nicole",
+                "lastname": "Jones",
+                "birth": "04-04-1994",
+                "national chess ID": "AV04824"
+            },
+            {
+                "firstname": "Frank",
+                "lastname": "Rivera",
+                "birth": "04-10-1998",
+                "national chess ID": "YR85990"
+            },
+            {
+                "firstname": "Wanda",
+                "lastname": "Armstrong",
+                "birth": "26-02-1973",
+                "national chess ID": "VM89208"
+            }
+        ]
+    },
+    {
+        "name": "C",
+        "place": "Cc",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-2222",
+        "director_note": "",
+        "rounds_count": 6,
+        "rounds": [
+            {
+                "name": "Round 1",
                 "matches": [
                     {
                         "players": {
-                            "Lola Delagne": 1,
-                            "Pamela Edwards": 0
+                            "Micheal Haley": 1,
+                            "Kathy Mcdowell": 0
                         }
                     },
                     {
                         "players": {
-                            "Stacy Williams": 0.5,
-                            "Christine Murphy": 0.5
+                            "Pamela Edwards": 0.5,
+                            "Brandy Short": 0.5
                         }
                     },
                     {
                         "players": {
-                            "Nicole Jones": 1,
-                            "Beth Harmon": 0
+                            "Christine Murphy": 0.5,
+                            "Cody Davis": 0.5
                         }
                     }
                 ],
-                "start_time": "2024-03-26 21:39:29.836704",
-                "end_time": "2024-03-26 21:39:29.836704"
+                "start_time": "2024-04-01 21:11:20.997238",
+                "end_time": "2024-04-01 21:11:20.997238"
+            },
+            {
+                "name": "Round 2",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
             },
             {
                 "name": "Round 3",
@@ -619,22 +374,35 @@
                 "matches": [],
                 "start_time": null,
                 "end_time": null
+            },
+            {
+                "name": "Round 6",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
             }
         ],
         "current_round": 1,
-        "director_note": "",
+        "players_score": {
+            "Micheal Haley": 1,
+            "Christine Murphy": 0.5,
+            "Pamela Edwards": 0.5,
+            "Brandy Short": 0.5,
+            "Cody Davis": 0.5,
+            "Kathy Mcdowell": 0
+        },
         "players_list": [
             {
-                "firstname": "Lola",
-                "lastname": "Delagne",
-                "birth": "13-12-1994",
-                "national chess ID": "NH75146"
+                "firstname": "Christine",
+                "lastname": "Murphy",
+                "birth": "07-08-1994",
+                "national chess ID": "KY01632"
             },
             {
-                "firstname": "Stacey",
-                "lastname": "Burns",
-                "birth": "28-12-1997",
-                "national chess ID": "OR50619"
+                "firstname": "Micheal",
+                "lastname": "Haley",
+                "birth": "11-12-1987",
+                "national chess ID": "BV84013"
             },
             {
                 "firstname": "Pamela",
@@ -643,31 +411,142 @@
                 "national chess ID": "MS45742"
             },
             {
-                "firstname": "Christine",
-                "lastname": "Murphy",
-                "birth": "07-08-1994",
-                "national chess ID": "KY01632"
+                "firstname": "Brandy",
+                "lastname": "Short",
+                "birth": "22-09-2000",
+                "national chess ID": "JW69952"
             },
             {
-                "firstname": "Nicole",
-                "lastname": "Jones",
-                "birth": "04-04-1994",
-                "national chess ID": "AV04824"
+                "firstname": "Cody",
+                "lastname": "Davis",
+                "birth": "07-02-1989",
+                "national chess ID": "LX70979"
             },
             {
-                "firstname": "Beth",
-                "lastname": "Harmon",
-                "birth": "02-11-1948",
-                "national chess ID": "AG76245"
+                "firstname": "Kathy",
+                "lastname": "Mcdowell",
+                "birth": "05-09-1979",
+                "national chess ID": "EK89597"
+            }
+        ]
+    },
+    {
+        "name": "Dd",
+        "place": "Ddd",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-2222",
+        "director_note": "",
+        "rounds_count": 5,
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Jake Douglas": 0.5,
+                            "Patrick Quinn": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Heidi Miller": 1,
+                            "James Wallace": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Bryan Hodge": 1,
+                            "Brandon Greene": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-01 22:23:18.182807",
+                "end_time": "2024-04-01 22:23:18.182807"
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Bryan Hodge": 1,
+                            "Jake Douglas": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Heidi Miller": 0.5,
+                            "Patrick Quinn": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "James Wallace": 1,
+                            "Brandon Greene": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-01 22:23:21.223113",
+                "end_time": "2024-04-01 22:23:21.223113"
+            },
+            {
+                "name": "Round 3",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
             }
         ],
+        "current_round": 2,
         "players_score": {
-            "Nicole Jones": 2,
-            "Lola Delagne": 1.5,
-            "Stacy Williams": 1.0,
-            "Christine Murphy": 1.0,
-            "Pamela Edwards": 0.5,
-            "Beth Harmon": 0
-        }
+            "Bryan Hodge": 2,
+            "Heidi Miller": 1.5,
+            "Patrick Quinn": 1.0,
+            "James Wallace": 1,
+            "Jake Douglas": 0.5,
+            "Brandon Greene": 0
+        },
+        "players_list": [
+            {
+                "firstname": "Bryan",
+                "lastname": "Hodge",
+                "birth": "21-11-1988",
+                "national chess ID": "EB77714"
+            },
+            {
+                "firstname": "Jake",
+                "lastname": "Douglas",
+                "birth": "26-02-1992",
+                "national chess ID": "BC13361"
+            },
+            {
+                "firstname": "Heidi",
+                "lastname": "Miller",
+                "birth": "20-07-1981",
+                "national chess ID": "WU44295"
+            },
+            {
+                "firstname": "Patrick",
+                "lastname": "Quinn",
+                "birth": "05-05-1993",
+                "national chess ID": "EA39624"
+            },
+            {
+                "firstname": "James",
+                "lastname": "Wallace",
+                "birth": "24-03-1976",
+                "national chess ID": "KZ45488"
+            },
+            {
+                "firstname": "Brandon",
+                "lastname": "Greene",
+                "birth": "12-12-1986",
+                "national chess ID": "IM32836"
+            }
+        ]
     }
 ]

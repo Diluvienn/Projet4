@@ -17,11 +17,10 @@ from .match import Match
 class Round:
     """Class representing a round in a tournament."""
 
-    def __init__(self, tournament, name, start_time, end_time):
-        self.tournament = tournament
-        self.played_pairs = set()
+    def __init__(self, name):
         self.name = name
         self.matches = []
+        self.played_pairs = set()
         self.start_time = None
         self.end_time = None
 
@@ -38,11 +37,18 @@ class Round:
     @classmethod
     def from_json(cls, round_data):
         name = round_data["name"]
+        print(f"name dans from json ROUND: {name}")
         matches_data = round_data["matches"]
+        print(f"matches_data dans from json ROUND : {matches_data}")
         matches = [Match.from_json(match_data) for match_data in matches_data]
+        print(f"matches dans from json ROUND : {matches}")
         start_time = round_data.get("start_time")
         end_time = round_data.get("end_time")
-        return cls(name, matches, start_time, end_time)
+        round = cls(name)
+        round.matches.extend(matches)
+        print(f"attributs de round, dans from_json:")
+        print(vars(round))
+        return round
 
     def add_match(self, match):
         """Ajoute un match à ce round."""
