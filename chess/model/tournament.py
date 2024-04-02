@@ -25,8 +25,8 @@ from model.player import Player
 class Tournament:
     """A class representing a chess tournament."""
 
-    def __init__(self, name: str, place: str, date_start: str, date_end: str, rounds: int = 4, director_notes: str = "",
-                 current_round: int = 0):
+    def __init__(self, name: str, place: str, date_start: str, date_end: str, rounds: int = 4,
+                 director_notes: str = "", current_round: int = 0):
         """Initialize a Tournament object.
 
        Args:
@@ -50,8 +50,7 @@ class Tournament:
         self.current_round: int = current_round
         self.players_score: Dict[str, int] = {}
         self.players_list: List[str] = list(self.players_score.keys())
-        self.rounds_list = []
-        self.played_pairs: Set[Tuple[Player, Player]] = set()
+        self.played_pairs = set()
 
     def __getitem__(self, key):
         """Get an item from the tournament by key.
@@ -83,8 +82,6 @@ class Tournament:
             return self.players_score
         elif key == 'players_list':
             return self.players_list
-        elif key == 'rounds_list':
-            return self.rounds_list
         elif key == 'played_pairs':
             return self.played_pairs
         else:
@@ -98,17 +95,16 @@ class Tournament:
                   Keys include 'name', 'place', 'date_start', 'date_end', 'rounds', 'current_round',
                   'players_list', 'players_score', and 'director_note'.
         """
-        rounds_count = len(self.rounds)  # Calculer le nombre de tours
         return {
             'name': self.name,
             'place': self.place,
             'date_start': self.date_start,
             'date_end': self.date_end,
             'director_note': self.director_notes,
-            'rounds_count': rounds_count,
             'rounds': [round.to_json() for round in self.rounds],
             'current_round': self.current_round,
-            'players_score': self.players_score
+            'players_score': self.players_score,
+            'played_pairs': [{'player1': pair[0].to_json(), 'player2': pair[1].to_json()} for pair in self.played_pairs]
 
         }
 
@@ -128,6 +124,7 @@ class Tournament:
             self.rounds.append(round_instance)
 
     def generate_pairs_for_round(self):
+        print(f"current round au debut de generate : {self.current_round}")
 
         # Générer les paires pour le premier round
         if self.current_round == 0:
@@ -151,6 +148,7 @@ class Tournament:
                 # Mettre à jour les paires déjà jouées et les joueurs appariés
                 self.played_pairs.add((player1, player2))
                 self.played_pairs.add((player2, player1))
+                # self.update_played_pairs()
                 paired_players.add(player1)
                 paired_players.add(player2)
 
@@ -190,6 +188,7 @@ class Tournament:
                 # Mettre à jour les paires déjà jouées
                 self.played_pairs.add((player1, player2))
                 self.played_pairs.add((player2, player1))
+                # self.update_played_pairs()
 
                 # Retirer les joueurs associés de la liste des joueurs triés
                 sorted_players.remove(player1)
@@ -199,19 +198,21 @@ class Tournament:
             # Enregistrez les paires de matchs générées pour ce round
             self.rounds[self.current_round].matches.extend(round_matches)
 
-    def update_played_pairs(self):
-        if self.current_round > 0:
-            previous_round_matches = self.rounds[self.current_round - 1].matches
-            for match in previous_round_matches:
-                player1 = list(match.players.keys())[0]
-                player2 = list(match.players.keys())[1]
-                # Ajouter la paire de joueurs à l'ensemble de paires jouées pour ce round
-                self.played_pairs.add((player1, player2))
-                self.played_pairs.add((player2, player1))
+    # def update_played_pairs(self):
+    #     if self.current_round > 0:
+    #         previous_round_matches = self.rounds[self.current_round - 1].matches
+    #         for match in previous_round_matches:
+    #             player1 = list(match.players.keys())[0]
+    #             player2 = list(match.players.keys())[1]
+    #             # Ajouter la paire de joueurs à l'ensemble de paires jouées pour ce round
+    #             self.played_pairs.add((player1, player2))
+    #             self.played_pairs.add((player2, player1))
 
     def play_tournament(self):
-        while self.current_round < len(self.rounds):
+        print(f"self.current round au totu debut de play tournament : {self.current_round}")
+        while self.current_round <= len(self.rounds):
             current_round = self.rounds[self.current_round]
+
             print("*" * 100)
             print(f"Round {self.current_round + 1} :")
             # Définir l'heure de début du round
@@ -220,8 +221,8 @@ class Tournament:
             # Générer les paires de matchs pour ce round
             self.generate_pairs_for_round()
 
-            # Mettre à jour les paires déjà jouées
-            self.update_played_pairs()
+            # # Mettre à jour les paires déjà jouées
+            # self.update_played_pairs()
 
             # Définir l'heure de début du round
             self.rounds[self.current_round].start_time = datetime.now()
@@ -234,30 +235,37 @@ class Tournament:
                 score1 = match.players[player1]
                 score2 = match.players[player2]
                 print(f"Match: {player1_name} vs {player2_name}, Scores: {score1}-{score2}")
-                print(f"Start Time: {current_round.start_time}, End Time: {current_round.end_time}")
+                # print(f"Start Time: {current_round.start_time}, End Time: {current_round.end_time}")
 
                 # Récupérer les scores précédents à partir des données du tournoi
                 previous_scores = self.players_score if hasattr(self, 'players_score') else {}
+            print(f"previous score dans generate boucle match {previous_scores}")
 
             # Calculer et afficher le classement provisoire
             calculate_leaderboard(self, previous_scores)
 
-            self.current_round += 1
+            print(f"currenr round avant condition de sortie {self.current_round}")
+            print(f" len rounds avant condition de sortie : {len(self.rounds) - 1 }")
             # Demander si vous voulez jouer le prochain round
 
-            if self.current_round == len(self.rounds) - 1:
+            if self.current_round == (len(self.rounds) - 1):
+                print(self.current_round)
+                print(len(self.rounds))
+                print(len(self.rounds) + 1)
                 tournament_repository = TournamentRepository()
                 tournament_repository.add_tournament(self)
                 break
 
             play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")
             if play_next_round == "n":
+                self.current_round += 1
                 tournament_repository = TournamentRepository()
                 tournament_repository.add_tournament(self)
                 break
             elif play_next_round != "y":
                 print("Veuillez effectuer un choix valide.")
                 continue
+            self.current_round += 1
 
     @classmethod
     def from_json(cls, json_data):
@@ -274,27 +282,37 @@ class Tournament:
         place = json_data['place']
         date_start = json_data['date_start']
         date_end = json_data['date_end']
-        rounds_count = json_data['rounds_count']
         current_round = json_data['current_round']
         director_notes = json_data['director_note']
-        players_list = json_data['players_list']
+
+        # Convertir les joueurs de JSON en objets Player
+        players_list_data = json_data['players_list']
+        players_list = [Player.from_json(player_data) for player_data in
+                        players_list_data]  # Convertir en objets Player
+
+        # Convertir les paires jouées de JSON en objets Player
+        played_pairs_data = json_data.get('played_pairs', [])
+        played_pairs = set()
+        for pair_data in played_pairs_data:
+            player1_data = pair_data['player1']
+            player2_data = pair_data['player2']
+            player1 = Player.from_json(player1_data)
+            player2 = Player.from_json(player2_data)
+            played_pairs.add((player1, player2))
+
         players_score = json_data['players_score']
         rounds_data = json_data['rounds']
 
-        # Créer les objets Round à partir des données JSON
-        rounds = [Round.from_json(round_data) for round_data in rounds_data]
-
-        players_list_data = json_data['players_list']
-        players_list = [Player.from_json(player_data) for player_data in players_list_data]
-
         # Créer l'objet Tournament avec les données récupérées
-        tournament = cls(name, place, date_start, date_end, rounds_count, director_notes, current_round)
-        tournament.rounds = rounds
+        tournament = cls(name, place, date_start, date_end, director_notes, current_round)
         tournament.players_list = players_list
         tournament.players_score = players_score
-        print(f"attributs de tournament, dans from_json:")
-        print(vars(tournament))
+        tournament.played_pairs = played_pairs
+        tournament.current_round = current_round
 
+        # Créer les objets Round à partir des données JSON
+        rounds = [Round.from_json(round_data, tournament) for round_data in rounds_data]
+        tournament.rounds = rounds
         return tournament
 
     def __str__(self):
@@ -305,14 +323,14 @@ class Tournament:
 
 
 def calculate_leaderboard(tournament, previous_scores=None):
-    print(f"previous_scores dans calculate_leaderbord {previous_scores}")
     # Créez une liste de tuples (joueur, score total)
     leaderboard = [(player, player.calculate_total_score(tournament.rounds, previous_scores)) for player in tournament.players_list]
     # Triez la liste en fonction du score total (en ordre décroissant)
     sorted_leaderboard = sorted(leaderboard, key=lambda x: x[1], reverse=True)
+    print(f'sorted leaderboard : {sorted_leaderboard}')
 
     tournament.players_score = {f"{player.firstname} {player.lastname}": score for player, score in sorted_leaderboard}
-
+    print(f"tournament players score : {tournament.players_score}")
     # Affichez le classement
     print(f"Classement fin du round {tournament.current_round + 1} :")
     for i, (player, score) in enumerate(sorted_leaderboard, start=1):
@@ -341,13 +359,50 @@ class TournamentRepository:
         """
         tournaments = self.load_tournaments()
         tournament_data = tournament.to_json()
-        tournament_data["players_list"] = [player.to_json() for player in tournament.players_list]
-        tournament_data["rounds"] = [round.to_json() for round in tournament.rounds]
-        print(f"tournament_data  : {tournament_data}")
-        tournaments.append(tournament_data)
 
+        # Convertir les joueurs en JSON
+        players_json = []
+        for player in tournament.players_list:
+            player_json = player.to_json()
+            players_json.append(player_json)
+        tournament_data["players_list"] = players_json
+
+        # Convertir les paires jouées en JSON
+        played_pairs_json = []
+        for pair in tournament.played_pairs:
+            player1_json = pair[0].to_json()
+            player2_json = pair[1].to_json()
+            played_pair_json = {"player1": player1_json, "player2": player2_json}
+            played_pairs_json.append(played_pair_json)
+        tournament_data["played_pairs"] = played_pairs_json
+
+        # Convertir les rounds en JSON
+        rounds_json = []
+        for round in tournament.rounds:
+            round_json = round.to_json()
+            rounds_json.append(round_json)
+        tournament_data["rounds"] = rounds_json
+
+        tournaments.append(tournament_data)
         with open(self.filename, 'w') as file:
             json.dump(tournaments, file, indent=4)
+
+    # def add_tournament(self, tournament):
+    #     CA CA MARCHE !!!! JUSTE SANS PLAYED PAIRS"""Add a tournament to the repository.
+    #
+    #     Args:
+    #         tournament (Tournament): The tournament object to be added to the repository.
+    #
+    #     """
+    #     tournaments = self.load_tournaments()
+    #     tournament_data = tournament.to_json()
+    #     tournament_data["players_list"] = [player.to_json() for player in tournament.players_list]
+    #     tournament_data["rounds"] = [round.to_json() for round in tournament.rounds]
+    #     print(f"tournament_data  : {tournament_data}")
+    #     tournaments.append(tournament_data)
+    #
+    #     with open(self.filename, 'w') as file:
+    #         json.dump(tournaments, file, indent=4)
 
     def load_tournaments(self):
         """Load tournaments from the JSON file.
@@ -366,8 +421,11 @@ class TournamentRepository:
     def find_unfinished_tournaments(self):
         tournaments = self.load_tournaments()
         unfinished_tournaments = []
+
         for tournament in tournaments:
-            if tournament["current_round"] < (tournament["rounds_count"]) - 1:
+            round_count = len(tournament["rounds"])
+            round_count = int(round_count)
+            if tournament["current_round"] < (round_count - 1):
                 unfinished_tournaments.append(tournament)
         return unfinished_tournaments
 

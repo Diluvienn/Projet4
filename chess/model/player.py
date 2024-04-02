@@ -38,8 +38,8 @@ class Player:
         return f"{self.firstname} {self.lastname}"
 
     def calculate_total_score(self, rounds, previous_scores=None):
-        print(f"previous_scores dans calculate_total_score : {previous_scores}")
-        total_score = self.score if previous_scores is None else previous_scores.get(self.full_name(), self.score)
+        total_score = self.score
+        # total_score = self.score if previous_scores is None else previous_scores.get(self.full_name(), self.score)
 
         for round in rounds:
             for match in round.matches:

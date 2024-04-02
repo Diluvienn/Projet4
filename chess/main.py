@@ -82,8 +82,7 @@ def main():
             tournament.players_list = selected_players
             tournament.players_score = {f"{player.firstname} {player.lastname}": 0 for player in selected_players}
 
-            play_main_menu = True  # Variable de contrôle pour revenir au menu principal
-            while play_main_menu:
+            while True:
                 # Demander si l'utilisateur veut jouer le premier round
                 play_first_round = input("Voulez-vous jouer le premier round ? (y/n): ").lower()
 
@@ -98,52 +97,10 @@ def main():
                 elif play_first_round != "y" and play_first_round != "n":
                     print("veuillez effectuer un choix valide")
                 else:
-                    while tournament.current_round < len(tournament.rounds):
-                        current_round = tournament.rounds[tournament.current_round]
-                        print("*" * 100)
-                        print(f"Round {tournament.current_round + 1} :")
-                        # Définir l'heure de début du round
-                        tournament.rounds[tournament.current_round].start_time = datetime.now()
-
-                        # Générer les paires de matchs pour ce round
-                        tournament.generate_pairs_for_round()
-
-                        # Mettre à jour les paires déjà jouées
-                        tournament.update_played_pairs()
-
-                        # Définir l'heure de début du round
-                        tournament.rounds[tournament.current_round].start_time = datetime.now()
-
-                        for match in current_round.matches:
-                            player1 = list(match.players.keys())[0]
-                            player2 = list(match.players.keys())[1]
-                            player1_name = f"{player1.firstname} {player1.lastname}"
-                            player2_name = f"{player2.firstname} {player2.lastname}"
-                            score1 = match.players[player1]
-                            score2 = match.players[player2]
-                            print(f"Match: {player1_name} vs {player2_name}, Scores: {score1}-{score2}")
-                            print(f"Start Time: {current_round.start_time}, End Time: {current_round.end_time}")
-
-                        # Calculer et afficher le classement provisoire
-                        calculate_leaderboard(tournament)
-
-                        tournament.current_round += 1
-                        # Demander si vous voulez jouer le prochain round
-
-                        if tournament.current_round == len(tournament.rounds) - 1:
-                            break
-
-                        play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")
-                        if play_next_round == "n":
-                            tournament_repository = TournamentRepository()
-                            print("les attributs de tournament avant l'add dans le main")
-                            print(vars(tournament))
-                            tournament_repository.add_tournament(tournament)
-                            play_main_menu = False
-                            break
-                        elif play_next_round != "y":
-                            print("Veuillez effectuer un choix valide.")
-                            continue
+                    print(f"current round : {tournament.current_round}")
+                    print(f" len de round : {len(tournament.rounds)}")
+                    tournament.play_tournament()
+                    break
 
         elif choice == "6":
             tournament_repository = TournamentRepository()
@@ -152,20 +109,12 @@ def main():
 
             # Extraire les scores précédemment enregistrés dans le JSON
             previous_scores = chosen_tournament_data.get("players_score", {})
-
+            print(f"previous score à sa rceation dans le main : {previous_scores}")
             tournament = Tournament.from_json(chosen_tournament_data)
             print("attribust de tournament, dans main, après re création de l'objet")
             print(vars(tournament))
-            tournament.current_round += 1
+            print(f"current round après le +1 dans le main de 6 : {tournament.current_round}")
 
-            # Calculer les scores totaux des joueurs en tenant compte des scores précédents
-            for player in tournament.players_list:
-                if isinstance(player, Player):  # Vérifiez si l'élément est une instance de Player
-                    total_score = player.calculate_total_score(tournament.rounds, previous_scores)
-                    print(f"Le score total de {player.full_name()} est : {total_score}")
-                else:
-                    print(f"Erreur : {player} n'est pas une instance de Player.")
-            print(f"previous_scores juste avant l'appel de play-tournament {previous_scores}")
             tournament.play_tournament()
 
 

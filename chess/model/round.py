@@ -9,9 +9,8 @@ Classes:
 Usage:
     # Get the list of matches in the round
 """
-import random
-import itertools
-from .match import Match
+
+from model.match import Match
 
 
 class Round:
@@ -35,19 +34,14 @@ class Round:
         }
 
     @classmethod
-    def from_json(cls, round_data):
+    def from_json(cls, round_data, tournament):
         name = round_data["name"]
-        print(f"name dans from json ROUND: {name}")
         matches_data = round_data["matches"]
-        print(f"matches_data dans from json ROUND : {matches_data}")
-        matches = [Match.from_json(match_data) for match_data in matches_data]
-        print(f"matches dans from json ROUND : {matches}")
+        matches = [Match.from_json(match_data, tournament) for match_data in matches_data]
         start_time = round_data.get("start_time")
         end_time = round_data.get("end_time")
         round = cls(name)
         round.matches.extend(matches)
-        print(f"attributs de round, dans from_json:")
-        print(vars(round))
         return round
 
     def add_match(self, match):

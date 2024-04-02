@@ -5,7 +5,6 @@
         "date_start": "11-11-1111",
         "date_end": "11-11-2222",
         "director_note": "",
-        "rounds_count": 4,
         "rounds": [
             {
                 "name": "Round 1",
@@ -124,7 +123,6 @@
         "date_start": "01-01-2001",
         "date_end": "10-01-2001",
         "director_note": "",
-        "rounds_count": 4,
         "rounds": [
             {
                 "name": "Round 1",
@@ -224,7 +222,6 @@
         "date_start": "11-11-1111",
         "date_end": "11-11-2222",
         "director_note": "",
-        "rounds_count": 5,
         "rounds": [
             {
                 "name": "Round 1",
@@ -324,7 +321,6 @@
         "date_start": "11-11-1111",
         "date_end": "11-11-2222",
         "director_note": "",
-        "rounds_count": 6,
         "rounds": [
             {
                 "name": "Round 1",
@@ -436,7 +432,6 @@
         "date_start": "11-11-1111",
         "date_end": "11-11-2222",
         "director_note": "",
-        "rounds_count": 5,
         "rounds": [
             {
                 "name": "Round 1",
@@ -546,6 +541,3793 @@
                 "lastname": "Greene",
                 "birth": "12-12-1986",
                 "national chess ID": "IM32836"
+            }
+        ]
+    },
+    {
+        "name": "Ee",
+        "place": "Eee",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-1111",
+        "director_note": "",
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Stacey Burns": 1,
+                            "Erin Williams": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Frank Rivera": 0.5,
+                            "Wanda Armstrong": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Michael Schmidt": 1,
+                            "Nicole Jones": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 12:00:30.946122",
+                "end_time": "2024-04-02 12:00:30.946122"
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Stacey Burns": 1,
+                            "Erin Williams": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Michael Schmidt": 0.5,
+                            "Frank Rivera": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Nicole Jones": 1,
+                            "Wanda Armstrong": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 12:00:32.034120",
+                "end_time": "2024-04-02 12:00:32.034120"
+            },
+            {
+                "name": "Round 3",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            }
+        ],
+        "current_round": 2,
+        "players_score": {
+            "Stacey Burns": 2,
+            "Michael Schmidt": 1.5,
+            "Nicole Jones": 1,
+            "Frank Rivera": 1.0,
+            "Wanda Armstrong": 0.5,
+            "Erin Williams": 0
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                },
+                "player2": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Frank",
+                    "lastname": "Rivera",
+                    "birth": "04-10-1998",
+                    "national chess ID": "YR85990"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Frank",
+                    "lastname": "Rivera",
+                    "birth": "04-10-1998",
+                    "national chess ID": "YR85990"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                },
+                "player2": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Stacey",
+                "lastname": "Burns",
+                "birth": "28-12-1997",
+                "national chess ID": "OR50619"
+            },
+            {
+                "firstname": "Erin",
+                "lastname": "Williams",
+                "birth": "27-09-1994",
+                "national chess ID": "CN32822"
+            },
+            {
+                "firstname": "Michael",
+                "lastname": "Schmidt",
+                "birth": "14-12-1997",
+                "national chess ID": "BV96896"
+            },
+            {
+                "firstname": "Nicole",
+                "lastname": "Jones",
+                "birth": "04-04-1994",
+                "national chess ID": "AV04824"
+            },
+            {
+                "firstname": "Frank",
+                "lastname": "Rivera",
+                "birth": "04-10-1998",
+                "national chess ID": "YR85990"
+            },
+            {
+                "firstname": "Wanda",
+                "lastname": "Armstrong",
+                "birth": "26-02-1973",
+                "national chess ID": "VM89208"
+            }
+        ]
+    },
+    {
+        "name": "Ff",
+        "place": "Fff",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-2222",
+        "director_note": "",
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Nicole Jones": 1,
+                            "Micheal Haley": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Wanda Armstrong": 0.5,
+                            "Christine Murphy": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Stacey Burns": 1,
+                            "Michael Schmidt": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Erin Williams": 0.5,
+                            "Frank Rivera": 0.5
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 12:09:19.059612",
+                "end_time": "2024-04-02 12:09:19.059612"
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Stacey Burns": 0.5,
+                            "Erin Williams": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Michael Schmidt": 1,
+                            "Nicole Jones": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Frank Rivera": 0.5,
+                            "Wanda Armstrong": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Christine Murphy": 1,
+                            "Micheal Haley": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 12:09:21.395733",
+                "end_time": "2024-04-02 12:09:21.395733"
+            },
+            {
+                "name": "Round 3",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            }
+        ],
+        "current_round": 2,
+        "players_score": {
+            "Stacey Burns": 1.5,
+            "Christine Murphy": 1.5,
+            "Erin Williams": 1.0,
+            "Michael Schmidt": 1,
+            "Nicole Jones": 1,
+            "Frank Rivera": 1.0,
+            "Wanda Armstrong": 1.0,
+            "Micheal Haley": 0
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                },
+                "player2": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                },
+                "player2": {
+                    "firstname": "Micheal",
+                    "lastname": "Haley",
+                    "birth": "11-12-1987",
+                    "national chess ID": "BV84013"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Christine",
+                    "lastname": "Murphy",
+                    "birth": "07-08-1994",
+                    "national chess ID": "KY01632"
+                },
+                "player2": {
+                    "firstname": "Micheal",
+                    "lastname": "Haley",
+                    "birth": "11-12-1987",
+                    "national chess ID": "BV84013"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Micheal",
+                    "lastname": "Haley",
+                    "birth": "11-12-1987",
+                    "national chess ID": "BV84013"
+                },
+                "player2": {
+                    "firstname": "Christine",
+                    "lastname": "Murphy",
+                    "birth": "07-08-1994",
+                    "national chess ID": "KY01632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Micheal",
+                    "lastname": "Haley",
+                    "birth": "11-12-1987",
+                    "national chess ID": "BV84013"
+                },
+                "player2": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                },
+                "player2": {
+                    "firstname": "Frank",
+                    "lastname": "Rivera",
+                    "birth": "04-10-1998",
+                    "national chess ID": "YR85990"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Christine",
+                    "lastname": "Murphy",
+                    "birth": "07-08-1994",
+                    "national chess ID": "KY01632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Frank",
+                    "lastname": "Rivera",
+                    "birth": "04-10-1998",
+                    "national chess ID": "YR85990"
+                },
+                "player2": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                },
+                "player2": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Christine",
+                    "lastname": "Murphy",
+                    "birth": "07-08-1994",
+                    "national chess ID": "KY01632"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Frank",
+                    "lastname": "Rivera",
+                    "birth": "04-10-1998",
+                    "national chess ID": "YR85990"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Frank",
+                    "lastname": "Rivera",
+                    "birth": "04-10-1998",
+                    "national chess ID": "YR85990"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Stacey",
+                "lastname": "Burns",
+                "birth": "28-12-1997",
+                "national chess ID": "OR50619"
+            },
+            {
+                "firstname": "Erin",
+                "lastname": "Williams",
+                "birth": "27-09-1994",
+                "national chess ID": "CN32822"
+            },
+            {
+                "firstname": "Michael",
+                "lastname": "Schmidt",
+                "birth": "14-12-1997",
+                "national chess ID": "BV96896"
+            },
+            {
+                "firstname": "Nicole",
+                "lastname": "Jones",
+                "birth": "04-04-1994",
+                "national chess ID": "AV04824"
+            },
+            {
+                "firstname": "Frank",
+                "lastname": "Rivera",
+                "birth": "04-10-1998",
+                "national chess ID": "YR85990"
+            },
+            {
+                "firstname": "Wanda",
+                "lastname": "Armstrong",
+                "birth": "26-02-1973",
+                "national chess ID": "VM89208"
+            },
+            {
+                "firstname": "Christine",
+                "lastname": "Murphy",
+                "birth": "07-08-1994",
+                "national chess ID": "KY01632"
+            },
+            {
+                "firstname": "Micheal",
+                "lastname": "Haley",
+                "birth": "11-12-1987",
+                "national chess ID": "BV84013"
+            }
+        ]
+    },
+    {
+        "name": "Gg",
+        "place": "Ggg",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-2222",
+        "director_note": "",
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Bryan Hodge": 1,
+                            "Brandon Greene": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Patrick Quinn": 1,
+                            "James Wallace": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Jake Douglas": 1,
+                            "Heidi Miller": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:12:03.110896",
+                "end_time": "2024-04-02 15:12:03.110896"
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Bryan Hodge": 1,
+                            "Jake Douglas": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Heidi Miller": 1,
+                            "Patrick Quinn": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "James Wallace": 1,
+                            "Brandon Greene": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:12:08.207607",
+                "end_time": "2024-04-02 15:12:08.207607"
+            },
+            {
+                "name": "Round 3",
+                "matches": [
+                    {
+                        "players": {
+                            "Bryan Hodge": 1,
+                            "Heidi Miller": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Jake Douglas": 0.5,
+                            "Patrick Quinn": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "James Wallace": 1,
+                            "Brandon Greene": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:12:15.824090",
+                "end_time": "2024-04-02 15:12:15.824090"
+            },
+            {
+                "name": "Round 4",
+                "matches": [
+                    {
+                        "players": {
+                            "Bryan Hodge": 0.5,
+                            "Patrick Quinn": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Jake Douglas": 0.5,
+                            "James Wallace": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Heidi Miller": 1,
+                            "Brandon Greene": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:12:20.536948",
+                "end_time": "2024-04-02 15:12:20.536948"
+            }
+        ],
+        "current_round": 3,
+        "players_score": {
+            "Bryan Hodge": 3.5,
+            "James Wallace": 2.5,
+            "Jake Douglas": 2.0,
+            "Heidi Miller": 2,
+            "Patrick Quinn": 2.0,
+            "Brandon Greene": 0
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                },
+                "player2": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                },
+                "player2": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                },
+                "player2": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                },
+                "player2": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                },
+                "player2": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                },
+                "player2": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                },
+                "player2": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                },
+                "player2": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                },
+                "player2": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                },
+                "player2": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                },
+                "player2": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                },
+                "player2": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                },
+                "player2": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                },
+                "player2": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Bryan",
+                "lastname": "Hodge",
+                "birth": "21-11-1988",
+                "national chess ID": "EB77714"
+            },
+            {
+                "firstname": "Jake",
+                "lastname": "Douglas",
+                "birth": "26-02-1992",
+                "national chess ID": "BC13361"
+            },
+            {
+                "firstname": "Heidi",
+                "lastname": "Miller",
+                "birth": "20-07-1981",
+                "national chess ID": "WU44295"
+            },
+            {
+                "firstname": "Patrick",
+                "lastname": "Quinn",
+                "birth": "05-05-1993",
+                "national chess ID": "EA39624"
+            },
+            {
+                "firstname": "James",
+                "lastname": "Wallace",
+                "birth": "24-03-1976",
+                "national chess ID": "KZ45488"
+            },
+            {
+                "firstname": "Brandon",
+                "lastname": "Greene",
+                "birth": "12-12-1986",
+                "national chess ID": "IM32836"
+            }
+        ]
+    },
+    {
+        "name": "H",
+        "place": "Hh",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-2222",
+        "director_note": "",
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Juliette Armanet": 0.5,
+                            "Emma Watson": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Laurie Darmon": 1,
+                            "Albert Einstein": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Leo Roger": 1,
+                            "Lea Hadid": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:14:17.637687",
+                "end_time": "2024-04-02 15:14:17.637687"
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Juliette Armanet": 1,
+                            "Laurie Darmon": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Leo Roger": 1,
+                            "Emma Watson": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Lea Hadid": 1,
+                            "Albert Einstein": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:14:19.173081",
+                "end_time": "2024-04-02 15:14:19.173081"
+            },
+            {
+                "name": "Round 3",
+                "matches": [
+                    {
+                        "players": {
+                            "Juliette Armanet": 1,
+                            "Leo Roger": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Laurie Darmon": 0.5,
+                            "Lea Hadid": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Emma Watson": 0.5,
+                            "Albert Einstein": 0.5
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:14:20.237047",
+                "end_time": "2024-04-02 15:14:20.237047"
+            },
+            {
+                "name": "Round 4",
+                "matches": [
+                    {
+                        "players": {
+                            "Juliette Armanet": 1,
+                            "Lea Hadid": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Laurie Darmon": 1,
+                            "Leo Roger": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Emma Watson": 1,
+                            "Albert Einstein": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:14:21.245985",
+                "end_time": "2024-04-02 15:14:21.245985"
+            }
+        ],
+        "current_round": 3,
+        "players_score": {
+            "Juliette Armanet": 3.5,
+            "Laurie Darmon": 2.5,
+            "Leo Roger": 2,
+            "Emma Watson": 2.0,
+            "Lea Hadid": 1.5,
+            "Albert Einstein": 0.5
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Albert",
+                    "lastname": "Einstein",
+                    "birth": "14-03-1879",
+                    "national chess ID": "QI15099"
+                },
+                "player2": {
+                    "firstname": "Emma",
+                    "lastname": "Watson",
+                    "birth": "15-04-1990",
+                    "national chess ID": "HG19735"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Albert",
+                    "lastname": "Einstein",
+                    "birth": "14-03-1879",
+                    "national chess ID": "QI15099"
+                },
+                "player2": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Leo",
+                    "lastname": "Roger",
+                    "birth": "02-01-2002",
+                    "national chess ID": "AG12345"
+                },
+                "player2": {
+                    "firstname": "Laurie",
+                    "lastname": "Darmon",
+                    "birth": "21-02-1991",
+                    "national chess ID": "IF78963"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Laurie",
+                    "lastname": "Darmon",
+                    "birth": "21-02-1991",
+                    "national chess ID": "IF78963"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Leo",
+                    "lastname": "Roger",
+                    "birth": "02-01-2002",
+                    "national chess ID": "AG12345"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Emma",
+                    "lastname": "Watson",
+                    "birth": "15-04-1990",
+                    "national chess ID": "HG19735"
+                },
+                "player2": {
+                    "firstname": "Leo",
+                    "lastname": "Roger",
+                    "birth": "02-01-2002",
+                    "national chess ID": "AG12345"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Laurie",
+                    "lastname": "Darmon",
+                    "birth": "21-02-1991",
+                    "national chess ID": "IF78963"
+                },
+                "player2": {
+                    "firstname": "Leo",
+                    "lastname": "Roger",
+                    "birth": "02-01-2002",
+                    "national chess ID": "AG12345"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Leo",
+                    "lastname": "Roger",
+                    "birth": "02-01-2002",
+                    "national chess ID": "AG12345"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                },
+                "player2": {
+                    "firstname": "Laurie",
+                    "lastname": "Darmon",
+                    "birth": "21-02-1991",
+                    "national chess ID": "IF78963"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Emma",
+                    "lastname": "Watson",
+                    "birth": "15-04-1990",
+                    "national chess ID": "HG19735"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Leo",
+                    "lastname": "Roger",
+                    "birth": "02-01-2002",
+                    "national chess ID": "AG12345"
+                },
+                "player2": {
+                    "firstname": "Emma",
+                    "lastname": "Watson",
+                    "birth": "15-04-1990",
+                    "national chess ID": "HG19735"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Emma",
+                    "lastname": "Watson",
+                    "birth": "15-04-1990",
+                    "national chess ID": "HG19735"
+                },
+                "player2": {
+                    "firstname": "Albert",
+                    "lastname": "Einstein",
+                    "birth": "14-03-1879",
+                    "national chess ID": "QI15099"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Leo",
+                    "lastname": "Roger",
+                    "birth": "02-01-2002",
+                    "national chess ID": "AG12345"
+                },
+                "player2": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Laurie",
+                    "lastname": "Darmon",
+                    "birth": "21-02-1991",
+                    "national chess ID": "IF78963"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Emma",
+                    "lastname": "Watson",
+                    "birth": "15-04-1990",
+                    "national chess ID": "HG19735"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                },
+                "player2": {
+                    "firstname": "Leo",
+                    "lastname": "Roger",
+                    "birth": "02-01-2002",
+                    "national chess ID": "AG12345"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Laurie",
+                    "lastname": "Darmon",
+                    "birth": "21-02-1991",
+                    "national chess ID": "IF78963"
+                },
+                "player2": {
+                    "firstname": "Albert",
+                    "lastname": "Einstein",
+                    "birth": "14-03-1879",
+                    "national chess ID": "QI15099"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Laurie",
+                    "lastname": "Darmon",
+                    "birth": "21-02-1991",
+                    "national chess ID": "IF78963"
+                },
+                "player2": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Albert",
+                    "lastname": "Einstein",
+                    "birth": "14-03-1879",
+                    "national chess ID": "QI15099"
+                },
+                "player2": {
+                    "firstname": "Laurie",
+                    "lastname": "Darmon",
+                    "birth": "21-02-1991",
+                    "national chess ID": "IF78963"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                },
+                "player2": {
+                    "firstname": "Albert",
+                    "lastname": "Einstein",
+                    "birth": "14-03-1879",
+                    "national chess ID": "QI15099"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Juliette",
+                "lastname": "Armanet",
+                "birth": "04-03-1984",
+                "national chess ID": "DJ21462"
+            },
+            {
+                "firstname": "Laurie",
+                "lastname": "Darmon",
+                "birth": "21-02-1991",
+                "national chess ID": "IF78963"
+            },
+            {
+                "firstname": "Leo",
+                "lastname": "Roger",
+                "birth": "02-01-2002",
+                "national chess ID": "AG12345"
+            },
+            {
+                "firstname": "Lea",
+                "lastname": "Hadid",
+                "birth": "01-01-2000",
+                "national chess ID": "JR45632"
+            },
+            {
+                "firstname": "Emma",
+                "lastname": "Watson",
+                "birth": "15-04-1990",
+                "national chess ID": "HG19735"
+            },
+            {
+                "firstname": "Albert",
+                "lastname": "Einstein",
+                "birth": "14-03-1879",
+                "national chess ID": "QI15099"
+            }
+        ]
+    },
+    {
+        "name": "Ii",
+        "place": "Iii",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-2222",
+        "director_note": "",
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "James Wallace": 1,
+                            "Erin Williams": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Mark Zuck": 1,
+                            "Laurie Darmon": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Wanda Armstrong": 0.5,
+                            "Brandy Short": 0.5
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:21:07.680257",
+                "end_time": "2024-04-02 15:21:07.680257"
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "James Wallace": 1,
+                            "Wanda Armstrong": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Erin Williams": 1,
+                            "Brandy Short": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Mark Zuck": 1,
+                            "Laurie Darmon": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:21:08.961256",
+                "end_time": "2024-04-02 15:21:08.961256"
+            },
+            {
+                "name": "Round 3",
+                "matches": [
+                    {
+                        "players": {
+                            "James Wallace": 1,
+                            "Brandy Short": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Erin Williams": 1,
+                            "Wanda Armstrong": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Mark Zuck": 0.5,
+                            "Laurie Darmon": 0.5
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:21:10.049244",
+                "end_time": "2024-04-02 15:21:10.049244"
+            },
+            {
+                "name": "Round 4",
+                "matches": [
+                    {
+                        "players": {
+                            "James Wallace": 1,
+                            "Mark Zuck": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Erin Williams": 1,
+                            "Laurie Darmon": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Wanda Armstrong": 0.5,
+                            "Brandy Short": 0.5
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:21:13.514393",
+                "end_time": "2024-04-02 15:21:13.514393"
+            }
+        ],
+        "current_round": 3,
+        "players_score": {
+            "James Wallace": 4,
+            "Erin Williams": 3,
+            "Mark Zuck": 2.5,
+            "Wanda Armstrong": 1.0,
+            "Brandy Short": 1.0,
+            "Laurie Darmon": 0.5
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                },
+                "player2": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Mark",
+                    "lastname": "Zuck",
+                    "birth": "14-05-1984",
+                    "national chess ID": "NO33579"
+                },
+                "player2": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Brandy",
+                    "lastname": "Short",
+                    "birth": "22-09-2000",
+                    "national chess ID": "JW69952"
+                },
+                "player2": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                },
+                "player2": {
+                    "firstname": "Mark",
+                    "lastname": "Zuck",
+                    "birth": "14-05-1984",
+                    "national chess ID": "NO33579"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                },
+                "player2": {
+                    "firstname": "Brandy",
+                    "lastname": "Short",
+                    "birth": "22-09-2000",
+                    "national chess ID": "JW69952"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Brandy",
+                    "lastname": "Short",
+                    "birth": "22-09-2000",
+                    "national chess ID": "JW69952"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Laurie",
+                    "lastname": "Darmon",
+                    "birth": "21-02-1991",
+                    "national chess ID": "IF78963"
+                },
+                "player2": {
+                    "firstname": "Mark",
+                    "lastname": "Zuck",
+                    "birth": "14-05-1984",
+                    "national chess ID": "NO33579"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                },
+                "player2": {
+                    "firstname": "Laurie",
+                    "lastname": "Darmon",
+                    "birth": "21-02-1991",
+                    "national chess ID": "IF78963"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Laurie",
+                    "lastname": "Darmon",
+                    "birth": "21-02-1991",
+                    "national chess ID": "IF78963"
+                },
+                "player2": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                },
+                "player2": {
+                    "firstname": "Brandy",
+                    "lastname": "Short",
+                    "birth": "22-09-2000",
+                    "national chess ID": "JW69952"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Brandy",
+                    "lastname": "Short",
+                    "birth": "22-09-2000",
+                    "national chess ID": "JW69952"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                },
+                "player2": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Brandy",
+                    "lastname": "Short",
+                    "birth": "22-09-2000",
+                    "national chess ID": "JW69952"
+                },
+                "player2": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Mark",
+                    "lastname": "Zuck",
+                    "birth": "14-05-1984",
+                    "national chess ID": "NO33579"
+                },
+                "player2": {
+                    "firstname": "Laurie",
+                    "lastname": "Darmon",
+                    "birth": "21-02-1991",
+                    "national chess ID": "IF78963"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "James",
+                "lastname": "Wallace",
+                "birth": "24-03-1976",
+                "national chess ID": "KZ45488"
+            },
+            {
+                "firstname": "Erin",
+                "lastname": "Williams",
+                "birth": "27-09-1994",
+                "national chess ID": "CN32822"
+            },
+            {
+                "firstname": "Wanda",
+                "lastname": "Armstrong",
+                "birth": "26-02-1973",
+                "national chess ID": "VM89208"
+            },
+            {
+                "firstname": "Brandy",
+                "lastname": "Short",
+                "birth": "22-09-2000",
+                "national chess ID": "JW69952"
+            },
+            {
+                "firstname": "Mark",
+                "lastname": "Zuck",
+                "birth": "14-05-1984",
+                "national chess ID": "NO33579"
+            },
+            {
+                "firstname": "Laurie",
+                "lastname": "Darmon",
+                "birth": "21-02-1991",
+                "national chess ID": "IF78963"
+            }
+        ]
+    },
+    {
+        "name": "Ii",
+        "place": "Iii",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-2222",
+        "director_note": "",
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Jake Douglas": 0.5,
+                            "Heidi Miller": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Patrick Quinn": 0.5,
+                            "Brandon Greene": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Bryan Hodge": 1,
+                            "James Wallace": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:22:24.785462",
+                "end_time": "2024-04-02 15:22:24.785462"
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Bryan Hodge": 0.5,
+                            "Jake Douglas": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Heidi Miller": 1,
+                            "Patrick Quinn": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "James Wallace": 0.5,
+                            "Brandon Greene": 0.5
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:22:25.073724",
+                "end_time": "2024-04-02 15:22:25.073724"
+            },
+            {
+                "name": "Round 3",
+                "matches": [
+                    {
+                        "players": {
+                            "Bryan Hodge": 1,
+                            "Heidi Miller": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Jake Douglas": 1,
+                            "Patrick Quinn": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "James Wallace": 0.5,
+                            "Brandon Greene": 0.5
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:22:26.522161",
+                "end_time": "2024-04-02 15:22:26.522161"
+            },
+            {
+                "name": "Round 4",
+                "matches": [
+                    {
+                        "players": {
+                            "Bryan Hodge": 1,
+                            "Patrick Quinn": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Jake Douglas": 1,
+                            "James Wallace": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Heidi Miller": 1,
+                            "Brandon Greene": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:22:27.466018",
+                "end_time": "2024-04-02 15:22:27.466018"
+            }
+        ],
+        "current_round": 3,
+        "players_score": {
+            "Bryan Hodge": 3.5,
+            "Jake Douglas": 3.0,
+            "Heidi Miller": 2.5,
+            "Brandon Greene": 1.5,
+            "James Wallace": 1.0,
+            "Patrick Quinn": 0.5
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                },
+                "player2": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                },
+                "player2": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                },
+                "player2": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                },
+                "player2": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                },
+                "player2": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                },
+                "player2": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                },
+                "player2": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                },
+                "player2": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                },
+                "player2": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                },
+                "player2": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                },
+                "player2": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                },
+                "player2": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                },
+                "player2": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                },
+                "player2": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Bryan",
+                "lastname": "Hodge",
+                "birth": "21-11-1988",
+                "national chess ID": "EB77714"
+            },
+            {
+                "firstname": "Jake",
+                "lastname": "Douglas",
+                "birth": "26-02-1992",
+                "national chess ID": "BC13361"
+            },
+            {
+                "firstname": "Heidi",
+                "lastname": "Miller",
+                "birth": "20-07-1981",
+                "national chess ID": "WU44295"
+            },
+            {
+                "firstname": "Patrick",
+                "lastname": "Quinn",
+                "birth": "05-05-1993",
+                "national chess ID": "EA39624"
+            },
+            {
+                "firstname": "James",
+                "lastname": "Wallace",
+                "birth": "24-03-1976",
+                "national chess ID": "KZ45488"
+            },
+            {
+                "firstname": "Brandon",
+                "lastname": "Greene",
+                "birth": "12-12-1986",
+                "national chess ID": "IM32836"
+            }
+        ]
+    },
+    {
+        "name": "J",
+        "place": "Jj",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-2222",
+        "director_note": "",
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Heidi Miller": 1,
+                            "Patrick Quinn": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Bryan Hodge": 1,
+                            "James Wallace": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Jake Douglas": 1,
+                            "Brandon Greene": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:26:40.845168",
+                "end_time": "2024-04-02 15:26:40.845168"
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Bryan Hodge": 1,
+                            "Jake Douglas": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Heidi Miller": 0.5,
+                            "James Wallace": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Patrick Quinn": 1,
+                            "Brandon Greene": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:26:41.364640",
+                "end_time": "2024-04-02 15:26:41.364640"
+            },
+            {
+                "name": "Round 3",
+                "matches": [
+                    {
+                        "players": {
+                            "Bryan Hodge": 1,
+                            "Heidi Miller": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Jake Douglas": 0.5,
+                            "Patrick Quinn": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "James Wallace": 0.5,
+                            "Brandon Greene": 0.5
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:26:41.933725",
+                "end_time": "2024-04-02 15:26:41.933725"
+            },
+            {
+                "name": "Round 4",
+                "matches": [
+                    {
+                        "players": {
+                            "Bryan Hodge": 1,
+                            "Patrick Quinn": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Jake Douglas": 1,
+                            "Heidi Miller": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "James Wallace": 1,
+                            "Brandon Greene": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:26:42.533270",
+                "end_time": "2024-04-02 15:26:42.533270"
+            }
+        ],
+        "current_round": 3,
+        "players_score": {
+            "Bryan Hodge": 4,
+            "Jake Douglas": 2.5,
+            "James Wallace": 2.0,
+            "Heidi Miller": 1.5,
+            "Patrick Quinn": 1.5,
+            "Brandon Greene": 0.5
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                },
+                "player2": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                },
+                "player2": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                },
+                "player2": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                },
+                "player2": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                },
+                "player2": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                },
+                "player2": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                },
+                "player2": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                },
+                "player2": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                },
+                "player2": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                },
+                "player2": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                },
+                "player2": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                },
+                "player2": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Jake",
+                    "lastname": "Douglas",
+                    "birth": "26-02-1992",
+                    "national chess ID": "BC13361"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                },
+                "player2": {
+                    "firstname": "James",
+                    "lastname": "Wallace",
+                    "birth": "24-03-1976",
+                    "national chess ID": "KZ45488"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Patrick",
+                    "lastname": "Quinn",
+                    "birth": "05-05-1993",
+                    "national chess ID": "EA39624"
+                },
+                "player2": {
+                    "firstname": "Brandon",
+                    "lastname": "Greene",
+                    "birth": "12-12-1986",
+                    "national chess ID": "IM32836"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Bryan",
+                "lastname": "Hodge",
+                "birth": "21-11-1988",
+                "national chess ID": "EB77714"
+            },
+            {
+                "firstname": "Jake",
+                "lastname": "Douglas",
+                "birth": "26-02-1992",
+                "national chess ID": "BC13361"
+            },
+            {
+                "firstname": "Heidi",
+                "lastname": "Miller",
+                "birth": "20-07-1981",
+                "national chess ID": "WU44295"
+            },
+            {
+                "firstname": "Patrick",
+                "lastname": "Quinn",
+                "birth": "05-05-1993",
+                "national chess ID": "EA39624"
+            },
+            {
+                "firstname": "James",
+                "lastname": "Wallace",
+                "birth": "24-03-1976",
+                "national chess ID": "KZ45488"
+            },
+            {
+                "firstname": "Brandon",
+                "lastname": "Greene",
+                "birth": "12-12-1986",
+                "national chess ID": "IM32836"
+            }
+        ]
+    },
+    {
+        "name": "Z",
+        "place": "Zz",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-2222",
+        "director_note": "",
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Wanda Armstrong": 1,
+                            "Heidi Miller": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Michael Schmidt": 0.5,
+                            "Erin Williams": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Brandy Short": 0.5,
+                            "Frank Rivera": 0.5
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:27:52.340960",
+                "end_time": "2024-04-02 15:27:52.340960"
+            },
+            {
+                "name": "Round 2",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 3",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            }
+        ],
+        "current_round": 0,
+        "players_score": {
+            "Wanda Armstrong": 1,
+            "Michael Schmidt": 0.5,
+            "Brandy Short": 0.5,
+            "Erin Williams": 0.5,
+            "Frank Rivera": 0.5,
+            "Heidi Miller": 0
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                },
+                "player2": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Heidi",
+                    "lastname": "Miller",
+                    "birth": "20-07-1981",
+                    "national chess ID": "WU44295"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Frank",
+                    "lastname": "Rivera",
+                    "birth": "04-10-1998",
+                    "national chess ID": "YR85990"
+                },
+                "player2": {
+                    "firstname": "Brandy",
+                    "lastname": "Short",
+                    "birth": "22-09-2000",
+                    "national chess ID": "JW69952"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Brandy",
+                    "lastname": "Short",
+                    "birth": "22-09-2000",
+                    "national chess ID": "JW69952"
+                },
+                "player2": {
+                    "firstname": "Frank",
+                    "lastname": "Rivera",
+                    "birth": "04-10-1998",
+                    "national chess ID": "YR85990"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                },
+                "player2": {
+                    "firstname": "Erin",
+                    "lastname": "Williams",
+                    "birth": "27-09-1994",
+                    "national chess ID": "CN32822"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Michael",
+                "lastname": "Schmidt",
+                "birth": "14-12-1997",
+                "national chess ID": "BV96896"
+            },
+            {
+                "firstname": "Wanda",
+                "lastname": "Armstrong",
+                "birth": "26-02-1973",
+                "national chess ID": "VM89208"
+            },
+            {
+                "firstname": "Brandy",
+                "lastname": "Short",
+                "birth": "22-09-2000",
+                "national chess ID": "JW69952"
+            },
+            {
+                "firstname": "Heidi",
+                "lastname": "Miller",
+                "birth": "20-07-1981",
+                "national chess ID": "WU44295"
+            },
+            {
+                "firstname": "Erin",
+                "lastname": "Williams",
+                "birth": "27-09-1994",
+                "national chess ID": "CN32822"
+            },
+            {
+                "firstname": "Frank",
+                "lastname": "Rivera",
+                "birth": "04-10-1998",
+                "national chess ID": "YR85990"
+            }
+        ]
+    },
+    {
+        "name": "Y",
+        "place": "Yy",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-2222",
+        "director_note": "",
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Albus Dumbledore": 0.5,
+                            "Romeo Alonzo": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Kathy Mcdowell": 0.5,
+                            "Juliette Armanet": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Michael Schmidt": 1,
+                            "Nicole Jones": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:30:42.191370",
+                "end_time": "2024-04-02 15:30:42.191370"
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Michael Schmidt": 0.5,
+                            "Kathy Mcdowell": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Albus Dumbledore": 1,
+                            "Juliette Armanet": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Romeo Alonzo": 1,
+                            "Nicole Jones": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:30:46.583315",
+                "end_time": "2024-04-02 15:30:46.583315"
+            },
+            {
+                "name": "Round 3",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            }
+        ],
+        "current_round": 2,
+        "players_score": {
+            "Michael Schmidt": 1.5,
+            "Albus Dumbledore": 1.5,
+            "Romeo Alonzo": 1.5,
+            "Kathy Mcdowell": 1.0,
+            "Juliette Armanet": 0.5,
+            "Nicole Jones": 0
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Kathy",
+                    "lastname": "Mcdowell",
+                    "birth": "05-09-1979",
+                    "national chess ID": "EK89597"
+                },
+                "player2": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Albus",
+                    "lastname": "Dumbledore",
+                    "birth": "11-11-1881",
+                    "national chess ID": "OR48621"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                },
+                "player2": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Albus",
+                    "lastname": "Dumbledore",
+                    "birth": "11-11-1881",
+                    "national chess ID": "OR48621"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Kathy",
+                    "lastname": "Mcdowell",
+                    "birth": "05-09-1979",
+                    "national chess ID": "EK89597"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Albus",
+                    "lastname": "Dumbledore",
+                    "birth": "11-11-1881",
+                    "national chess ID": "OR48621"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                },
+                "player2": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                },
+                "player2": {
+                    "firstname": "Kathy",
+                    "lastname": "Mcdowell",
+                    "birth": "05-09-1979",
+                    "national chess ID": "EK89597"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Kathy",
+                    "lastname": "Mcdowell",
+                    "birth": "05-09-1979",
+                    "national chess ID": "EK89597"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Albus",
+                    "lastname": "Dumbledore",
+                    "birth": "11-11-1881",
+                    "national chess ID": "OR48621"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Michael",
+                "lastname": "Schmidt",
+                "birth": "14-12-1997",
+                "national chess ID": "BV96896"
+            },
+            {
+                "firstname": "Kathy",
+                "lastname": "Mcdowell",
+                "birth": "05-09-1979",
+                "national chess ID": "EK89597"
+            },
+            {
+                "firstname": "Albus",
+                "lastname": "Dumbledore",
+                "birth": "11-11-1881",
+                "national chess ID": "OR48621"
+            },
+            {
+                "firstname": "Juliette",
+                "lastname": "Armanet",
+                "birth": "04-03-1984",
+                "national chess ID": "DJ21462"
+            },
+            {
+                "firstname": "Romeo",
+                "lastname": "Alonzo",
+                "birth": "15-03-1974",
+                "national chess ID": "RY49563"
+            },
+            {
+                "firstname": "Nicole",
+                "lastname": "Jones",
+                "birth": "04-04-1994",
+                "national chess ID": "AV04824"
+            }
+        ]
+    },
+    {
+        "name": "Y",
+        "place": "Yy",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-2222",
+        "director_note": 2,
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Albus Dumbledore": 0.5,
+                            "Romeo Alonzo": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Kathy Mcdowell": 0.5,
+                            "Juliette Armanet": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Michael Schmidt": 1,
+                            "Nicole Jones": 0
+                        }
+                    }
+                ],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Michael Schmidt": 0.5,
+                            "Kathy Mcdowell": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Albus Dumbledore": 1,
+                            "Juliette Armanet": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Romeo Alonzo": 1,
+                            "Nicole Jones": 0
+                        }
+                    }
+                ],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 3",
+                "matches": [
+                    {
+                        "players": {
+                            "Michael Schmidt": 1,
+                            "Kathy Mcdowell": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Albus Dumbledore": 0.5,
+                            "Juliette Armanet": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Romeo Alonzo": 1,
+                            "Nicole Jones": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:32:13.576211",
+                "end_time": "2024-04-02 15:32:13.576211"
+            },
+            {
+                "name": "Round 4",
+                "matches": [
+                    {
+                        "players": {
+                            "Michael Schmidt": 1,
+                            "Albus Dumbledore": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Kathy Mcdowell": 0.5,
+                            "Juliette Armanet": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Romeo Alonzo": 0.5,
+                            "Nicole Jones": 0.5
+                        }
+                    }
+                ],
+                "start_time": "2024-04-02 15:32:25.874655",
+                "end_time": "2024-04-02 15:32:25.874655"
+            }
+        ],
+        "current_round": 3,
+        "players_score": {
+            "Michael Schmidt": 3.5,
+            "Romeo Alonzo": 3.0,
+            "Albus Dumbledore": 2.0,
+            "Kathy Mcdowell": 1.5,
+            "Juliette Armanet": 1.5,
+            "Nicole Jones": 0.5
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Kathy",
+                    "lastname": "Mcdowell",
+                    "birth": "05-09-1979",
+                    "national chess ID": "EK89597"
+                },
+                "player2": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                },
+                "player2": {
+                    "firstname": "Albus",
+                    "lastname": "Dumbledore",
+                    "birth": "11-11-1881",
+                    "national chess ID": "OR48621"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                },
+                "player2": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Albus",
+                    "lastname": "Dumbledore",
+                    "birth": "11-11-1881",
+                    "national chess ID": "OR48621"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Albus",
+                    "lastname": "Dumbledore",
+                    "birth": "11-11-1881",
+                    "national chess ID": "OR48621"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Kathy",
+                    "lastname": "Mcdowell",
+                    "birth": "05-09-1979",
+                    "national chess ID": "EK89597"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                },
+                "player2": {
+                    "firstname": "Kathy",
+                    "lastname": "Mcdowell",
+                    "birth": "05-09-1979",
+                    "national chess ID": "EK89597"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Albus",
+                    "lastname": "Dumbledore",
+                    "birth": "11-11-1881",
+                    "national chess ID": "OR48621"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Kathy",
+                    "lastname": "Mcdowell",
+                    "birth": "05-09-1979",
+                    "national chess ID": "EK89597"
+                },
+                "player2": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                },
+                "player2": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Albus",
+                    "lastname": "Dumbledore",
+                    "birth": "11-11-1881",
+                    "national chess ID": "OR48621"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Albus",
+                    "lastname": "Dumbledore",
+                    "birth": "11-11-1881",
+                    "national chess ID": "OR48621"
+                },
+                "player2": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Nicole",
+                    "lastname": "Jones",
+                    "birth": "04-04-1994",
+                    "national chess ID": "AV04824"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Kathy",
+                    "lastname": "Mcdowell",
+                    "birth": "05-09-1979",
+                    "national chess ID": "EK89597"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Albus",
+                    "lastname": "Dumbledore",
+                    "birth": "11-11-1881",
+                    "national chess ID": "OR48621"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Kathy",
+                    "lastname": "Mcdowell",
+                    "birth": "05-09-1979",
+                    "national chess ID": "EK89597"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Albus",
+                    "lastname": "Dumbledore",
+                    "birth": "11-11-1881",
+                    "national chess ID": "OR48621"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Kathy",
+                    "lastname": "Mcdowell",
+                    "birth": "05-09-1979",
+                    "national chess ID": "EK89597"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                },
+                "player2": {
+                    "firstname": "Kathy",
+                    "lastname": "Mcdowell",
+                    "birth": "05-09-1979",
+                    "national chess ID": "EK89597"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Michael",
+                "lastname": "Schmidt",
+                "birth": "14-12-1997",
+                "national chess ID": "BV96896"
+            },
+            {
+                "firstname": "Kathy",
+                "lastname": "Mcdowell",
+                "birth": "05-09-1979",
+                "national chess ID": "EK89597"
+            },
+            {
+                "firstname": "Albus",
+                "lastname": "Dumbledore",
+                "birth": "11-11-1881",
+                "national chess ID": "OR48621"
+            },
+            {
+                "firstname": "Juliette",
+                "lastname": "Armanet",
+                "birth": "04-03-1984",
+                "national chess ID": "DJ21462"
+            },
+            {
+                "firstname": "Romeo",
+                "lastname": "Alonzo",
+                "birth": "15-03-1974",
+                "national chess ID": "RY49563"
+            },
+            {
+                "firstname": "Nicole",
+                "lastname": "Jones",
+                "birth": "04-04-1994",
+                "national chess ID": "AV04824"
             }
         ]
     }

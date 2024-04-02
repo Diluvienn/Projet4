@@ -12,9 +12,6 @@ Usage:
 """
 
 import random
-
-from model.player import Player
-
 possible_score = [(0, 1), (0.5, 0.5), (1, 0)]
 
 
@@ -38,25 +35,25 @@ class Match:
         return match_json
 
     @classmethod
-    def from_json(cls, match_data):
+    def from_json(cls, match_data, tournament):
         # Récupérer les données des joueurs depuis le JSON
         players_data = match_data["players"]
 
-        # Créer un dictionnaire pour stocker les joueurs et leurs scores
+        # Créer un dictionnaire pour stocker les objets Player et leurs scores
         players = {}
 
-        # Parcourir les données des joueurs
+        # Convertir les noms des joueurs en objets Player
         for player_name, score in players_data.items():
-            # Ajouter le joueur et son score au dictionnaire
-            players[player_name] = score
+            player_firstname, player_lastname = player_name.split()
+            player = find_player(tournament, player_firstname, player_lastname)
+            if player:
+                players[player] = score
+            else:
+                print(f"Joueur introuvable dans la liste des joueurs du tournoi : {player_name}")
 
-        # Créer l'objet Match avec les joueurs et leurs scores
+        # Créer l'objet Match avec les joueurs (objets Player) et leurs scores
         match = cls(players)
-        print(f"attributs de match, dans from_json MATCH:")
-        print(vars(match))
-
         return match
-
 
     def __str__(self):
         player1_name = f"{list(self.players.keys())[0].firstname} {list(self.players.keys())[0].lastname}"
@@ -84,6 +81,14 @@ class Match:
                     self.players[player] += 0.5  # Ajouter 0.5 aux scores de tous les joueurs
 
             return result
+
+
+def find_player(tournament, player_firstname, player_lastname):
+    for p in tournament.players_list:
+        if p.firstname == player_firstname and p.lastname == player_lastname:
+            return p
+    return None
+
 
 
 if __name__ == "__main__":
