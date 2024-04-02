@@ -1,10 +1,8 @@
-from datetime import datetime
-
 from view.viewmain import main_user_choice
 from view.viewnewtournament import create_tournament_from_cli, add_player_to_tournament_from_cli, add_player_from_cli
-from model.tournament import TournamentRepository, Tournament, calculate_leaderboard
+from model.tournament import TournamentRepository, Tournament
 
-from model.player import PlayerRepository, Player
+from model.player import PlayerRepository
 
 
 def main():
@@ -17,8 +15,11 @@ def main():
             player_repository = PlayerRepository()
             sorted_players = player_repository.get_player_by_alphabetical_order()
             print("*" * 100)
-            for player_info in sorted_players:
-                print(player_info)
+            if not sorted_players:
+                print("Aucun joueur enregistré pour le moment.")
+            else:
+                for player_info in sorted_players:
+                    print(player_info)
             print("*" * 100)
 
         # choix 2 : Voir la liste des tournois enregistrés par ordre alphabétique
@@ -26,37 +27,60 @@ def main():
             tournament_repository = TournamentRepository()
             tournaments = tournament_repository.get_tournaments_by_alphabetical_order()
             print("*" * 100)
-            for tournament in tournaments:
-                print(tournament)
+            if not tournaments:
+                print("Aucun tournoi disponible pour le moment.")
+            else:
+                for tournament in tournaments:
+                    print(tournament)
             print("*" * 100)
 
         elif choice == "3":
+            print("*" * 100)
             tournament_repository = TournamentRepository()
-            tournaments = tournament_repository.get_tournament_details()
+            print("Noms des tournois : ")
+            tournament_details = tournament_repository.get_tournament_details()
 
-            user_tournament_choice = input(
-                "Indiquez le nom du tournoi dont vous souhaitez les informations : ").capitalize()
-
-            found = False
-            for tournament_info in tournaments:
-                if user_tournament_choice == tournament_info['name']:
-                    print("*" * 100)
-                    print("Tournament:", tournament_info['name'])
-                    print("Place:", tournament_info['place'])
-                    print("Start date:", tournament_info['date_start'])
-                    print("End date:", tournament_info['date_end'])
-                    print("Director's note:", tournament_info['director_note'])
-                    print("Players and Scores:")
-                    for player_score in tournament_info['players_scores']:
-                        print(f"- {player_score['name']}: {player_score['score']}")
-                    print("*" * 100)
-                    found = True
-                    break
-
-            if not found:
+            if tournament_details:
+                # Affichage des détails du tournoi
                 print("*" * 100)
-                print("Le tournoi spécifié n'existe pas.")
+                print("Nom du tournoi:", tournament_details['name'])
+                print("Place:", tournament_details['place'])
+                print("Start date:", tournament_details['date_start'])
+                print("End date:", tournament_details['date_end'])
+                print("Director's note:", tournament_details['director_note'])
+                print("Players and Scores:")
+                for player, score in tournament_details['players_score'].items():
+                    print(f"{player}: {score}")
+
+                print(tournament_details['tournament_status'])
                 print("*" * 100)
+            else:
+                print("Aucun tournoi correspondant n'a été trouvé.")
+            # user_tournament_choice = input(
+            #     "Indiquez le nom du tournoi dont vous souhaitez les informations : ").capitalize()
+            # tournaments = tournament_repository.get_tournament_details()
+            #
+            #
+            #
+            # found = False
+            # for tournament_info in tournaments:
+            #     if user_tournament_choice == tournament_info['name']:
+            #         print("*" * 100)
+            #         print("Tournament:", tournament_info['name'])
+            #         print("Place:", tournament_info['place'])
+            #         print("Start date:", tournament_info['date_start'])
+            #         print("End date:", tournament_info['date_end'])
+            #         print("Director's note:", tournament_info['director_note'])
+            #         print("Players and Scores:", tournament_info['players_score'])
+            #         print("Status :", tournament_info['tournament_status'])
+            #         print("*" * 100)
+            #         found = True
+            #         break
+            #
+            # if not found:
+            #     print("*" * 100)
+            #     print("Le tournoi spécifié n'existe pas.")
+            #     print("*" * 100)
 
         # choix 4 : Ajouter un nouveau joueur à la liste déjà existante
         elif choice == "4":
@@ -91,7 +115,6 @@ def main():
                     tournament_repository = TournamentRepository()
                     tournament_repository.add_tournament(tournament)
                     print("Le tournoi est enregistré.")
-                    play_main_menu = False
                     break
 
                 elif play_first_round != "y" and play_first_round != "n":
@@ -105,19 +128,10 @@ def main():
         elif choice == "6":
             tournament_repository = TournamentRepository()
             chosen_tournament_data = tournament_repository.resume_tournament()
-            print(f"chosen_tournament {chosen_tournament_data}")
 
             # Extraire les scores précédemment enregistrés dans le JSON
-            previous_scores = chosen_tournament_data.get("players_score", {})
-            print(f"previous score à sa rceation dans le main : {previous_scores}")
             tournament = Tournament.from_json(chosen_tournament_data)
-            print("attribust de tournament, dans main, après re création de l'objet")
-            print(vars(tournament))
-            print(f"current round après le +1 dans le main de 6 : {tournament.current_round}")
-
             tournament.play_tournament()
-
-
 
         # choix 7 : quitter le logiciel
         elif choice == "7":

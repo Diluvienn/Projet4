@@ -15,7 +15,8 @@ import random
 import itertools
 
 from datetime import datetime
-from typing import Set, Tuple, Dict, List
+from typing import Dict, List
+from unidecode import unidecode
 
 from model.round import Round
 from model.match import Match
@@ -124,7 +125,6 @@ class Tournament:
             self.rounds.append(round_instance)
 
     def generate_pairs_for_round(self):
-        print(f"current round au debut de generate : {self.current_round}")
 
         # Générer les paires pour le premier round
         if self.current_round == 0:
@@ -209,7 +209,6 @@ class Tournament:
     #             self.played_pairs.add((player2, player1))
 
     def play_tournament(self):
-        print(f"self.current round au totu debut de play tournament : {self.current_round}")
         while self.current_round <= len(self.rounds):
             current_round = self.rounds[self.current_round]
 
@@ -239,19 +238,13 @@ class Tournament:
 
                 # Récupérer les scores précédents à partir des données du tournoi
                 previous_scores = self.players_score if hasattr(self, 'players_score') else {}
-            print(f"previous score dans generate boucle match {previous_scores}")
 
             # Calculer et afficher le classement provisoire
             calculate_leaderboard(self, previous_scores)
 
-            print(f"currenr round avant condition de sortie {self.current_round}")
-            print(f" len rounds avant condition de sortie : {len(self.rounds) - 1 }")
             # Demander si vous voulez jouer le prochain round
 
             if self.current_round == (len(self.rounds) - 1):
-                print(self.current_round)
-                print(len(self.rounds))
-                print(len(self.rounds) + 1)
                 tournament_repository = TournamentRepository()
                 tournament_repository.add_tournament(self)
                 break
@@ -327,10 +320,8 @@ def calculate_leaderboard(tournament, previous_scores=None):
     leaderboard = [(player, player.calculate_total_score(tournament.rounds, previous_scores)) for player in tournament.players_list]
     # Triez la liste en fonction du score total (en ordre décroissant)
     sorted_leaderboard = sorted(leaderboard, key=lambda x: x[1], reverse=True)
-    print(f'sorted leaderboard : {sorted_leaderboard}')
 
     tournament.players_score = {f"{player.firstname} {player.lastname}": score for player, score in sorted_leaderboard}
-    print(f"tournament players score : {tournament.players_score}")
     # Affichez le classement
     print(f"Classement fin du round {tournament.current_round + 1} :")
     for i, (player, score) in enumerate(sorted_leaderboard, start=1):
@@ -383,26 +374,18 @@ class TournamentRepository:
             rounds_json.append(round_json)
         tournament_data["rounds"] = rounds_json
 
-        tournaments.append(tournament_data)
+        # Recherchez le tournoi existant et mettez à jour ses données s'il existe déjà
+        for i, existing_tournament in enumerate(tournaments):
+            if existing_tournament["name"] == tournament.name:
+                tournaments[i] = tournament_data
+                break
+        else:
+            # Si le tournoi n'existe pas, ajoutez-le simplement à la liste
+            tournaments.append(tournament_data)
+
+        # Enregistrez la liste mise à jour des tournois dans le fichier
         with open(self.filename, 'w') as file:
             json.dump(tournaments, file, indent=4)
-
-    # def add_tournament(self, tournament):
-    #     CA CA MARCHE !!!! JUSTE SANS PLAYED PAIRS"""Add a tournament to the repository.
-    #
-    #     Args:
-    #         tournament (Tournament): The tournament object to be added to the repository.
-    #
-    #     """
-    #     tournaments = self.load_tournaments()
-    #     tournament_data = tournament.to_json()
-    #     tournament_data["players_list"] = [player.to_json() for player in tournament.players_list]
-    #     tournament_data["rounds"] = [round.to_json() for round in tournament.rounds]
-    #     print(f"tournament_data  : {tournament_data}")
-    #     tournaments.append(tournament_data)
-    #
-    #     with open(self.filename, 'w') as file:
-    #         json.dump(tournaments, file, indent=4)
 
     def load_tournaments(self):
         """Load tournaments from the JSON file.
@@ -465,50 +448,38 @@ class TournamentRepository:
         Returns: List[dict]: A list of dictionaries containing details of the tournaments including players and their
         scores, sorted by name.
         """
-        tournaments = self.load_tournaments()
-        formatted_output = []
+        # Obtenir les noms des tournois
+        tournament_names = self.get_tournaments_by_alphabetical_order()
+        for name in tournament_names:
+            print(name)
+        print("*" * 100)
+        # Demander à l'utilisateur de choisir un tournoi
+        user_tournament_choice = input(
+            "Indiquez le nom du tournoi dont vous souhaitez les informations : ").capitalize()
 
-        # Trier les tournois par ordre alphabétique du nom
-        sorted_tournaments = sorted(tournaments, key=lambda x: x["name"])
+        user_tournament_choice_normalized = unidecode(user_tournament_choice)
 
-        for tournament_data in sorted_tournaments:
-            tournament_details = {
-                "name": tournament_data["name"],
-                "place": tournament_data["place"],
-                "date_start": tournament_data["date_start"],
-                "date_end": tournament_data["date_end"],
-                "director_note": tournament_data["director_note"]
-            }
-
-            players_scores = []
-            for player in tournament_data["players_list"]:
-                player_score = {
-                    "name": player,
-                    "score": tournament_data.get("players_score", {}).get(player, 0)
-                    # Get player's score or default to 0 if not found
+        # Obtenir les détails du tournoi choisi
+        for tournament_data in self.load_tournaments():
+            tournament_name_normalized = unidecode(tournament_data['name'].capitalize())
+            if user_tournament_choice_normalized == tournament_name_normalized:
+                tournament_details = {
+                    "name": tournament_data["name"],
+                    "place": tournament_data["place"],
+                    "date_start": tournament_data["date_start"],
+                    "date_end": tournament_data["date_end"],
+                    "director_note": tournament_data["director_note"],
+                    "players_score": tournament_data['players_score'],
                 }
-                players_scores.append(player_score)
-
-            tournament_details["players_scores"] = players_scores
-            formatted_output.append(tournament_details)
-
-        return formatted_output
+                current_round = tournament_data['current_round']
+                rounds = len(tournament_data['rounds'])
+                if current_round == rounds:
+                    tournament_details["tournament_status"] = " Tournoi terminé"
+                else:
+                    tournament_details["tournament_status"] = f"Round actuel : {current_round} sur {rounds}"
+                return tournament_details
+        return None
 
 
 if __name__ == "__main__":
     pass
-    # def update_tournament_scores(self, tournament):
-    #
-    #     # Chargez tous les tournois existants
-    #     tournaments = self.load_tournaments()
-    #
-    #     # Recherchez le tournoi spécifique par son nom
-    #     for index, stored_tournament in enumerate(tournaments):
-    #         if stored_tournament['name'] == tournament.name:
-    #             # Mettez à jour les scores du tournoi spécifique
-    #             tournaments[index] = tournament.tournament_to_json()
-    #             break
-    #
-    #     # Écrivez la liste mise à jour des tournois dans le fichier JSON
-    #     with open(self.filename, 'w') as file:
-    #         json.dump(tournaments, file, indent=4)
