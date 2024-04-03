@@ -198,16 +198,6 @@ class Tournament:
             # Enregistrez les paires de matchs générées pour ce round
             self.rounds[self.current_round].matches.extend(round_matches)
 
-    # def update_played_pairs(self):
-    #     if self.current_round > 0:
-    #         previous_round_matches = self.rounds[self.current_round - 1].matches
-    #         for match in previous_round_matches:
-    #             player1 = list(match.players.keys())[0]
-    #             player2 = list(match.players.keys())[1]
-    #             # Ajouter la paire de joueurs à l'ensemble de paires jouées pour ce round
-    #             self.played_pairs.add((player1, player2))
-    #             self.played_pairs.add((player2, player1))
-
     def play_tournament(self):
         while self.current_round <= len(self.rounds):
             current_round = self.rounds[self.current_round]
@@ -219,9 +209,6 @@ class Tournament:
 
             # Générer les paires de matchs pour ce round
             self.generate_pairs_for_round()
-
-            # # Mettre à jour les paires déjà jouées
-            # self.update_played_pairs()
 
             # Définir l'heure de début du round
             self.rounds[self.current_round].start_time = datetime.now()
@@ -250,14 +237,16 @@ class Tournament:
                 break
 
             play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")
+            while play_next_round not in ["y", "n"]:
+                print("Veuillez effectuer un choix valide.")
+                play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")
+
             if play_next_round == "n":
                 self.current_round += 1
                 tournament_repository = TournamentRepository()
                 tournament_repository.add_tournament(self)
                 break
-            elif play_next_round != "y":
-                print("Veuillez effectuer un choix valide.")
-                continue
+
             self.current_round += 1
 
     @classmethod
@@ -317,7 +306,8 @@ class Tournament:
 
 def calculate_leaderboard(tournament, previous_scores=None):
     # Créez une liste de tuples (joueur, score total)
-    leaderboard = [(player, player.calculate_total_score(tournament.rounds, previous_scores)) for player in tournament.players_list]
+    leaderboard = [(player, player.calculate_total_score(tournament.rounds, previous_scores))
+                   for player in tournament.players_list]
     # Triez la liste en fonction du score total (en ordre décroissant)
     sorted_leaderboard = sorted(leaderboard, key=lambda x: x[1], reverse=True)
 
@@ -470,13 +460,14 @@ class TournamentRepository:
                     "date_end": tournament_data["date_end"],
                     "director_note": tournament_data["director_note"],
                     "players_score": tournament_data['players_score'],
+                    "rounds": tournament_data['rounds']
                 }
                 current_round = tournament_data['current_round']
-                rounds = len(tournament_data['rounds'])
-                if current_round == rounds:
+                rounds_count = len(tournament_data['rounds'])
+                if current_round == rounds_count:
                     tournament_details["tournament_status"] = " Tournoi terminé"
                 else:
-                    tournament_details["tournament_status"] = f"Round actuel : {current_round} sur {rounds}"
+                    tournament_details["tournament_status"] = f"Round actuel : {current_round} sur {rounds_count}"
                 return tournament_details
         return None
 

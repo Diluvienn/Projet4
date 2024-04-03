@@ -18,4 +18,3 @@ def main_user_choice():
           "7 : Quitter")
 
     return input("Mon choix (1, 2, 3, 4, 5, 6 ou 7): ")
-

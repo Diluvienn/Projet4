@@ -66,21 +66,38 @@ class Match:
         result = random.choice(["win", "loss", "draw"])
         # Assign the match result to the instance variable self.result
         self.result = result
-        for _, _ in self.players.items():
 
-            # Mise à jour des scores des joueurs en fonction du résultat
-            if result == "win":
-                winning_player = max(self.players,
-                                     key=self.players.get)  # Trouver le joueur avec le score le plus élevé
-                self.players[winning_player] += 1  # Incrémenter le score du joueur gagnant
-            elif result == "loss":
-                losing_player = min(self.players, key=self.players.get)  # Trouver le joueur avec le score le plus bas
-                self.players[losing_player] += 1  # Incrémenter le score du joueur perdant
-            elif result == "draw":
-                for player in self.players:
-                    self.players[player] += 0.5  # Ajouter 0.5 aux scores de tous les joueurs
+        # Inverser aléatoirement l'ordre des joueurs
+        players_list = list(self.players.keys())
+        random.shuffle(players_list)
+        player1, player2 = players_list
 
-            return result
+        # Mise à jour des scores des joueurs en fonction du résultat
+        if result == "win":
+            winning_player = player1 if random.random() < 0.5 else player2
+            self.players[winning_player] += 1
+        elif result == "loss":
+            losing_player = player1 if random.random() < 0.5 else player2
+            self.players[losing_player] += 1
+        elif result == "draw":
+            for player in self.players:
+                self.players[player] += 0.5
+
+        return result
+        # for _, _ in self.players.items():
+        #
+        #     # Mise à jour des scores des joueurs en fonction du résultat
+        #     if result == "win":
+        #         winning_player = max(self.players,
+        #                              key=self.players.get)  # Trouver le joueur avec le score le plus élevé
+        #         self.players[winning_player] += 1  # Incrémenter le score du joueur gagnant
+        #     elif result == "loss":
+        #         losing_player = min(self.players, key=self.players.get)  # Trouver le joueur avec le score le plus bas
+        #         self.players[losing_player] += 1  # Incrémenter le score du joueur perdant
+        #     elif result == "draw":
+        #         for player in self.players:
+        #             self.players[player] += 0.5  # Ajouter 0.5 aux scores de tous les joueurs
+        #     return result
 
 
 def find_player(tournament, player_firstname, player_lastname):

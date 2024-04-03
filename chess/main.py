@@ -49,38 +49,31 @@ def main():
                 print("End date:", tournament_details['date_end'])
                 print("Director's note:", tournament_details['director_note'])
                 print("Players and Scores:")
-                for player, score in tournament_details['players_score'].items():
+                sorted_players = sorted(tournament_details['players_score'].items(), key=lambda x: x[0])
+
+                # Affichez les joueurs dans l'ordre alphabétique avec leurs scores
+                for player, score in sorted_players:
                     print(f"{player}: {score}")
 
                 print(tournament_details['tournament_status'])
-                print("*" * 100)
+
+                rounds = tournament_details['rounds']
+                for round_data in rounds:
+                    round_name = round_data['name']
+                    matches = round_data['matches']
+                    if matches:
+                        print(f"Matches pour le {round_name}:")
+                        print("~" * 25)
+                        for match in matches:
+                            players = match['players']
+                            for player, score in players.items():
+                                print(f"{player}: {score}")
+                            print("~" * 25)
+
             else:
                 print("Aucun tournoi correspondant n'a été trouvé.")
-            # user_tournament_choice = input(
-            #     "Indiquez le nom du tournoi dont vous souhaitez les informations : ").capitalize()
-            # tournaments = tournament_repository.get_tournament_details()
-            #
-            #
-            #
-            # found = False
-            # for tournament_info in tournaments:
-            #     if user_tournament_choice == tournament_info['name']:
-            #         print("*" * 100)
-            #         print("Tournament:", tournament_info['name'])
-            #         print("Place:", tournament_info['place'])
-            #         print("Start date:", tournament_info['date_start'])
-            #         print("End date:", tournament_info['date_end'])
-            #         print("Director's note:", tournament_info['director_note'])
-            #         print("Players and Scores:", tournament_info['players_score'])
-            #         print("Status :", tournament_info['tournament_status'])
-            #         print("*" * 100)
-            #         found = True
-            #         break
-            #
-            # if not found:
-            #     print("*" * 100)
-            #     print("Le tournoi spécifié n'existe pas.")
-            #     print("*" * 100)
+
+            print("*" * 100)
 
         # choix 4 : Ajouter un nouveau joueur à la liste déjà existante
         elif choice == "4":
