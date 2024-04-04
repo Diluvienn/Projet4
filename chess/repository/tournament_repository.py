@@ -4,6 +4,8 @@ import json
 from typing import List
 from unidecode import unidecode
 
+from model.tournament import Tournament
+
 
 class TournamentRepository:
     """Repository for managing tournament data storage and retrieval."""
@@ -115,30 +117,15 @@ class TournamentRepository:
         sorted_tournaments = sorted(tournaments, key=lambda x: x['name'])
         formatted_output = []
         for tournament_data in sorted_tournaments:
-            formatted_output.append(f"{tournament_data['name']}")
+            tournament = Tournament(**tournament_data)
+            formatted_output.append(tournament)
         return formatted_output
 
-    def get_tournament_details(self):
-        """Get details of the tournaments including players and their scores, sorted by name.
+    def get_tournament_details(self, tournament_name):
 
-        Returns: List[dict]: A list of dictionaries containing details of the tournaments including players and their
-        scores, sorted by name.
-        """
-        # Obtenir les noms des tournois
-        tournament_names = self.get_tournaments_by_alphabetical_order()
-        for name in tournament_names:
-            print(name)
-        print("*" * 100)
-        # Demander à l'utilisateur de choisir un tournoi
-        user_tournament_choice = input(
-            "Indiquez le nom du tournoi dont vous souhaitez les informations : ").capitalize()
-
-        user_tournament_choice_normalized = unidecode(user_tournament_choice)
-
-        # Obtenir les détails du tournoi choisi
         for tournament_data in self.load_tournaments():
             tournament_name_normalized = unidecode(tournament_data['name'].capitalize())
-            if user_tournament_choice_normalized == tournament_name_normalized:
+            if tournament_name_normalized == unidecode(tournament_name.capitalize()):
                 tournament_details = {
                     "name": tournament_data["name"],
                     "place": tournament_data["place"],

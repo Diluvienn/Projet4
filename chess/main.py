@@ -38,7 +38,8 @@ def main():
         if choice == "1":
             tournament_controller.show_tournaments()
         elif choice == "2":
-            tournament_controller.get_tournament_details()
+            tournament_name = tournament_view.get_tournament_name_from_user()
+            tournament_controller.get_tournament_details(tournament_name)
         elif choice == "3":
             tournament_controller.create_new_tournament()
         elif choice == "4":

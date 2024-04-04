@@ -9,8 +9,7 @@ Classes:
       number of rounds, current round, player list, player scores, and director notes.
     - TournamentRepository: Manages the storage and retrieval of tournament information.
 """
-import os
-import json
+
 import random
 import itertools
 
@@ -27,7 +26,8 @@ class Tournament:
     """A class representing a chess tournament."""
 
     def __init__(self, name: str, place: str, date_start: str, date_end: str, rounds: int = 4,
-                 director_notes: str = "", current_round: int = 0):
+                 director_note: str = "", current_round: int = 0, players_score: Dict = {}, played_pairs: set = (),
+                 players_list:List = []):
         """Initialize a Tournament object.
 
        Args:
@@ -47,7 +47,7 @@ class Tournament:
         self.date_start: str = date_start
         self.date_end: str = date_end
         self.rounds = []
-        self.director_notes: str = director_notes
+        self.director_note: str = director_note
         self.current_round: int = current_round
         self.players_score: Dict[str, int] = {}
         self.players_list: List[str] = list(self.players_score.keys())
@@ -297,22 +297,13 @@ class Tournament:
         tournament.rounds = rounds
         return tournament
 
-    def add_director_notes_to_tournament(self):
-        notes = input("Avez-vous des notes de directeurs à ajouter (y/n) ? :")
-        if notes == "y":
-            notes = input("Vous pouvez les ajouter ici : ")
-        elif notes == "n":
-            notes = ""
-        else:
-            print("Veuillez effectuer un choix valide.")
 
-        return notes
 
     def __str__(self):
         """Return a string representation of the tournaments."""
         return (f"Tournament: {self.name}\nLocation: {self.place}\nStart: {self.date_start}\n"
                 f"End: {self.date_end}\nRounds: {self.rounds}\n"
-                f"Current Round: {self.current_round}\nDirector Notes: {self.director_notes}")
+                f"Current Round: {self.current_round}\nDirector Notes: {self.director_note}")
 
 
 def calculate_leaderboard(tournament, previous_scores=None):

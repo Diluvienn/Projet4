@@ -1,3 +1,6 @@
+from utils.formatvalidator import validate_date_format
+from controller.tournament_controller import TournamentController
+
 class TournamentView:
     @staticmethod
     def display_menu():
@@ -17,15 +20,18 @@ class TournamentView:
             print(f"- {tournament.name}")
 
     @staticmethod
-    def display_tournament_details(tournament):
-        """Affiche les détails d'un tournoi spécifique."""
-        print("\nDétails du tournoi:")
-        print(f"Nom: {tournament.name}")
-        print(f"Lieu: {tournament.place}")
-        print(f"Date de début: {tournament.date_start}")
-        print(f"Date de fin: {tournament.date_end}")
-        print(f"Nombre de rounds: {tournament.rounds}")
-        # Afficher d'autres détails du tournoi si nécessaire
+    def display_tournament_details(tournament_details):
+        if tournament_details:
+            print("Détails du tournoi:")
+            print(f"Nom: {tournament_details['name']}")
+            print(f"Lieu: {tournament_details['place']}")
+            print(f"Date de début: {tournament_details['date_start']}")
+            print(f"Date de fin: {tournament_details['date_end']}")
+            print(f"Notes du directeur: {tournament_details['director_note']}")
+            print(f"Statut du tournoi: {tournament_details['tournament_status']}")
+            # Afficher les autres détails du tournoi
+        else:
+            print("Le tournoi spécifié n'existe pas ou n'a pas été trouvé.")
 
     @staticmethod
     def display_message(message):
@@ -39,7 +45,24 @@ class TournamentView:
         print("Création d'un nouveau tournoi:")
         name = input("Nom du tournoi : ").capitalize()
         place = input("Lieu du tournoi : ").capitalize()
-        date_start = input("Date de début (format DD-MM-YYYY) : ")
-        date_end = input("Date de fin (format DD-MM-YYYY) : ")
+        # Demander au contrôleur d'ajouter des notes du directeur
+        tournament_controller = TournamentController()
+        director_notes = tournament_controller.add_director_notes_to_tournament()
+        while True:
+            date_start = input("Date de début (format DD-MM-YYYY) : ")
+            if validate_date_format(date_start):
+                break
+            else:
+                print("Format de date incorrect. Veuillez saisir une date au format DD-MM-YYYY.")
+        while True:
+            date_end = input("Date de fin (format DD-MM-YYYY) : ")
+            if validate_date_format(date_end):
+                break
+            else:
+                print("Format de date incorrect. Veuillez saisir une date au format DD-MM-YYYY.")
         rounds = input("Nombre de rounds (facultatif, par défaut 4) : ")
-        return name, place, date_start, date_end, rounds
+        return name, place, date_start, date_end, rounds, director_notes
+
+    def get_tournament_name_from_user(self):
+        """Ask the user to enter the name of the tournament."""
+        return input("Entrez le nom du tournoi dont vous souhaitez voir les détails : ").capitalize()

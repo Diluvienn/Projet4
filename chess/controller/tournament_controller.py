@@ -8,23 +8,36 @@ class TournamentController:
         self.tournament_repository = tournament_repository
         self.tournament_view = tournament_view
 
-    def show_tournaments(self, tournaments):
-        self.tournament_view.display_tournaments(tournaments)
+    def show_tournaments(self):
+        tournaments = self.tournament_repository.get_tournaments_by_alphabetical_order()
+        self.tournament_view.display_tournament_list(tournaments)
 
-    def get_tournament_details(self, tournament):
-        self.tournament_view.display_tournament_details(tournament)
+    def get_tournament_details(self, tournament_name):
+        tournament_details = self.tournament_repository.get_tournament_details(tournament_name)
+        if tournament_details:
+            # Afficher les détails du tournoi
+            self.tournament_view.display_tournament_details(tournament_details)
+        else:
+            print("Le tournoi spécifié n'existe pas ou n'a pas été trouvé.")
 
     def create_new_tournament(self):
         """Crée un nouveau tournoi."""
-        name = self.tournament_view.get_tournament_name()
-        place = self.tournament_view.get_tournament_place()
-        date_start = self.tournament_view.get_tournament_start_date()
-        date_end = self.tournament_view.get_tournament_end_date()
-        director_notes = self.tournament_view.get_director_notes()
-        rounds = self.tournament_view.get_number_of_rounds()
-
-        new_tournament = Tournament(name, place, date_start, date_end, director_notes, rounds)
+        name, place, date_start, date_end, rounds = self.tournament_view.get_new_tournament_details()
+        # Créez un nouvel objet Tournament avec les détails obtenus
+        new_tournament = Tournament(name, place, date_start, date_end, rounds)
+        # Ajoutez le tournoi à votre repository
         self.tournament_repository.add_tournament(new_tournament)
+
+    def add_director_notes_to_tournament(self):
+        notes = input("Ajouter des notes du directeur (y/n) ? : ")
+        if notes.lower() == "y":
+            notes_text = input("Entrez les notes du directeur : ")
+            return notes_text
+        elif notes.lower() == "n":
+            return ""
+        else:
+            print("Choix invalide.")
+            return self.add_director_notes_to_tournament()
 
     def resume_tournament(self):
         """Reprend un tournoi non terminé."""
