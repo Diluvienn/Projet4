@@ -2,6 +2,9 @@ from utils.formatvalidator import validate_date_format
 from controller.tournament_controller import TournamentController
 
 class TournamentView:
+    def __init__(self, tournament_controller):
+        self.tournament_controller = tournament_controller
+
     @staticmethod
     def display_menu():
         """Affiche le menu principal de gestion des tournois."""
@@ -38,16 +41,15 @@ class TournamentView:
         """Affiche un message spécifique."""
         print(message)
 
-    @staticmethod
-    def get_new_tournament_details():
+
+    def get_new_tournament_details(self):
         """Demande à l'utilisateur de saisir les détails pour créer un nouveau tournoi."""
         print("*" * 100)
         print("Création d'un nouveau tournoi:")
         name = input("Nom du tournoi : ").capitalize()
         place = input("Lieu du tournoi : ").capitalize()
         # Demander au contrôleur d'ajouter des notes du directeur
-        tournament_controller = TournamentController()
-        director_notes = tournament_controller.add_director_notes_to_tournament()
+        director_notes = self.tournament_controller.add_director_notes_to_tournament()
         while True:
             date_start = input("Date de début (format DD-MM-YYYY) : ")
             if validate_date_format(date_start):
@@ -61,7 +63,18 @@ class TournamentView:
             else:
                 print("Format de date incorrect. Veuillez saisir une date au format DD-MM-YYYY.")
         rounds = input("Nombre de rounds (facultatif, par défaut 4) : ")
+
         return name, place, date_start, date_end, rounds, director_notes
+
+    def display_add_player_menu(self, num_players):
+        if num_players >= 6 and num_players % 2 == 0:
+            print("\nSouhaitez-vous ajouter un joueur existant (1), créer un nouveau joueur (2) "
+                  "ou arrêter l'ajout de joueur (3) ?: ")
+        else:
+            print("\nSouhaitez-vous ajouter un joueur existant (1) ou créer un nouveau joueur (2) ?: ")
+
+    def get_user_choice(self):
+        return input("Votre choix : ")
 
     def get_tournament_name_from_user(self):
         """Ask the user to enter the name of the tournament."""

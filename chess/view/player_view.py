@@ -1,6 +1,6 @@
 class PlayerView:
-    @staticmethod
-    def get_new_player_details():
+
+    def get_new_player_details(self):
         """Demande et récupère les détails d'un nouveau joueur depuis l'utilisateur."""
         print("Ajout d'un nouveau joueur :")
         firstname = input("Prénom du joueur : ").capitalize()

@@ -6,7 +6,7 @@ for managing tournament data storage and retrieval.
 
 Classes:
     - Tournament: Represents a chess tournament with attributes including name, place, start date, end date,
-      number of rounds, current round, player list, player scores, and director notes.
+      number of rounds, current round, player list, player scores, and director note.
     - TournamentRepository: Manages the storage and retrieval of tournament information.
 """
 
@@ -20,6 +20,7 @@ from unidecode import unidecode
 from model.round import Round
 from model.match import Match
 from model.player import Player
+# from repository.tournament_repository import TournamentRepository
 
 
 class Tournament:
@@ -75,8 +76,8 @@ class Tournament:
             return self.date_end
         elif key == 'rounds':
             return self.rounds
-        elif key == 'director_notes':
-            return self.director_notes
+        elif key == 'director_note':
+            return self.director_note
         elif key == 'current_round':
             return self.current_round
         elif key == 'players_score':
@@ -101,7 +102,7 @@ class Tournament:
             'place': self.place,
             'date_start': self.date_start,
             'date_end': self.date_end,
-            'director_note': self.director_notes,
+            'director_note': self.director_note,
             'rounds': [round.to_json() for round in self.rounds],
             'current_round': self.current_round,
             'players_score': self.players_score,
@@ -265,7 +266,7 @@ class Tournament:
         date_start = json_data['date_start']
         date_end = json_data['date_end']
         current_round = json_data['current_round']
-        director_notes = json_data['director_note']
+        director_note = json_data['director_note']
 
         # Convertir les joueurs de JSON en objets Player
         players_list_data = json_data['players_list']
@@ -286,7 +287,7 @@ class Tournament:
         rounds_data = json_data['rounds']
 
         # Créer l'objet Tournament avec les données récupérées
-        tournament = cls(name, place, date_start, date_end, director_notes, current_round)
+        tournament = cls(name, place, date_start, date_end, director_note, current_round)
         tournament.players_list = players_list
         tournament.players_score = players_score
         tournament.played_pairs = played_pairs
@@ -303,7 +304,7 @@ class Tournament:
         """Return a string representation of the tournaments."""
         return (f"Tournament: {self.name}\nLocation: {self.place}\nStart: {self.date_start}\n"
                 f"End: {self.date_end}\nRounds: {self.rounds}\n"
-                f"Current Round: {self.current_round}\nDirector Notes: {self.director_note}")
+                f"Current Round: {self.current_round}\nDirector Note: {self.director_note}")
 
 
 def calculate_leaderboard(tournament, previous_scores=None):

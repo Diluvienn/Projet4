@@ -196,5 +196,17 @@
         "lastname": "Armanet",
         "birth": "04-03-1984",
         "national chess ID": "DJ21462"
+    },
+    {
+        "firstname": "Andrea",
+        "lastname": "Blop",
+        "birth": "09-12-1999",
+        "national chess ID": "GF87452"
+    },
+    {
+        "firstname": "F",
+        "lastname": "F",
+        "birth": "11-11-1999",
+        "national chess ID": "GR45632"
     }
 ]

@@ -1538,5 +1538,576 @@
                 "national chess ID": "JR45632"
             }
         ]
+    },
+    {
+        "name": "Russe",
+        "place": "St petersbourg",
+        "date_start": "04-04-2024",
+        "date_end": "10-04-2024",
+        "director_note": 2,
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Beth Harmon": 1,
+                            "Wanda Armstrong": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Lea Hadid": 0.5,
+                            "Michael Schmidt": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "F F": 0,
+                            "Bryan Hodge": 1
+                        }
+                    }
+                ],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Lea Hadid": 0.5,
+                            "Beth Harmon": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "F F": 1,
+                            "Michael Schmidt": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Bryan Hodge": 1,
+                            "Wanda Armstrong": 0
+                        }
+                    }
+                ],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 3",
+                "matches": [
+                    {
+                        "players": {
+                            "Lea Hadid": 0.5,
+                            "Beth Harmon": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "F F": 0.5,
+                            "Bryan Hodge": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Michael Schmidt": 0,
+                            "Wanda Armstrong": 1
+                        }
+                    }
+                ],
+                "start_time": "2024-04-04 21:23:10.239656",
+                "end_time": "2024-04-04 21:23:10.239656"
+            },
+            {
+                "name": "Round 4",
+                "matches": [
+                    {
+                        "players": {
+                            "Lea Hadid": 1,
+                            "F F": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Beth Harmon": 1,
+                            "Bryan Hodge": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Michael Schmidt": 1,
+                            "Wanda Armstrong": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-04 21:23:12.295624",
+                "end_time": "2024-04-04 21:23:12.295624"
+            },
+            {
+                "name": "Round 5",
+                "matches": [
+                    {
+                        "players": {
+                            "Lea Hadid": 1,
+                            "Bryan Hodge": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Beth Harmon": 0.5,
+                            "F F": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Michael Schmidt": 0,
+                            "Wanda Armstrong": 1
+                        }
+                    }
+                ],
+                "start_time": "2024-04-04 21:23:13.584613",
+                "end_time": "2024-04-04 21:23:13.584613"
+            }
+        ],
+        "current_round": 4,
+        "players_score": {
+            "Lea Hadid": 3.5,
+            "Beth Harmon": 3.5,
+            "Bryan Hodge": 2.5,
+            "F F": 2.0,
+            "Wanda Armstrong": 2,
+            "Michael Schmidt": 1.5
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Beth",
+                    "lastname": "Harmon",
+                    "birth": "02-11-1948",
+                    "national chess ID": "AG76245"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                },
+                "player2": {
+                    "firstname": "Beth",
+                    "lastname": "Harmon",
+                    "birth": "02-11-1948",
+                    "national chess ID": "AG76245"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "F",
+                    "lastname": "F",
+                    "birth": "11-11-1999",
+                    "national chess ID": "GR45632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "F",
+                    "lastname": "F",
+                    "birth": "11-11-1999",
+                    "national chess ID": "GR45632"
+                },
+                "player2": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "Beth",
+                    "lastname": "Harmon",
+                    "birth": "02-11-1948",
+                    "national chess ID": "AG76245"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Beth",
+                    "lastname": "Harmon",
+                    "birth": "02-11-1948",
+                    "national chess ID": "AG76245"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                },
+                "player2": {
+                    "firstname": "F",
+                    "lastname": "F",
+                    "birth": "11-11-1999",
+                    "national chess ID": "GR45632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Beth",
+                    "lastname": "Harmon",
+                    "birth": "02-11-1948",
+                    "national chess ID": "AG76245"
+                },
+                "player2": {
+                    "firstname": "F",
+                    "lastname": "F",
+                    "birth": "11-11-1999",
+                    "national chess ID": "GR45632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                },
+                "player2": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "F",
+                    "lastname": "F",
+                    "birth": "11-11-1999",
+                    "national chess ID": "GR45632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                },
+                "player2": {
+                    "firstname": "Beth",
+                    "lastname": "Harmon",
+                    "birth": "02-11-1948",
+                    "national chess ID": "AG76245"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "F",
+                    "lastname": "F",
+                    "birth": "11-11-1999",
+                    "national chess ID": "GR45632"
+                },
+                "player2": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Beth",
+                    "lastname": "Harmon",
+                    "birth": "02-11-1948",
+                    "national chess ID": "AG76245"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Michael",
+                    "lastname": "Schmidt",
+                    "birth": "14-12-1997",
+                    "national chess ID": "BV96896"
+                },
+                "player2": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "F",
+                    "lastname": "F",
+                    "birth": "11-11-1999",
+                    "national chess ID": "GR45632"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "F",
+                    "lastname": "F",
+                    "birth": "11-11-1999",
+                    "national chess ID": "GR45632"
+                },
+                "player2": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Bryan",
+                    "lastname": "Hodge",
+                    "birth": "21-11-1988",
+                    "national chess ID": "EB77714"
+                },
+                "player2": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Beth",
+                    "lastname": "Harmon",
+                    "birth": "02-11-1948",
+                    "national chess ID": "AG76245"
+                },
+                "player2": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Beth",
+                    "lastname": "Harmon",
+                    "birth": "02-11-1948",
+                    "national chess ID": "AG76245"
+                },
+                "player2": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Lea",
+                    "lastname": "Hadid",
+                    "birth": "01-01-2000",
+                    "national chess ID": "JR45632"
+                },
+                "player2": {
+                    "firstname": "F",
+                    "lastname": "F",
+                    "birth": "11-11-1999",
+                    "national chess ID": "GR45632"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "F",
+                    "lastname": "F",
+                    "birth": "11-11-1999",
+                    "national chess ID": "GR45632"
+                },
+                "player2": {
+                    "firstname": "Beth",
+                    "lastname": "Harmon",
+                    "birth": "02-11-1948",
+                    "national chess ID": "AG76245"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Lea",
+                "lastname": "Hadid",
+                "birth": "01-01-2000",
+                "national chess ID": "JR45632"
+            },
+            {
+                "firstname": "Beth",
+                "lastname": "Harmon",
+                "birth": "02-11-1948",
+                "national chess ID": "AG76245"
+            },
+            {
+                "firstname": "F",
+                "lastname": "F",
+                "birth": "11-11-1999",
+                "national chess ID": "GR45632"
+            },
+            {
+                "firstname": "Bryan",
+                "lastname": "Hodge",
+                "birth": "21-11-1988",
+                "national chess ID": "EB77714"
+            },
+            {
+                "firstname": "Michael",
+                "lastname": "Schmidt",
+                "birth": "14-12-1997",
+                "national chess ID": "BV96896"
+            },
+            {
+                "firstname": "Wanda",
+                "lastname": "Armstrong",
+                "birth": "26-02-1973",
+                "national chess ID": "VM89208"
+            }
+        ]
+    },
+    {
+        "name": "Intergalactique",
+        "place": "Pyongyang",
+        "date_start": "06-06-2006",
+        "date_end": "16-06-2006",
+        "director_note": "",
+        "rounds": [],
+        "current_round": 0,
+        "players_score": {},
+        "played_pairs": [],
+        "players_list": []
+    },
+    {
+        "name": "1",
+        "place": "2",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-2222",
+        "director_note": "",
+        "rounds": [],
+        "current_round": 0,
+        "players_score": {},
+        "played_pairs": [],
+        "players_list": []
     }
 ]

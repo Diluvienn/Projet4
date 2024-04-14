@@ -52,50 +52,40 @@ class PlayerRepository:
             players = json.load(file)
         return players
 
-    def get_player_by_index(self, index):
-        """Get a player from the repository by index.
-
-        Args:
-            index (int): The index of the player in the repository.
-
-        Returns:
-            Player: The player object corresponding to the given index.
-
-        Note:
-            This method retrieves player data from the repository by index,
-            creates a Player object from the data, and returns the Player instance.
-
-        """
-        players = self.load_players()
-        player_data = players[index]
-        player_instance = Player(player_data['firstname'], player_data['lastname'], player_data['birth'],
-                                 player_data['national chess ID'])
-        return player_instance
+    def get_player_by_index(self):
+        """Get a player from the repository by index."""
+        sorted_players = self.get_player_by_alphabetical_order()
+        print("Liste des joueurs triés par ordre alphabétique:")
+        for i, player_data in enumerate(sorted_players):
+            print(f"{i + 1} - {player_data['lastname']} {player_data['firstname']}")
+        try:
+            index = int(input("Entrez l'index du joueur : "))
+            if 1 <= index <= len(sorted_players):
+                player_data = sorted_players[index - 1]
+                player_instance = Player(player_data['firstname'], player_data['lastname'], player_data['birth'],
+                                         player_data['national chess ID'])
+                return player_instance
+            else:
+                print("Index invalide.")
+                return None
+        except ValueError:
+            print("Veuillez entrer un index valide.")
+            return None
 
     def get_player_by_alphabetical_order(self):
         """Get players from the repository sorted alphabetically by last name.
 
         Returns:
-            List[str]: A list of formatted strings representing player information sorted alphabetically
-                       by last name.
+            List[Dict[str, str]]: A list of dictionaries representing player information sorted alphabetically
+                                   by last name.
 
         Note:
             This method retrieves player data from the repository, sorts the players alphabetically
-            by last name, formats the player information, and returns a list of formatted strings.
+            by last name, and returns a list of dictionaries.
         """
         players = self.load_players()
         sorted_players = sorted(players, key=lambda x: x['lastname'])
-        formatted_output = []
-        for player_data in sorted_players:
-            player_details = [
-                f"Nom: {player_data['lastname']} {player_data['firstname']}",
-                f"Date de naissance: {player_data['birth']}",
-                f"National chess ID: {player_data['national chess ID']}",
-                f"~" * 25
-            ]
-            formatted_output.extend(player_details)
-
-        return formatted_output
+        return sorted_players
 
 
 if __name__ == "__main__":
