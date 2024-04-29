@@ -52,25 +52,29 @@ class PlayerRepository:
             players = json.load(file)
         return players
 
-    def get_player_by_index(self):
+    def display_players_by_index(self):
         """Get a player from the repository by index."""
         sorted_players = self.get_player_by_alphabetical_order()
         print("Liste des joueurs triés par ordre alphabétique:")
         for i, player_data in enumerate(sorted_players):
             print(f"{i + 1} - {player_data['lastname']} {player_data['firstname']}")
-        try:
-            index = int(input("Entrez l'index du joueur : "))
-            if 1 <= index <= len(sorted_players):
-                player_data = sorted_players[index - 1]
-                player_instance = Player(player_data['firstname'], player_data['lastname'], player_data['birth'],
-                                         player_data['national chess ID'])
-                return player_instance
+        return sorted_players
+
+    def get_selected_player(self, sorted_players):
+        """Get the selected player based on user input."""
+        while True:
+            index_input = input("Entrez l'index du joueur : ")
+            if index_input.isdigit():
+                index = int(index_input)
+                if 1 <= index <= len(sorted_players):
+                    player_data = sorted_players[index - 1]
+                    player_instance = Player(player_data['firstname'], player_data['lastname'], player_data['birth'],
+                                             player_data['national chess ID'])
+                    return player_instance, index
+                else:
+                    print("Index invalide.")
             else:
-                print("Index invalide.")
-                return None
-        except ValueError:
-            print("Veuillez entrer un index valide.")
-            return None
+                print("Veuillez indiquer un numéro valide.")
 
     def get_player_by_alphabetical_order(self):
         """Get players from the repository sorted alphabetically by last name.

@@ -10,23 +10,13 @@ Classes:
     - PlayerRepository: Manages the storage and retrieval of player information.
 """
 
-from utils.formatvalidator import validate_date_format, validate_national_chess_id_format
-
 
 class Player:
     """Player"""
 
     def __init__(self, firstname: str, lastname: str, birth: str, national_chess_id: str):
-        if not firstname.isalpha():
-            raise ValueError("Firstname must contain only letters without accent or hypen..")
-        if not lastname.isalpha():
-            raise ValueError("Lastname must contain only letters without accent or hypen.")
-        if not validate_date_format(birth):
-            raise ValueError("Invalid date format. Please use 'dd-mm-yyyy' format.")
-        if not validate_national_chess_id_format(national_chess_id):
-            raise ValueError("Invalid national chess ID format. Please use 'AB12345' format.")
-        self.firstname = firstname.capitalize()
-        self.lastname = lastname.capitalize()
+        self.firstname = firstname.title()
+        self.lastname = lastname.title()
         self.birth = birth
         self.national_chess_id = national_chess_id
         self.score = 0

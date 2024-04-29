@@ -5,6 +5,7 @@ from typing import List
 from unidecode import unidecode
 
 from model.tournament import Tournament
+from model.player import Player
 
 
 class TournamentRepository:
@@ -26,9 +27,13 @@ class TournamentRepository:
             tournament (Tournament): The tournament object to be added to the repository.
 
         """
+        print("début du add_tournament du repo")
+        print(vars(tournament))
         tournaments = self.load_tournaments()
         tournament_data = tournament.to_json()
-
+        print("juste sous le load puis tournament data")
+        print(vars(tournament))
+        print(tournament_data)
         # Convertir les joueurs en JSON
         players_json = []
         for player in tournament.players_list:
@@ -52,10 +57,14 @@ class TournamentRepository:
             rounds_json.append(round_json)
         tournament_data["rounds"] = rounds_json
 
+        # Convertir la valeur de director_note en chaîne de caractères
+        tournament_data["director_note"] = str(tournament_data["director_note"])
+
         # Recherchez le tournoi existant et mettez à jour ses données s'il existe déjà
         for i, existing_tournament in enumerate(tournaments):
             if existing_tournament["name"] == tournament.name:
                 tournaments[i] = tournament_data
+                print(f" tournament_data : {tournament_data}")
                 break
         else:
             # Si le tournoi n'existe pas, ajoutez-le simplement à la liste
@@ -95,13 +104,38 @@ class TournamentRepository:
         if not unfinished_tournaments:
             print("Aucun tournoi non terminé trouvé.")
             return
-        print("Tournois non terminés :")
+        print("\nTournois non terminés :")
         for idx, tournament in enumerate(unfinished_tournaments, 1):
             print(f"{idx}. {tournament['name']} à {tournament['place']}")
         choice = int(input("Choisissez le numéro du tournoi à reprendre : "))
         chosen_tournament = unfinished_tournaments[choice - 1]
         print(f"Vous avez choisi de reprendre le tournoi {chosen_tournament['name']} à {chosen_tournament['place']}")
+        print(f" director note : {chosen_tournament['director_note']}")
         return chosen_tournament
+
+    def find_unstarted_tournaments(self):
+        tournaments = self.load_tournaments()
+        unstarted_tournaments = []
+
+        for tournament in tournaments:
+            if tournament["current_round"] == 0:
+                unstarted_tournaments.append(tournament)
+        return unstarted_tournaments
+
+    def resume_unstarted_tournament(self):
+        unstarted_tournaments = self.find_unstarted_tournaments()
+        if not unstarted_tournaments:
+            print("Aucun tournoi non débuté trouvé.")
+            return
+        print("\nTournois non débuté :")
+        for idx, tournament in enumerate(unstarted_tournaments, 1):
+            print(f"{idx}. {tournament['name']} à {tournament['place']}")
+        choice = int(input("Choisissez le numéro du tournoi dont vous souhaitez renseigner les joueurs : "))
+        chosen_tournament = unstarted_tournaments[choice - 1]
+        print(f"Vous avez choisi le tournoi {chosen_tournament['name']} à {chosen_tournament['place']}")
+        return chosen_tournament
+
+
 
     def get_tournaments_by_alphabetical_order(self):
         """Get tournaments from the repository sorted alphabetically by name.
@@ -119,13 +153,15 @@ class TournamentRepository:
         for tournament_data in sorted_tournaments:
             tournament = Tournament(**tournament_data)
             formatted_output.append(tournament)
+        # total_tournaments = len(formatted_output)
+
         return formatted_output
 
     def get_tournament_details(self, tournament_name):
 
         for tournament_data in self.load_tournaments():
-            tournament_name_normalized = unidecode(tournament_data['name'].capitalize())
-            if tournament_name_normalized == unidecode(tournament_name.capitalize()):
+            tournament_name_normalized = unidecode(tournament_data['name'].title())
+            if tournament_name_normalized == unidecode(tournament_name.title()):
                 tournament_details = {
                     "name": tournament_data["name"],
                     "place": tournament_data["place"],
@@ -140,7 +176,7 @@ class TournamentRepository:
                 if current_round == rounds_count:
                     tournament_details["tournament_status"] = " Tournoi terminé"
                 else:
-                    tournament_details["tournament_status"] = f"Round actuel : {current_round} sur {rounds_count}"
+                    tournament_details["tournament_status"] = f"Round actuel : {current_round + 1} sur {rounds_count}"
                 return tournament_details
         return None
 

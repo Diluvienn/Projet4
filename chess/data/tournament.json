@@ -2087,27 +2087,2046 @@
         ]
     },
     {
-        "name": "Intergalactique",
-        "place": "Pyongyang",
+        "name": "Chilien",
+        "place": "Santiago",
         "date_start": "06-06-2006",
         "date_end": "16-06-2006",
+        "director_note": 0,
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 2",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 3",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            }
+        ],
+        "current_round": 0,
+        "players_score": {},
+        "played_pairs": [],
+        "players_list": [
+            {
+                "firstname": "Melissa",
+                "lastname": "Da costa",
+                "birth": "07-08-1990",
+                "national chess ID": "mc99763"
+            },
+            {
+                "firstname": "Laurie",
+                "lastname": "Darmon",
+                "birth": "21-02-1991",
+                "national chess ID": "IF78963"
+            },
+            {
+                "firstname": "Cody",
+                "lastname": "Davis",
+                "birth": "07-02-1989",
+                "national chess ID": "LX70979"
+            },
+            {
+                "firstname": "Lola",
+                "lastname": "Delagne",
+                "birth": "13-12-1994",
+                "national chess ID": "NH75146"
+            },
+            {
+                "firstname": "Jake",
+                "lastname": "Douglas",
+                "birth": "26-02-1992",
+                "national chess ID": "BC13361"
+            },
+            {
+                "firstname": "Albus",
+                "lastname": "Dumbledore",
+                "birth": "11-11-1881",
+                "national chess ID": "OR48621"
+            }
+        ]
+    },
+    {
+        "name": "Venezuelien",
+        "place": "Caracas",
+        "date_start": "07-07-2007",
+        "date_end": "17-07-2007",
+        "director_note": 2,
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Wanda Armstrong": 0.5,
+                            "Parker Castro": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Romeo Alonzo": 1,
+                            "Andrea Blop": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Juliette Armanet": 0,
+                            "Stacey Burns": 1
+                        }
+                    }
+                ],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Romeo Alonzo": 1,
+                            "Juliette Armanet": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Wanda Armstrong": 0,
+                            "Andrea Blop": 1
+                        }
+                    },
+                    {
+                        "players": {
+                            "Stacey Burns": 0.5,
+                            "Parker Castro": 0.5
+                        }
+                    }
+                ],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 3",
+                "matches": [
+                    {
+                        "players": {
+                            "Romeo Alonzo": 0.5,
+                            "Juliette Armanet": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Wanda Armstrong": 0,
+                            "Andrea Blop": 1
+                        }
+                    },
+                    {
+                        "players": {
+                            "Stacey Burns": 0.5,
+                            "Parker Castro": 0.5
+                        }
+                    }
+                ],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [
+                    {
+                        "players": {
+                            "Romeo Alonzo": 0,
+                            "Juliette Armanet": 1
+                        }
+                    },
+                    {
+                        "players": {
+                            "Wanda Armstrong": 0.5,
+                            "Andrea Blop": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Stacey Burns": 0.5,
+                            "Parker Castro": 0.5
+                        }
+                    }
+                ],
+                "start_time": "2024-04-27 21:02:59.073802",
+                "end_time": "2024-04-27 21:02:59.073802"
+            }
+        ],
+        "current_round": 3,
+        "players_score": {
+            "Romeo Alonzo": 2.5,
+            "Andrea Blop": 2.5,
+            "Stacey Burns": 2.5,
+            "Parker Castro": 2.0,
+            "Juliette Armanet": 1.5,
+            "Wanda Armstrong": 1.0
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Romeo",
+                "lastname": "Alonzo",
+                "birth": "15-03-1974",
+                "national chess ID": "RY49563"
+            },
+            {
+                "firstname": "Juliette",
+                "lastname": "Armanet",
+                "birth": "04-03-1984",
+                "national chess ID": "DJ21462"
+            },
+            {
+                "firstname": "Wanda",
+                "lastname": "Armstrong",
+                "birth": "26-02-1973",
+                "national chess ID": "VM89208"
+            },
+            {
+                "firstname": "Andrea",
+                "lastname": "Blop",
+                "birth": "09-12-1999",
+                "national chess ID": "GF87452"
+            },
+            {
+                "firstname": "Stacey",
+                "lastname": "Burns",
+                "birth": "28-12-1997",
+                "national chess ID": "OR50619"
+            },
+            {
+                "firstname": "Parker",
+                "lastname": "Castro",
+                "birth": "28-07-1992",
+                "national chess ID": "CO35493"
+            }
+        ]
+    },
+    {
+        "name": "Equatiorien",
+        "place": "Quito",
+        "date_start": "08-08-2008",
+        "date_end": "18-08-2008",
         "director_note": "",
-        "rounds": [],
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 2",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 3",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 5",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            }
+        ],
         "current_round": 0,
         "players_score": {},
         "played_pairs": [],
         "players_list": []
     },
     {
-        "name": "1",
-        "place": "2",
-        "date_start": "11-11-1111",
-        "date_end": "11-11-2222",
-        "director_note": "",
-        "rounds": [],
+        "name": "Paraguayen",
+        "place": "Ascuncion",
+        "date_start": "09-09-2009",
+        "date_end": "19-09-2009",
+        "director_note": 0,
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 2",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 3",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            }
+        ],
         "current_round": 0,
         "players_score": {},
         "played_pairs": [],
-        "players_list": []
+        "players_list": [
+            {
+                "firstname": "Nicole",
+                "lastname": "Jones",
+                "birth": "04-04-1994",
+                "national chess ID": "AV04824"
+            },
+            {
+                "firstname": "Kathy",
+                "lastname": "Mcdowell",
+                "birth": "05-09-1979",
+                "national chess ID": "EK89597"
+            },
+            {
+                "firstname": "Leo",
+                "lastname": "Meli",
+                "birth": "11-11-2011",
+                "national chess ID": "ER45782"
+            },
+            {
+                "firstname": "Heidi",
+                "lastname": "Miller",
+                "birth": "20-07-1981",
+                "national chess ID": "WU44295"
+            },
+            {
+                "firstname": "Christine",
+                "lastname": "Murphy",
+                "birth": "07-08-1994",
+                "national chess ID": "KY01632"
+            },
+            {
+                "firstname": "John",
+                "lastname": "Nojohn",
+                "birth": "30-01-1982",
+                "national chess ID": "ZR49653"
+            }
+        ]
+    },
+    {
+        "name": "1",
+        "place": "1",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-1111",
+        "director_note": 1,
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Romeo Alonzo": 0,
+                            "Juliette Armanet": 1
+                        }
+                    },
+                    {
+                        "players": {
+                            "Wanda Armstrong": 1,
+                            "Andrea Blop": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Stacey Burns": 0,
+                            "Parker Castro": 1
+                        }
+                    }
+                ],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Juliette Armanet": 0,
+                            "Parker Castro": 1
+                        }
+                    },
+                    {
+                        "players": {
+                            "Romeo Alonzo": 1,
+                            "Wanda Armstrong": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Andrea Blop": 1,
+                            "Stacey Burns": 0
+                        }
+                    }
+                ],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 3",
+                "matches": [
+                    {
+                        "players": {
+                            "Romeo Alonzo": 0,
+                            "Juliette Armanet": 1
+                        }
+                    },
+                    {
+                        "players": {
+                            "Wanda Armstrong": 1,
+                            "Andrea Blop": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Stacey Burns": 0.5,
+                            "Parker Castro": 0.5
+                        }
+                    }
+                ],
+                "start_time": "2024-04-29 10:02:29.705152",
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            }
+        ],
+        "current_round": 2,
+        "players_score": {
+            "Parker Castro": 2.5,
+            "Juliette Armanet": 2,
+            "Wanda Armstrong": 2,
+            "Romeo Alonzo": 1,
+            "Andrea Blop": 1,
+            "Stacey Burns": 0.5
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Romeo",
+                "lastname": "Alonzo",
+                "birth": "15-03-1974",
+                "national chess ID": "RY49563"
+            },
+            {
+                "firstname": "Juliette",
+                "lastname": "Armanet",
+                "birth": "04-03-1984",
+                "national chess ID": "DJ21462"
+            },
+            {
+                "firstname": "Wanda",
+                "lastname": "Armstrong",
+                "birth": "26-02-1973",
+                "national chess ID": "VM89208"
+            },
+            {
+                "firstname": "Andrea",
+                "lastname": "Blop",
+                "birth": "09-12-1999",
+                "national chess ID": "GF87452"
+            },
+            {
+                "firstname": "Stacey",
+                "lastname": "Burns",
+                "birth": "28-12-1997",
+                "national chess ID": "OR50619"
+            },
+            {
+                "firstname": "Parker",
+                "lastname": "Castro",
+                "birth": "28-07-1992",
+                "national chess ID": "CO35493"
+            }
+        ]
+    },
+    {
+        "name": "2",
+        "place": "2",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-1111",
+        "director_note": "fhoqifjperofj",
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Romeo Alonzo": 1,
+                            "Juliette Armanet": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Wanda Armstrong": 1,
+                            "Andrea Blop": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Stacey Burns": 0,
+                            "Parker Castro": 1
+                        }
+                    }
+                ],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Wanda Armstrong": 1,
+                            "Andrea Blop": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Romeo Alonzo": 1,
+                            "Parker Castro": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Juliette Armanet": 0.5,
+                            "Stacey Burns": 0.5
+                        }
+                    }
+                ],
+                "start_time": "2024-04-29 10:04:31.730443",
+                "end_time": null
+            },
+            {
+                "name": "Round 3",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            }
+        ],
+        "current_round": 1,
+        "players_score": {
+            "Romeo Alonzo": 2,
+            "Wanda Armstrong": 2,
+            "Parker Castro": 1,
+            "Juliette Armanet": 0.5,
+            "Stacey Burns": 0.5,
+            "Andrea Blop": 0
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Romeo",
+                "lastname": "Alonzo",
+                "birth": "15-03-1974",
+                "national chess ID": "RY49563"
+            },
+            {
+                "firstname": "Juliette",
+                "lastname": "Armanet",
+                "birth": "04-03-1984",
+                "national chess ID": "DJ21462"
+            },
+            {
+                "firstname": "Wanda",
+                "lastname": "Armstrong",
+                "birth": "26-02-1973",
+                "national chess ID": "VM89208"
+            },
+            {
+                "firstname": "Andrea",
+                "lastname": "Blop",
+                "birth": "09-12-1999",
+                "national chess ID": "GF87452"
+            },
+            {
+                "firstname": "Stacey",
+                "lastname": "Burns",
+                "birth": "28-12-1997",
+                "national chess ID": "OR50619"
+            },
+            {
+                "firstname": "Parker",
+                "lastname": "Castro",
+                "birth": "28-07-1992",
+                "national chess ID": "CO35493"
+            }
+        ]
+    },
+    {
+        "name": "3",
+        "place": "3",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-1111",
+        "director_note": "1",
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Romeo Alonzo": 0,
+                            "Juliette Armanet": 1
+                        }
+                    },
+                    {
+                        "players": {
+                            "Wanda Armstrong": 0,
+                            "Stacey Burns": 1
+                        }
+                    },
+                    {
+                        "players": {
+                            "Andrea Blop": 1,
+                            "Parker Castro": 0
+                        }
+                    }
+                ],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 3",
+                "matches": [
+                    {
+                        "players": {
+                            "Romeo Alonzo": 1,
+                            "Juliette Armanet": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Wanda Armstrong": 1,
+                            "Andrea Blop": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Stacey Burns": 0.5,
+                            "Parker Castro": 0.5
+                        }
+                    }
+                ],
+                "start_time": "2024-04-29 10:19:19.920935",
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            }
+        ],
+        "current_round": 2,
+        "players_score": {
+            "Stacey Burns": 1.5,
+            "Romeo Alonzo": 1,
+            "Juliette Armanet": 1,
+            "Wanda Armstrong": 1,
+            "Andrea Blop": 1,
+            "Parker Castro": 0.5
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                },
+                "player2": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                },
+                "player2": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Romeo",
+                "lastname": "Alonzo",
+                "birth": "15-03-1974",
+                "national chess ID": "RY49563"
+            },
+            {
+                "firstname": "Juliette",
+                "lastname": "Armanet",
+                "birth": "04-03-1984",
+                "national chess ID": "DJ21462"
+            },
+            {
+                "firstname": "Wanda",
+                "lastname": "Armstrong",
+                "birth": "26-02-1973",
+                "national chess ID": "VM89208"
+            },
+            {
+                "firstname": "Andrea",
+                "lastname": "Blop",
+                "birth": "09-12-1999",
+                "national chess ID": "GF87452"
+            },
+            {
+                "firstname": "Stacey",
+                "lastname": "Burns",
+                "birth": "28-12-1997",
+                "national chess ID": "OR50619"
+            },
+            {
+                "firstname": "Parker",
+                "lastname": "Castro",
+                "birth": "28-07-1992",
+                "national chess ID": "CO35493"
+            }
+        ]
+    },
+    {
+        "name": "4",
+        "place": "4",
+        "date_start": "11-11-1111",
+        "date_end": "11-11-1111",
+        "director_note": "rhdoigje",
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Romeo Alonzo": 0.5,
+                            "Juliette Armanet": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Wanda Armstrong": 0.5,
+                            "Andrea Blop": 0.5
+                        }
+                    },
+                    {
+                        "players": {
+                            "Stacey Burns": 0.5,
+                            "Parker Castro": 0.5
+                        }
+                    }
+                ],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Juliette Armanet": 0,
+                            "Stacey Burns": 1
+                        }
+                    },
+                    {
+                        "players": {
+                            "Andrea Blop": 1,
+                            "Parker Castro": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Romeo Alonzo": 1,
+                            "Wanda Armstrong": 0
+                        }
+                    }
+                ],
+                "start_time": "2024-04-29 10:33:03.402298",
+                "end_time": null
+            },
+            {
+                "name": "Round 3",
+                "matches": [
+                    {
+                        "players": {
+                            "Romeo Alonzo": 1,
+                            "Juliette Armanet": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Wanda Armstrong": 0,
+                            "Andrea Blop": 1
+                        }
+                    },
+                    {
+                        "players": {
+                            "Stacey Burns": 0.5,
+                            "Parker Castro": 0.5
+                        }
+                    }
+                ],
+                "start_time": "2024-04-29 10:33:12.983422",
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            }
+        ],
+        "current_round": 2,
+        "players_score": {
+            "Romeo Alonzo": 2.5,
+            "Andrea Blop": 2.5,
+            "Stacey Burns": 2.0,
+            "Parker Castro": 1.0,
+            "Juliette Armanet": 0.5,
+            "Wanda Armstrong": 0.5
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                },
+                "player2": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                },
+                "player2": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Stacey",
+                    "lastname": "Burns",
+                    "birth": "28-12-1997",
+                    "national chess ID": "OR50619"
+                },
+                "player2": {
+                    "firstname": "Parker",
+                    "lastname": "Castro",
+                    "birth": "28-07-1992",
+                    "national chess ID": "CO35493"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                },
+                "player2": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Andrea",
+                    "lastname": "Blop",
+                    "birth": "09-12-1999",
+                    "national chess ID": "GF87452"
+                },
+                "player2": {
+                    "firstname": "Wanda",
+                    "lastname": "Armstrong",
+                    "birth": "26-02-1973",
+                    "national chess ID": "VM89208"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Romeo",
+                "lastname": "Alonzo",
+                "birth": "15-03-1974",
+                "national chess ID": "RY49563"
+            },
+            {
+                "firstname": "Juliette",
+                "lastname": "Armanet",
+                "birth": "04-03-1984",
+                "national chess ID": "DJ21462"
+            },
+            {
+                "firstname": "Wanda",
+                "lastname": "Armstrong",
+                "birth": "26-02-1973",
+                "national chess ID": "VM89208"
+            },
+            {
+                "firstname": "Andrea",
+                "lastname": "Blop",
+                "birth": "09-12-1999",
+                "national chess ID": "GF87452"
+            },
+            {
+                "firstname": "Stacey",
+                "lastname": "Burns",
+                "birth": "28-12-1997",
+                "national chess ID": "OR50619"
+            },
+            {
+                "firstname": "Parker",
+                "lastname": "Castro",
+                "birth": "28-07-1992",
+                "national chess ID": "CO35493"
+            }
+        ]
     }
 ]

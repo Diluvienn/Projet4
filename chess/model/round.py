@@ -16,7 +16,7 @@ from model.match import Match
 class Round:
     """Class representing a round in a tournament."""
 
-    def __init__(self, name):
+    def __init__(self, name, matches, start_time, end_time):
         self.name = name
         self.matches = []
         self.played_pairs = set()
@@ -25,7 +25,7 @@ class Round:
 
     def to_json(self):
         start_time_str = str(self.start_time) if self.start_time else None
-        end_time_str = str(self.start_time) if self.start_time else None
+        end_time_str = str(self.end_time) if self.end_time else None
         return {
             "name": self.name,
             "matches": [match.to_json() for match in self.matches],
@@ -40,7 +40,7 @@ class Round:
         matches = [Match.from_json(match_data, tournament) for match_data in matches_data]
         start_time = round_data.get("start_time")
         end_time = round_data.get("end_time")
-        round = cls(name)
+        round = cls(name, matches, start_time, end_time)
         round.matches.extend(matches)
         return round
 
