@@ -42,6 +42,9 @@ class Round:
         end_time = round_data.get("end_time")
         round = cls(name, matches, start_time, end_time)
         round.matches.extend(matches)
+        round.start_time = start_time
+        round.end_time = end_time
+
         return round
 
     def add_match(self, match):

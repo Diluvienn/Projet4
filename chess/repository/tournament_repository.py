@@ -27,13 +27,9 @@ class TournamentRepository:
             tournament (Tournament): The tournament object to be added to the repository.
 
         """
-        print("début du add_tournament du repo")
-        print(vars(tournament))
         tournaments = self.load_tournaments()
         tournament_data = tournament.to_json()
-        print("juste sous le load puis tournament data")
-        print(vars(tournament))
-        print(tournament_data)
+
         # Convertir les joueurs en JSON
         players_json = []
         for player in tournament.players_list:
@@ -57,14 +53,14 @@ class TournamentRepository:
             rounds_json.append(round_json)
         tournament_data["rounds"] = rounds_json
 
-        # Convertir la valeur de director_note en chaîne de caractères
-        tournament_data["director_note"] = str(tournament_data["director_note"])
+        # # Convertir la valeur de director_note en chaîne de caractères
+        # tournament_data["director_note"] = str(tournament_data["director_note"])
 
         # Recherchez le tournoi existant et mettez à jour ses données s'il existe déjà
         for i, existing_tournament in enumerate(tournaments):
             if existing_tournament["name"] == tournament.name:
                 tournaments[i] = tournament_data
-                print(f" tournament_data : {tournament_data}")
+                print(f"tournament_data : {tournament_data}")
                 break
         else:
             # Si le tournoi n'existe pas, ajoutez-le simplement à la liste
@@ -109,8 +105,8 @@ class TournamentRepository:
             print(f"{idx}. {tournament['name']} à {tournament['place']}")
         choice = int(input("Choisissez le numéro du tournoi à reprendre : "))
         chosen_tournament = unfinished_tournaments[choice - 1]
+        print(f"chosen_tournament : {chosen_tournament}")
         print(f"Vous avez choisi de reprendre le tournoi {chosen_tournament['name']} à {chosen_tournament['place']}")
-        print(f" director note : {chosen_tournament['director_note']}")
         return chosen_tournament
 
     def find_unstarted_tournaments(self):
@@ -158,7 +154,6 @@ class TournamentRepository:
         return formatted_output
 
     def get_tournament_details(self, tournament_name):
-
         for tournament_data in self.load_tournaments():
             tournament_name_normalized = unidecode(tournament_data['name'].title())
             if tournament_name_normalized == unidecode(tournament_name.title()):
@@ -169,7 +164,8 @@ class TournamentRepository:
                     "date_end": tournament_data["date_end"],
                     "director_note": tournament_data["director_note"],
                     "players_score": tournament_data['players_score'],
-                    "rounds": tournament_data['rounds']
+                    "rounds": tournament_data['rounds'],
+                    "players_list" : tournament_data['players_list']
                 }
                 current_round = tournament_data['current_round']
                 rounds_count = len(tournament_data['rounds'])
@@ -177,6 +173,21 @@ class TournamentRepository:
                     tournament_details["tournament_status"] = " Tournoi terminé"
                 else:
                     tournament_details["tournament_status"] = f"Round actuel : {current_round + 1} sur {rounds_count}"
+
+                # Créer une nouvelle liste pour stocker les détails des rounds joués
+                played_rounds_details = []
+
+                # Ajout des détails des rounds joués
+                for idx, round_data in enumerate(tournament_data['rounds']):
+                    round_details = {
+                        "name": round_data['name'],
+                        "start_time": round_data.get('start_time', None),
+                        "end_time": round_data.get('end_time', None),
+                        "matches": round_data.get('matches', [])
+                    }
+                    played_rounds_details.append(round_details)
+                # Ajouter les détails des rounds joués à tournament_details
+                tournament_details["played_rounds"] = played_rounds_details
                 return tournament_details
         return None
 

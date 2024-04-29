@@ -5,15 +5,15 @@ class TournamentView:
     def __init__(self, tournament_controller):
         self.tournament_controller = tournament_controller
 
-    @staticmethod
-    def display_menu():
-        """Affiche le menu principal de gestion des tournois."""
-        print("\nMenu Principal:")
-        print("1. Afficher la liste des tournois")
-        print("2. Afficher les détails d'un tournoi")
-        print("3. Créer un nouveau tournoi")
-        print("4. Reprendre un tournoi non terminé")
-        print("5. Quitter")
+    # @staticmethod
+    # def display_menu():
+    #     """Affiche le menu principal de gestion des tournois."""
+    #     print("\nMenu Principal:")
+    #     print("1. Afficher la liste des tournois")
+    #     print("2. Afficher les détails d'un tournoi")
+    #     print("3. Créer un nouveau tournoi")
+    #     print("4. Reprendre un tournoi non terminé")
+    #     print("5. Quitter")
 
 
     # def display_tournament_list(self, tournaments):
@@ -29,8 +29,6 @@ class TournamentView:
         for index, tournament in enumerate(formatted_output, 1):
             print(f"{index}. {tournament.name} à {tournament.place}")
 
-        print(f"Nombre total de tournois : {total_tournaments}")
-
     @staticmethod
     def display_tournament_details(tournament_details):
         if tournament_details:
@@ -40,8 +38,24 @@ class TournamentView:
             print(f"Date de début: {tournament_details['date_start']}")
             print(f"Date de fin: {tournament_details['date_end']}")
             print(f"Notes du directeur: {tournament_details['director_note']}")
-            print(f"Statut du tournoi: {tournament_details['tournament_status']}")
-            # Afficher les autres détails du tournoi
+            if not tournament_details['players_list']:
+                print("Aucun joueur n'a encore été ajouté au tournoi.")
+            if tournament_details['rounds'][0]['matches']:
+                print(tournament_details['tournament_status'])
+            for round_data in tournament_details['rounds']:
+                matches = round_data['matches']
+                if matches:
+                    print(f"{round_data['name']}:")
+                    print(f"  Début: {round_data['start_time']}")
+                    print(f"  Fin: {round_data['end_time']}")
+                    print("  Matches:")
+                    for match in round_data['matches']:
+                        player1, score1 = list(match['players'].items())[0]
+                        player2, score2 = list(match['players'].items())[1]
+                        print(f"    '{player1}' vs '{player2}': {score1}-{score2}")
+                elif round_data == tournament_details['rounds'][0]:
+                    print("Le tournoi n'a pas encore débuté.")
+                    break
         else:
             print("Le tournoi spécifié n'existe pas ou n'a pas été trouvé.")
 
@@ -99,7 +113,6 @@ class TournamentView:
         return input("Votre choix : ")
 
     def get_tournament_index_from_user(self, total_tournaments):
-        print(f"total tournaments dans get_tournament_index : {total_tournaments}")
         """Ask the user to enter the index of the tournament."""
         while True:
             index_input = input("\nEntrez l'index du tournoi dont vous souhaitez voir les détails : ")

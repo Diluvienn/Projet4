@@ -43,8 +43,22 @@ class Match:
         players = {}
 
         # Convertir les noms des joueurs en objets Player
+        # for player_name, score in players_data.items():
+        #     player_firstname, player_lastname = player_name.split()
+        #     player = find_player(tournament, player_firstname, player_lastname)
+        #     if player:
+        #         players[player] = score
+        #     else:
+        #         print(f"Joueur introuvable dans la liste des joueurs du tournoi : {player_name}")
         for player_name, score in players_data.items():
-            player_firstname, player_lastname = player_name.split()
+            split_index = player_name.rfind(" ")  # Trouver l'index du dernier espace
+            if split_index != -1:
+                player_firstname = player_name[:split_index]
+                player_lastname = player_name[split_index + 1:]
+            else:
+                # S'il n'y a pas d'espace, le nom complet est le prénom
+                player_firstname = player_name
+                player_lastname = ""
             player = find_player(tournament, player_firstname, player_lastname)
             if player:
                 players[player] = score
@@ -62,24 +76,37 @@ class Match:
                 f"{self.players[list(self.players.keys())[1]]}")
 
     def play_match(self):
-        # Génération aléatoire du résultat du match
-        result = random.choice(["win", "loss", "draw"])
-        # Assign the match result to the instance variable self.result
+        # Afficher les détails du match
+        player1 = list(self.players.keys())[0]
+        player2 = list(self.players.keys())[1]
+        # Afficher les détails du match
+        player1_name = f"{list(self.players.keys())[0].firstname} {list(self.players.keys())[0].lastname}"
+        player2_name = f"{list(self.players.keys())[1].firstname} {list(self.players.keys())[1].lastname}"
+        print(f"Match: {player1_name}  contre {player2_name}")
+
+        # Demander à l'utilisateur de saisir le résultat
+        while True:
+            result_input = input(f"{player1_name}: (win/loss/draw) ")
+            if result_input.lower() in ["win", "loss", "draw"]:
+                result = result_input.lower()
+                break
+            else:
+                print("Veuillez entrer 'win', 'loss' ou 'draw'.")
+
+        # Assigner le résultat du match à la variable d'instance self.result
         self.result = result
 
-        # Inverser aléatoirement l'ordre des joueurs
-        players_list = list(self.players.keys())
-        random.shuffle(players_list)
-        player1, player2 = players_list
-
-        # Mise à jour des scores des joueurs en fonction du résultat
+        # Mettre à jour les scores des joueurs en fonction du résultat
         if result == "win":
-            winning_player = player1 if random.random() < 0.5 else player2
-            self.players[winning_player] += 1
+            winning_player = player1
         elif result == "loss":
-            losing_player = player1 if random.random() < 0.5 else player2
-            self.players[losing_player] += 1
-        elif result == "draw":
+            winning_player = player2
+        else:
+            winning_player = None
+
+        if winning_player:
+            self.players[winning_player] += 1
+        else:
             for player in self.players:
                 self.players[player] += 0.5
 

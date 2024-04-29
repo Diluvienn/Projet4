@@ -127,12 +127,21 @@ class TournamentController:
     def resume_tournament(self):
         """Reprend un tournoi non terminé."""
         chosen_tournament = self.tournament_repository.resume_tournament()
-        print(" chosen")
-        print(chosen_tournament)
+        print(f"chosen_tournament dans le control : {chosen_tournament}")
         if chosen_tournament:
             tournament = Tournament.from_json(chosen_tournament)
-            print("tourn ctrl vars tournament")
-            print(vars(tournament))
+            print("Détails du tournoi dans le contrôleur de reprise :")
+            print(f"Nom du tournoi : {tournament.name}")
+            print(f"Lieu : {tournament.place}")
+            print(f"Date de début : {tournament.date_start}")
+            print(f"Date de fin : {tournament.date_end}")
+            print(f"Note du directeur : {tournament.director_note}")
+            print("Détails des rounds :")
+            for round_num, round_data in enumerate(tournament.rounds, 1):
+                print(f"Round {round_num}:")
+                print(f"  Nom du round : {round_data.name}")
+                print(f"  Heure de début : {round_data.start_time}")
+                print(f"  Heure de fin : {round_data.end_time}")
             tournament.current_round += 1
             self.play_tournament(tournament)
 
@@ -147,14 +156,13 @@ class TournamentController:
             current_round = tournament.rounds[tournament.current_round]
 
             print(f"\nRound {tournament.current_round + 1} :")
-            # Définir l'heure de début du round
-            tournament.rounds[tournament.current_round].start_time = datetime.now()
+
+            # Définir l'heure de début du round s'il n'est pas déjà défini
+            if current_round.start_time is None:
+                current_round.start_time = datetime.now().strftime("%d-%m-%Y %H:%M")
 
             # Générer les paires de matchs pour ce round
             tournament.generate_pairs_for_round()
-
-            # Définir l'heure de début du round
-            tournament.rounds[tournament.current_round].start_time = datetime.now()
 
             for match in current_round.matches:
                 player1 = list(match.players.keys())[0]
@@ -172,6 +180,9 @@ class TournamentController:
             # Calculer et afficher le classement provisoire
             calculate_leaderboard(tournament, previous_scores)
 
+            if current_round.end_time is None:
+                current_round.end_time = datetime.now().strftime("%d-%m-%Y %H:%M")
+
             # Demander si vous voulez jouer le prochain round
 
             if tournament.current_round == (len(tournament.rounds) - 1):
@@ -180,8 +191,6 @@ class TournamentController:
                 break
 
             if not self.ask_to_play_next_round():
-                print("choix arret tournoi")
-                print(vars(tournament))
                 tournament_repository = TournamentRepository()
                 tournament_repository.add_tournament(tournament)
                 break
