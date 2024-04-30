@@ -5,15 +5,7 @@ class TournamentView:
     def __init__(self, tournament_controller):
         self.tournament_controller = tournament_controller
 
-    # @staticmethod
-    # def display_menu():
-    #     """Affiche le menu principal de gestion des tournois."""
-    #     print("\nMenu Principal:")
-    #     print("1. Afficher la liste des tournois")
-    #     print("2. Afficher les détails d'un tournoi")
-    #     print("3. Créer un nouveau tournoi")
-    #     print("4. Reprendre un tournoi non terminé")
-    #     print("5. Quitter")
+
 
 
     # def display_tournament_list(self, tournaments):
@@ -32,7 +24,7 @@ class TournamentView:
     @staticmethod
     def display_tournament_details(tournament_details):
         if tournament_details:
-            print("Détails du tournoi:")
+            print("\nDétails du tournoi:")
             print(f"Nom: {tournament_details['name']}")
             print(f"Lieu: {tournament_details['place']}")
             print(f"Date de début: {tournament_details['date_start']}")
@@ -85,13 +77,10 @@ class TournamentView:
                 print("Format de date incorrect. Veuillez saisir une date au format DD-MM-YYYY.")
         rounds_count = input("Nombre de rounds (facultatif, par défaut 4) : ")
         rounds_count = int(rounds_count) if rounds_count else 4
-        print(f" rounds_count : {rounds_count}")
 
         rounds = []
         for i in range(rounds_count):
-            print(f" i : {i}")
             round_name = f"Round {i + 1}"
-            print(f"round_name : {round_name}")
             round_details = {
                 "name": round_name,
                 "matches": [],

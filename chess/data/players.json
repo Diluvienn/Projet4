@@ -232,5 +232,23 @@
         "lastname": "Lucet",
         "birth": "30-05-1963",
         "national chess ID": "el19932"
+    },
+    {
+        "firstname": "Mathilde",
+        "lastname": "Gerner",
+        "birth": "14-09-1996",
+        "national chess ID": "mg42024"
+    },
+    {
+        "firstname": "Mentissa",
+        "lastname": "Aziza",
+        "birth": "04-04-1999",
+        "national chess ID": "ma75513"
+    },
+    {
+        "firstname": "Vanda",
+        "lastname": "Ribero",
+        "birth": "17-06-1962",
+        "national chess ID": "vr25130"
     }
 ]

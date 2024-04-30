@@ -72,7 +72,7 @@ class Match:
     def __str__(self):
         player1_name = f"{list(self.players.keys())[0].firstname} {list(self.players.keys())[0].lastname}"
         player2_name = f"{list(self.players.keys())[1].firstname} {list(self.players.keys())[1].lastname}"
-        return (f"Match: {player1_name} vs {player2_name}, Scores: {self.players[list(self.players.keys())[0]]}-"
+        return (f"\nMatch: {player1_name} vs {player2_name}, Scores: {self.players[list(self.players.keys())[0]]}-"
                 f"{self.players[list(self.players.keys())[1]]}")
 
     def play_match(self):
@@ -86,7 +86,7 @@ class Match:
 
         # Demander à l'utilisateur de saisir le résultat
         while True:
-            result_input = input(f"{player1_name}: (win/loss/draw) ")
+            result_input = input(f"{player1_name} (win/loss/draw):  ")
             if result_input.lower() in ["win", "loss", "draw"]:
                 result = result_input.lower()
                 break

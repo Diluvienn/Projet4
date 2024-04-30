@@ -15,9 +15,15 @@ class TournamentController:
     def show_tournaments(self):
         tournaments = self.tournament_repository.get_tournaments_by_alphabetical_order()
         total_tournaments = len(tournaments)
-        print(f" total tournaments dans show tournaments : {total_tournaments}")
         self.tournament_view.display_tournament_list(tournaments, total_tournaments)
         return tournaments
+
+    def show_tournament_details(self):
+        tournaments = self.show_tournaments()
+        total_tournaments = len(tournaments)
+        tournament_index = self.tournament_view.get_tournament_index_from_user(total_tournaments)
+        tournament_name = self.get_tournament_name_by_index(tournaments, tournament_index)
+        self.get_tournament_details(tournament_name)
 
     def get_tournament_name_by_index(self, tournaments, tournament_index):
         """Get the name of the tournament corresponding to the given index."""
@@ -33,11 +39,22 @@ class TournamentController:
             self.tournament_view.display_tournament_details(tournament_details)
         else:
             print("Le tournoi spécifié n'existe pas ou n'a pas été trouvé.")
+    def create_new_tournament(self):
+        """Crée un nouveau tournoi avec les détails fournis par l'utilisateur."""
+        name, place, date_start, date_end, director_note, rounds = self.tournament_view.get_new_tournament_details()
 
-    def create_new_tournament(self, name, place, date_start, date_end, director_note, rounds):
-        """Crée un nouveau tournoi."""
+        # Création du tournoi avec les détails fournis
         new_tournament = Tournament(name=name, place=place, date_start=date_start, date_end=date_end,
                                     director_note=director_note)
+
+        # Initialisation de la liste des joueurs du tournoi
+        if self.tournament_view.prompt_add_players():
+            self.add_players_to_tournament()
+            # Lancement du tournoi si l'utilisateur le souhaite
+            if self.tournament_view.prompt_play_tournament():
+                self.play_tournament(new_tournament)
+
+        # Ajout des rounds
         for round_details in rounds:
             round_name = round_details["name"]
             start_time = round_details["start_time"]
@@ -45,7 +62,12 @@ class TournamentController:
             matches = round_details.get("matches", [])
             new_round = Round(round_name, matches, start_time, end_time)
             new_tournament.add_round(new_round)
+
+        # Ajout du tournoi à la base de données
         self.tournament_repository.add_tournament(new_tournament)
+
+        print(f"\nLe tournoi {new_tournament.name} à {new_tournament.place} avec a bien été enregistré.")
+
         return new_tournament
 
     def add_director_notes_to_tournament(self):
@@ -59,8 +81,15 @@ class TournamentController:
             print("Choix invalide.")
             return self.add_director_notes_to_tournament()
 
-    def add_players_to_tournament(self, tournament):
+    def resume_unstarted_tournament(self):
+        chosen_tournament = self.tournament_repository.resume_unstarted_tournament()
+        if chosen_tournament:
+            tournament = Tournament.from_json(chosen_tournament)
+            return tournament
+
+    def add_players_to_tournament(self):
         """Add players to the tournament."""
+        tournament = self.resume_unstarted_tournament()
         selected_players_index = []
         selected_players = []
         sorted_players_list = self.player_repository.display_players_by_index()
@@ -105,6 +134,8 @@ class TournamentController:
                         tournament.players_list.append(player)
                     self.tournament_repository.add_tournament(tournament)
                     print("Les joueurs ont bien été ajoutés.")
+                    if self.tournament_view.prompt_play_tournament():
+                        self.play_tournament(tournament)
                     break  # Retourner au code appelant après avoir quitté la boucle
                 else:
                     print("Le nombre d'inscrits doit être pair et au moins égal à 6.")
@@ -127,29 +158,10 @@ class TournamentController:
     def resume_tournament(self):
         """Reprend un tournoi non terminé."""
         chosen_tournament = self.tournament_repository.resume_tournament()
-        print(f"chosen_tournament dans le control : {chosen_tournament}")
         if chosen_tournament:
             tournament = Tournament.from_json(chosen_tournament)
-            print("Détails du tournoi dans le contrôleur de reprise :")
-            print(f"Nom du tournoi : {tournament.name}")
-            print(f"Lieu : {tournament.place}")
-            print(f"Date de début : {tournament.date_start}")
-            print(f"Date de fin : {tournament.date_end}")
-            print(f"Note du directeur : {tournament.director_note}")
-            print("Détails des rounds :")
-            for round_num, round_data in enumerate(tournament.rounds, 1):
-                print(f"Round {round_num}:")
-                print(f"  Nom du round : {round_data.name}")
-                print(f"  Heure de début : {round_data.start_time}")
-                print(f"  Heure de fin : {round_data.end_time}")
             tournament.current_round += 1
             self.play_tournament(tournament)
-
-    def resume_unstarted_tournament(self):
-        chosen_tournament = self.tournament_repository.resume_unstarted_tournament()
-        if chosen_tournament:
-            tournament = Tournament.from_json(chosen_tournament)
-            self.add_players_to_tournament(tournament)
 
     def play_tournament(self, tournament):
         while tournament.current_round <= len(tournament.rounds):
@@ -196,10 +208,6 @@ class TournamentController:
                 break
 
             tournament.current_round += 1
-
-            # Enregistrer le tournoi une fois terminé
-            tournament_repository = TournamentRepository()
-            tournament_repository.add_tournament(tournament)
 
     def ask_to_play_next_round(self):
         play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")

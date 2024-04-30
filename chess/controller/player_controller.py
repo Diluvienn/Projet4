@@ -2,6 +2,7 @@ from model.player import Player
 from repository.player_repository import PlayerRepository
 from utils.formatvalidator import validate_date_format, validate_national_chess_id_format
 
+
 class PlayerController:
     def __init__(self, player_repository, player_view):
         self.player_repository = PlayerRepository()
@@ -13,8 +14,30 @@ class PlayerController:
         if not sorted_players:
             print("Aucun joueur enregistré pour le moment.")
         else:
-            for player_info in sorted_players:
-                print(player_info)
+            print("Liste des joueurs :\n")
+            for index, player_info in enumerate(sorted_players, start=1):
+                print(f"{index}. {player_info['lastname']} {player_info['firstname']}")
+
+            while True:
+                choice = input("\nSouhaitez-vous les détails d'un joueur ? (y/n): ").lower()
+                if choice == "n":
+                    break
+                elif choice == "y":
+                    player_index = input("Veuillez indiquer l'index du joueur : ")
+                    try:
+                        player_index = int(player_index)
+                        if 1 <= player_index <= len(sorted_players):
+                            player_info = sorted_players[player_index - 1]
+                            print("\nDétails du joueur :\n")
+                            print(f"Nom: {player_info['lastname']} {player_info['firstname']}")
+                            print(f"Date de naissance: {player_info['birth']}")
+                            print(f"Identifiant national d'échecs: {player_info['national chess ID']}")
+                        else:
+                            print("Index invalide.")
+                    except ValueError:
+                        print("Veuillez entrer un index valide.")
+                else:
+                    print("Choix invalide. Veuillez entrer 'y' pour oui ou 'n' pour non.")
 
     def add_player(self):
         """Ajoute un nouveau joueur à la liste des joueurs."""
@@ -23,10 +46,14 @@ class PlayerController:
             new_player = Player(*player_info)
             self.player_repository.add_player(new_player)
 
+    def create_new_player(self):
+        new_player = self.get_player_info_from_user()
+        self.player_repository.add_player(new_player)
+
     def get_player_info_from_user(self):
         """Obtient les informations d'un nouveau joueur depuis l'entrée utilisateur."""
         while True:
-            firstname = input("Entrez le prénom du joueur: ")
+            firstname = input("\nEntrez le prénom du joueur: ")
             if firstname.replace(' ', '').isalpha():
                 break
             else:
@@ -52,9 +79,8 @@ class PlayerController:
                 break
             else:
                 print(
-                    "Format d'identifiant national invalide. Veuillez utiliser le format 'AB12345'. Veuillez réessayer.")
+                    "Format d'identifiant national invalide. Veuillez utiliser le format 'AB12345'.")
 
         new_player = Player(firstname, lastname, birth, national_chess_id)
+        print(f"La joueuse ou le joueur {new_player.firstname} {new_player.lastname} a bien été ajouté.e à la liste.")
         return new_player
-
-

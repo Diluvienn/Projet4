@@ -265,7 +265,15 @@ def calculate_leaderboard(tournament, previous_scores):
 
     tournament.players_score = {f"{player.firstname} {player.lastname}": score for player, score in sorted_leaderboard}
     # Affichez le classement
-    print(f"Classement fin du round {tournament.current_round + 1} :")
+    # Vérifier si c'est le dernier round
+    if tournament.current_round == len(tournament.rounds) - 1:
+        print("\nClassement final du tournoi :")
+    else:
+        print(f"\nClassement fin du round {tournament.current_round + 1} :")
+
+    # Afficher le classement
+    for i, (player, score) in enumerate(sorted_leaderboard, start=1):
+        print(f"{i}. {player.firstname} {player.lastname} : {score} points")
     for i, (player, score) in enumerate(sorted_leaderboard, start=1):
         print(f"{i}. {player.firstname} {player.lastname} : {score} points")
 

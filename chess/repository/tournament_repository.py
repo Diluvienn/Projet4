@@ -60,7 +60,6 @@ class TournamentRepository:
         for i, existing_tournament in enumerate(tournaments):
             if existing_tournament["name"] == tournament.name:
                 tournaments[i] = tournament_data
-                print(f"tournament_data : {tournament_data}")
                 break
         else:
             # Si le tournoi n'existe pas, ajoutez-le simplement à la liste
@@ -169,7 +168,7 @@ class TournamentRepository:
                 }
                 current_round = tournament_data['current_round']
                 rounds_count = len(tournament_data['rounds'])
-                if current_round == rounds_count:
+                if current_round + 1 == rounds_count:
                     tournament_details["tournament_status"] = " Tournoi terminé"
                 else:
                     tournament_details["tournament_status"] = f"Round actuel : {current_round + 1} sur {rounds_count}"
