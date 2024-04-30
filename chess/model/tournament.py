@@ -13,14 +13,11 @@ Classes:
 import random
 import itertools
 
-from datetime import datetime
 from typing import Dict, List
-from unidecode import unidecode
 
 from model.round import Round
 from model.match import Match
 from model.player import Player
-# from repository.tournament_repository import TournamentRepository
 
 
 class Tournament:
@@ -109,14 +106,6 @@ class Tournament:
             'played_pairs': [{'player1': pair[0].to_json(), 'player2': pair[1].to_json()} for pair in self.played_pairs]
 
         }
-
-    def get_players(self):
-        """Get the list of players registered for the tournament.
-
-        Returns:
-            list: A list of formatted player names.
-        """
-        return self.players_list
 
     def add_round(self, new_round):
         """Ajoute un round au tournoi."""
@@ -247,8 +236,6 @@ class Tournament:
         tournament.rounds = rounds
         return tournament
 
-
-
     def __str__(self):
         """Return a string representation of the tournaments."""
         return (f"Tournament: {self.name}\nLocation: {self.place}\nStart: {self.date_start}\n"
@@ -272,8 +259,6 @@ def calculate_leaderboard(tournament, previous_scores):
         print(f"\nClassement fin du round {tournament.current_round + 1} :")
 
     # Afficher le classement
-    for i, (player, score) in enumerate(sorted_leaderboard, start=1):
-        print(f"{i}. {player.firstname} {player.lastname} : {score} points")
     for i, (player, score) in enumerate(sorted_leaderboard, start=1):
         print(f"{i}. {player.firstname} {player.lastname} : {score} points")
 

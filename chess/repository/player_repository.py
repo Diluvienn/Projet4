@@ -4,6 +4,23 @@ import json
 from model.player import Player
 
 
+def get_selected_player(sorted_players):
+    """Get the selected player based on user input."""
+    while True:
+        index_input = input("Entrez l'index du joueur : ")
+        if index_input.isdigit():
+            index = int(index_input)
+            if 1 <= index <= len(sorted_players):
+                player_data = sorted_players[index - 1]
+                player_instance = Player(player_data['firstname'], player_data['lastname'], player_data['birth'],
+                                         player_data['national chess ID'])
+                return player_instance, index
+            else:
+                print("Index invalide.")
+        else:
+            print("Veuillez indiquer un numéro valide.")
+
+
 class PlayerRepository:
     """Repository for managing player data storage and retrieval."""
 
@@ -15,28 +32,6 @@ class PlayerRepository:
         """
         data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
         self.filename = os.path.join(data_dir, filename)
-
-    def add_player(self, player):
-        """Add a player to the repository.
-
-        Args:
-            player (Player): The player object to be added.
-
-        Notes:
-            This method first loads existing players from the JSON file,
-            adds the new player to the list, and then writes the updated list
-            back to the JSON file.
-
-        Args:
-            player (Player): The player object to be added to the repository.
-        """
-
-        players = self.load_players()
-        players.append(player.to_json())
-
-        # Écriture de la liste mise à jour dans le fichier JSON
-        with open(self.filename, 'w') as file:
-            json.dump(players, file, indent=4)
 
     def load_players(self):
         """Load players from the JSON file.
@@ -52,30 +47,6 @@ class PlayerRepository:
             players = json.load(file)
         return players
 
-    def display_players_by_index(self):
-        """Get a player from the repository by index."""
-        sorted_players = self.get_player_by_alphabetical_order()
-        print("Liste des joueurs triés par ordre alphabétique:")
-        for i, player_data in enumerate(sorted_players):
-            print(f"{i + 1} - {player_data['lastname']} {player_data['firstname']}")
-        return sorted_players
-
-    def get_selected_player(self, sorted_players):
-        """Get the selected player based on user input."""
-        while True:
-            index_input = input("Entrez l'index du joueur : ")
-            if index_input.isdigit():
-                index = int(index_input)
-                if 1 <= index <= len(sorted_players):
-                    player_data = sorted_players[index - 1]
-                    player_instance = Player(player_data['firstname'], player_data['lastname'], player_data['birth'],
-                                             player_data['national chess ID'])
-                    return player_instance, index
-                else:
-                    print("Index invalide.")
-            else:
-                print("Veuillez indiquer un numéro valide.")
-
     def get_player_by_alphabetical_order(self):
         """Get players from the repository sorted alphabetically by last name.
 
@@ -89,6 +60,26 @@ class PlayerRepository:
         """
         players = self.load_players()
         sorted_players = sorted(players, key=lambda x: x['lastname'])
+        return sorted_players
+
+    def add_player(self, player):
+        """Add a player to the repository.
+
+        """
+
+        players = self.load_players()
+        players.append(player.to_json())
+
+        # Écriture de la liste mise à jour dans le fichier JSON
+        with open(self.filename, 'w') as file:
+            json.dump(players, file, indent=4)
+
+    def display_players_by_index(self):
+        """Get a player from the repository by index."""
+        sorted_players = self.get_player_by_alphabetical_order()
+        print("Liste des joueurs triés par ordre alphabétique:")
+        for i, player_data in enumerate(sorted_players):
+            print(f"{i + 1} - {player_data['lastname']} {player_data['firstname']}")
         return sorted_players
 
 

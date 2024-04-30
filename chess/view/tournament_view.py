@@ -1,25 +1,76 @@
 from utils.formatvalidator import validate_date_format
 
 
+def display_tournament_list(tournaments):
+    """Affiche la liste des tournois."""
+    formatted_output = tournaments
+
+    print("\nListe des tournois:")
+    for index, tournament in enumerate(formatted_output, 1):
+        print(f"{index}. {tournament.name} à {tournament.place}")
+
+
+def get_tournament_index_from_user(total_tournaments):
+    """Ask the user to enter the index of the tournament."""
+    while True:
+        index_input = input("\nEntrez l'index du tournoi dont vous souhaitez voir les détails : ")
+        if index_input.isdigit():
+            index = int(index_input)
+            if 1 <= index <= total_tournaments:
+                return index
+            else:
+                print(f"L'index doit être compris entre 1 et {total_tournaments}.")
+        else:
+            print("L'index doit être un nombre entier.")
+
+
+def prompt_add_players():
+    """Demande à l'utilisateur s'il souhaite ajouter des joueurs au tournoi."""
+    while True:
+        add_players_choice = input("Souhaitez-vous ajouter des joueurs au tournoi ? (y/n) : ")
+        if add_players_choice.lower() == "y":
+            return True
+        elif add_players_choice.lower() == "n":
+            return False
+        else:
+            print("Veuillez effectuer un choix valide")
+
+
+def prompt_play_tournament():
+    """Demande à l'utilisateur s'il souhaite lancer le tournoi."""
+    while True:
+        play_tournament_choice = input("Souhaitez-vous lancer le tournoi ? (y/n) : ")
+        if play_tournament_choice.lower() == "y":
+            return True
+        elif play_tournament_choice.lower() == "n":
+            return False
+        else:
+            print("Veuillez effectuer un choix valide")
+
+
+def get_user_choice():
+    return input("Votre choix : ")
+
+
+def display_add_player_menu(num_players):
+    if num_players >= 6 and num_players % 2 == 0:
+        print("\nSouhaitez-vous ajouter un joueur existant (1), créer un nouveau joueur (2) "
+              "ou arrêter l'ajout de joueur (3) ?: ")
+    else:
+        print("\nSouhaitez-vous ajouter un joueur existant (1) ou créer un nouveau joueur (2) ?: ")
+
+
+def ask_to_play_next_round():
+    play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")
+    while play_next_round not in ["y", "n"]:
+        print("Veuillez effectuer un choix valide.")
+        play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")
+    return play_next_round == "y"
+
+
 class TournamentView:
     def __init__(self, tournament_controller):
         self.tournament_controller = tournament_controller
-
-
-
-
-    # def display_tournament_list(self, tournaments):
-    #     """Affiche la liste des tournois."""
-    #     print("\nListe des tournois:")
-    #     for index, tournament in enumerate(tournaments, 1):
-    #         print(f"{index}. {tournament.name} à {tournament.place}")
-    def display_tournament_list(self, tournaments,total_tournaments):
-        """Affiche la liste des tournois."""
-        formatted_output = tournaments
-
-        print("\nListe des tournois:")
-        for index, tournament in enumerate(formatted_output, 1):
-            print(f"{index}. {tournament.name} à {tournament.place}")
 
     @staticmethod
     def display_tournament_details(tournament_details):
@@ -90,48 +141,3 @@ class TournamentView:
             rounds.append(round_details)
 
         return name, place, date_start, date_end, director_note, rounds
-
-    def display_add_player_menu(self, num_players):
-        if num_players >= 6 and num_players % 2 == 0:
-            print("\nSouhaitez-vous ajouter un joueur existant (1), créer un nouveau joueur (2) "
-                  "ou arrêter l'ajout de joueur (3) ?: ")
-        else:
-            print("\nSouhaitez-vous ajouter un joueur existant (1) ou créer un nouveau joueur (2) ?: ")
-
-    def get_user_choice(self):
-        return input("Votre choix : ")
-
-    def get_tournament_index_from_user(self, total_tournaments):
-        """Ask the user to enter the index of the tournament."""
-        while True:
-            index_input = input("\nEntrez l'index du tournoi dont vous souhaitez voir les détails : ")
-            if index_input.isdigit():
-                index = int(index_input)
-                if 1 <= index <= total_tournaments:
-                    return index
-                else:
-                    print(f"L'index doit être compris entre 1 et {total_tournaments}.")
-            else:
-                print("L'index doit être un nombre entier.")
-
-    def prompt_add_players(self):
-        """Demande à l'utilisateur s'il souhaite ajouter des joueurs au tournoi."""
-        while True:
-            add_players_choice = input("Souhaitez-vous ajouter des joueurs au tournoi ? (y/n) : ")
-            if add_players_choice.lower() == "y":
-                return True
-            elif add_players_choice.lower() == "n":
-                return False
-            else:
-                print("Veuillez effectuer un choix valide")
-
-    def prompt_play_tournament(self):
-        """Demande à l'utilisateur s'il souhaite lancer le tournoi."""
-        while True:
-            play_tournament_choice = input("Souhaitez-vous lancer le tournoi ? (y/n) : ")
-            if play_tournament_choice.lower() == "y":
-                return True
-            elif play_tournament_choice.lower() == "n":
-                return False
-            else:
-                print("Veuillez effectuer un choix valide")

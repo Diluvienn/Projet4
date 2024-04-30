@@ -20,6 +20,40 @@ class TournamentRepository:
         data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
         self.filename = os.path.join(data_dir, filename)
 
+    def load_tournaments(self):
+        """Load tournaments from the JSON file.
+
+       Returns:
+           List[dict]: A list of dictionaries containing tournament information loaded from the JSON file.
+                       If the file does not exist, an empty list is returned.
+       """
+        if not os.path.exists(self.filename):
+            return []
+
+        with open(self.filename, 'r') as file:
+            tournaments = json.load(file)
+        return tournaments
+
+    def get_tournaments_by_alphabetical_order(self):
+        """Get tournaments from the repository sorted alphabetically by name.
+
+        Returns:
+            List[str]: A list of tournament names sorted alphabetically.
+
+        Note:
+            This method retrieves tournament data from the repository, sorts the tournaments alphabetically
+            by name, and returns a list of tournament names.
+        """
+        tournaments = self.load_tournaments()
+        sorted_tournaments = sorted(tournaments, key=lambda x: x['name'])
+        formatted_output = []
+        for tournament_data in sorted_tournaments:
+            tournament = Tournament(**tournament_data)
+            formatted_output.append(tournament)
+        # total_tournaments = len(formatted_output)
+
+        return formatted_output
+
     def add_tournament(self, tournament):
         """Add a tournament to the repository.
 
@@ -69,19 +103,18 @@ class TournamentRepository:
         with open(self.filename, 'w') as file:
             json.dump(tournaments, file, indent=4)
 
-    def load_tournaments(self):
-        """Load tournaments from the JSON file.
-
-       Returns:
-           List[dict]: A list of dictionaries containing tournament information loaded from the JSON file.
-                       If the file does not exist, an empty list is returned.
-       """
-        if not os.path.exists(self.filename):
-            return []
-
-        with open(self.filename, 'r') as file:
-            tournaments = json.load(file)
-        return tournaments
+    def resume_unstarted_tournament(self):
+        unstarted_tournaments = self.find_unstarted_tournaments()
+        if not unstarted_tournaments:
+            print("Aucun tournoi non débuté trouvé.")
+            return
+        print("\nTournois non débuté :")
+        for idx, tournament in enumerate(unstarted_tournaments, 1):
+            print(f"{idx}. {tournament['name']} à {tournament['place']}")
+        choice = int(input("Choisissez le numéro du tournoi dont vous souhaitez renseigner les joueurs : "))
+        chosen_tournament = unstarted_tournaments[choice - 1]
+        print(f"Vous avez choisi le tournoi {chosen_tournament['name']} à {chosen_tournament['place']}")
+        return chosen_tournament
 
     def find_unfinished_tournaments(self):
         tournaments = self.load_tournaments()
@@ -104,8 +137,7 @@ class TournamentRepository:
             print(f"{idx}. {tournament['name']} à {tournament['place']}")
         choice = int(input("Choisissez le numéro du tournoi à reprendre : "))
         chosen_tournament = unfinished_tournaments[choice - 1]
-        print(f"chosen_tournament : {chosen_tournament}")
-        print(f"Vous avez choisi de reprendre le tournoi {chosen_tournament['name']} à {chosen_tournament['place']}")
+        print(f"\nVous avez choisi de reprendre le tournoi {chosen_tournament['name']} à {chosen_tournament['place']}")
         return chosen_tournament
 
     def find_unstarted_tournaments(self):
@@ -116,41 +148,6 @@ class TournamentRepository:
             if tournament["current_round"] == 0:
                 unstarted_tournaments.append(tournament)
         return unstarted_tournaments
-
-    def resume_unstarted_tournament(self):
-        unstarted_tournaments = self.find_unstarted_tournaments()
-        if not unstarted_tournaments:
-            print("Aucun tournoi non débuté trouvé.")
-            return
-        print("\nTournois non débuté :")
-        for idx, tournament in enumerate(unstarted_tournaments, 1):
-            print(f"{idx}. {tournament['name']} à {tournament['place']}")
-        choice = int(input("Choisissez le numéro du tournoi dont vous souhaitez renseigner les joueurs : "))
-        chosen_tournament = unstarted_tournaments[choice - 1]
-        print(f"Vous avez choisi le tournoi {chosen_tournament['name']} à {chosen_tournament['place']}")
-        return chosen_tournament
-
-
-
-    def get_tournaments_by_alphabetical_order(self):
-        """Get tournaments from the repository sorted alphabetically by name.
-
-        Returns:
-            List[str]: A list of tournament names sorted alphabetically.
-
-        Note:
-            This method retrieves tournament data from the repository, sorts the tournaments alphabetically
-            by name, and returns a list of tournament names.
-        """
-        tournaments = self.load_tournaments()
-        sorted_tournaments = sorted(tournaments, key=lambda x: x['name'])
-        formatted_output = []
-        for tournament_data in sorted_tournaments:
-            tournament = Tournament(**tournament_data)
-            formatted_output.append(tournament)
-        # total_tournaments = len(formatted_output)
-
-        return formatted_output
 
     def get_tournament_details(self, tournament_name):
         for tournament_data in self.load_tournaments():

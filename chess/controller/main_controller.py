@@ -53,7 +53,7 @@ class MainController:
             elif choice == "5":
                 self._tournament_controller.create_new_tournament()
             elif choice == "6":
-                self._tournament_controller.add_players_to_tournament()
+                self._tournament_controller.resume_unstarted_tournament()
             elif choice == "7":
                 self._tournament_controller.resume_tournament()
             elif choice == "8":

@@ -213,42 +213,72 @@
         "firstname": "Greta",
         "lastname": "Thunberg",
         "birth": "03-01-2003",
-        "national chess ID": "gt66730"
+        "national chess ID": "GT66730"
     },
     {
         "firstname": "Melissa",
-        "lastname": "Da costa",
+        "lastname": "Da Costa",
         "birth": "07-08-1990",
-        "national chess ID": "mc99763"
+        "national chess ID": "MC99763"
     },
     {
         "firstname": "Anne Laure",
         "lastname": "Coudray",
         "birth": "01-02-1977",
-        "national chess ID": "al77510"
+        "national chess ID": "AL77510"
     },
     {
         "firstname": "Elise",
         "lastname": "Lucet",
         "birth": "30-05-1963",
-        "national chess ID": "el19932"
+        "national chess ID": "EL19932"
     },
     {
         "firstname": "Mathilde",
         "lastname": "Gerner",
         "birth": "14-09-1996",
-        "national chess ID": "mg42024"
+        "national chess ID": "MG42024"
     },
     {
         "firstname": "Mentissa",
         "lastname": "Aziza",
         "birth": "04-04-1999",
-        "national chess ID": "ma75513"
+        "national chess ID": "MA75513"
     },
     {
         "firstname": "Vanda",
         "lastname": "Ribero",
         "birth": "17-06-1962",
-        "national chess ID": "vr25130"
+        "national chess ID": "VR25130"
+    },
+    {
+        "firstname": "Nicole",
+        "lastname": "Kidman",
+        "birth": "20-06-1967",
+        "national chess ID": "NC33162"
+    },
+    {
+        "firstname": "Zaho",
+        "lastname": "De Sagazan",
+        "birth": "28-12-1999",
+        "national chess ID": "ZS45412"
+    },
+    {
+        "firstname": "Lupita",
+        "lastname": "Nyong O",
+        "birth": "01-03-1983",
+        "national chess ID": "LN88403"
+    },
+    {
+        "firstname": "Lupita",
+        "lastname": "Nyong O",
+        "birth": "01-03-1983",
+        "national chess ID": "LN88421"
+    },
+    {
+        "firstname": "Lupita",
+        "lastname": "Nyong O",
+        "birth": "01-03-1983",
+        "national chess ID": "LN88421"
     }
 ]

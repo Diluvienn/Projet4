@@ -4355,5 +4355,296 @@
                 "national chess ID": "WU44295"
             }
         ]
+    },
+    {
+        "name": "Costaricien",
+        "place": "San Jos\u00e9",
+        "date_start": "15-05-2025",
+        "date_end": "25-05-2025",
+        "director_note": "ol\u00e9",
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matches": [
+                    {
+                        "players": {
+                            "Juliette Armanet": 1,
+                            "Anne Laure Coudray": 0
+                        }
+                    },
+                    {
+                        "players": {
+                            "Romeo Alonzo": 0,
+                            "Pamela Edwards": 1
+                        }
+                    },
+                    {
+                        "players": {}
+                    }
+                ],
+                "start_time": "30-04-2024 15:23",
+                "end_time": "30-04-2024 15:23"
+            },
+            {
+                "name": "Round 2",
+                "matches": [
+                    {
+                        "players": {
+                            "Romeo Alonzo": 0,
+                            "Melissa Da Costa": 1
+                        }
+                    },
+                    {
+                        "players": {
+                            "Anne Laure Coudray": 0,
+                            "Pamela Edwards": 1
+                        }
+                    },
+                    {
+                        "players": {
+                            "Juliette Armanet": 1,
+                            "Lupita Nyong O": 0
+                        }
+                    }
+                ],
+                "start_time": "30-04-2024 16:40",
+                "end_time": "30-04-2024 16:40"
+            },
+            {
+                "name": "Round 3",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 4",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            },
+            {
+                "name": "Round 5",
+                "matches": [],
+                "start_time": null,
+                "end_time": null
+            }
+        ],
+        "current_round": 1,
+        "players_score": {
+            "Juliette Armanet": 2,
+            "Pamela Edwards": 2,
+            "Melissa Da Costa": 1,
+            "Romeo Alonzo": 0,
+            "Lupita Nyong O": 0,
+            "Anne Laure Coudray": 0
+        },
+        "played_pairs": [
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Pamela",
+                    "lastname": "Edwards",
+                    "birth": "24-08-1976",
+                    "national chess ID": "MS45742"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Pamela",
+                    "lastname": "Edwards",
+                    "birth": "24-08-1976",
+                    "national chess ID": "MS45742"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Lupita",
+                    "lastname": "Nyong O",
+                    "birth": "01-03-1983",
+                    "national chess ID": "LN88421"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Anne Laure",
+                    "lastname": "Coudray",
+                    "birth": "01-02-1977",
+                    "national chess ID": "AL77510"
+                },
+                "player2": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                },
+                "player2": {
+                    "firstname": "Melissa",
+                    "lastname": "Da Costa",
+                    "birth": "07-08-1990",
+                    "national chess ID": "MC99763"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Lupita",
+                    "lastname": "Nyong O",
+                    "birth": "01-03-1983",
+                    "national chess ID": "LN88421"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Anne Laure",
+                    "lastname": "Coudray",
+                    "birth": "01-02-1977",
+                    "national chess ID": "AL77510"
+                },
+                "player2": {
+                    "firstname": "Pamela",
+                    "lastname": "Edwards",
+                    "birth": "24-08-1976",
+                    "national chess ID": "MS45742"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Lupita",
+                    "lastname": "Nyong O",
+                    "birth": "01-03-1983",
+                    "national chess ID": "LN88421"
+                },
+                "player2": {
+                    "firstname": "Melissa",
+                    "lastname": "Da Costa",
+                    "birth": "07-08-1990",
+                    "national chess ID": "MC99763"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Juliette",
+                    "lastname": "Armanet",
+                    "birth": "04-03-1984",
+                    "national chess ID": "DJ21462"
+                },
+                "player2": {
+                    "firstname": "Anne Laure",
+                    "lastname": "Coudray",
+                    "birth": "01-02-1977",
+                    "national chess ID": "AL77510"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Pamela",
+                    "lastname": "Edwards",
+                    "birth": "24-08-1976",
+                    "national chess ID": "MS45742"
+                },
+                "player2": {
+                    "firstname": "Anne Laure",
+                    "lastname": "Coudray",
+                    "birth": "01-02-1977",
+                    "national chess ID": "AL77510"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Melissa",
+                    "lastname": "Da Costa",
+                    "birth": "07-08-1990",
+                    "national chess ID": "MC99763"
+                },
+                "player2": {
+                    "firstname": "Romeo",
+                    "lastname": "Alonzo",
+                    "birth": "15-03-1974",
+                    "national chess ID": "RY49563"
+                }
+            },
+            {
+                "player1": {
+                    "firstname": "Melissa",
+                    "lastname": "Da Costa",
+                    "birth": "07-08-1990",
+                    "national chess ID": "MC99763"
+                },
+                "player2": {
+                    "firstname": "Lupita",
+                    "lastname": "Nyong O",
+                    "birth": "01-03-1983",
+                    "national chess ID": "LN88421"
+                }
+            }
+        ],
+        "players_list": [
+            {
+                "firstname": "Romeo",
+                "lastname": "Alonzo",
+                "birth": "15-03-1974",
+                "national chess ID": "RY49563"
+            },
+            {
+                "firstname": "Juliette",
+                "lastname": "Armanet",
+                "birth": "04-03-1984",
+                "national chess ID": "DJ21462"
+            },
+            {
+                "firstname": "Lupita",
+                "lastname": "Nyong O",
+                "birth": "01-03-1983",
+                "national chess ID": "LN88421"
+            },
+            {
+                "firstname": "Anne Laure",
+                "lastname": "Coudray",
+                "birth": "01-02-1977",
+                "national chess ID": "AL77510"
+            },
+            {
+                "firstname": "Melissa",
+                "lastname": "Da Costa",
+                "birth": "07-08-1990",
+                "national chess ID": "MC99763"
+            },
+            {
+                "firstname": "Pamela",
+                "lastname": "Edwards",
+                "birth": "24-08-1976",
+                "national chess ID": "MS45742"
+            }
+        ]
     }
 ]

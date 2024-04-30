@@ -2,6 +2,22 @@ from model.tournament import Tournament, calculate_leaderboard
 from model.round import Round
 from datetime import datetime
 from repository.tournament_repository import TournamentRepository
+from repository.player_repository import get_selected_player
+from view.tournament_view import (display_tournament_list,
+                                  get_tournament_index_from_user,
+                                  prompt_add_players,
+                                  prompt_play_tournament,
+                                  ask_to_play_next_round,
+                                  display_add_player_menu,
+                                  get_user_choice)
+
+
+def get_tournament_name_by_index(tournaments, tournament_index):
+    """Get the name of the tournament corresponding to the given index."""
+    if 1 <= tournament_index <= len(tournaments):
+        return tournaments[tournament_index - 1].name
+    else:
+        return None
 
 
 class TournamentController:
@@ -14,31 +30,16 @@ class TournamentController:
 
     def show_tournaments(self):
         tournaments = self.tournament_repository.get_tournaments_by_alphabetical_order()
-        total_tournaments = len(tournaments)
-        self.tournament_view.display_tournament_list(tournaments, total_tournaments)
+        display_tournament_list(tournaments)
         return tournaments
 
     def show_tournament_details(self):
         tournaments = self.show_tournaments()
         total_tournaments = len(tournaments)
-        tournament_index = self.tournament_view.get_tournament_index_from_user(total_tournaments)
-        tournament_name = self.get_tournament_name_by_index(tournaments, tournament_index)
+        tournament_index = get_tournament_index_from_user(total_tournaments)
+        tournament_name = get_tournament_name_by_index(tournaments, tournament_index)
         self.get_tournament_details(tournament_name)
 
-    def get_tournament_name_by_index(self, tournaments, tournament_index):
-        """Get the name of the tournament corresponding to the given index."""
-        if 1 <= tournament_index <= len(tournaments):
-            return tournaments[tournament_index - 1].name
-        else:
-            return None
-
-    def get_tournament_details(self, tournament_name):
-        tournament_details = self.tournament_repository.get_tournament_details(tournament_name)
-        if tournament_details:
-            # Afficher les détails du tournoi
-            self.tournament_view.display_tournament_details(tournament_details)
-        else:
-            print("Le tournoi spécifié n'existe pas ou n'a pas été trouvé.")
     def create_new_tournament(self):
         """Crée un nouveau tournoi avec les détails fournis par l'utilisateur."""
         name, place, date_start, date_end, director_note, rounds = self.tournament_view.get_new_tournament_details()
@@ -46,13 +47,6 @@ class TournamentController:
         # Création du tournoi avec les détails fournis
         new_tournament = Tournament(name=name, place=place, date_start=date_start, date_end=date_end,
                                     director_note=director_note)
-
-        # Initialisation de la liste des joueurs du tournoi
-        if self.tournament_view.prompt_add_players():
-            self.add_players_to_tournament()
-            # Lancement du tournoi si l'utilisateur le souhaite
-            if self.tournament_view.prompt_play_tournament():
-                self.play_tournament(new_tournament)
 
         # Ajout des rounds
         for round_details in rounds:
@@ -66,38 +60,24 @@ class TournamentController:
         # Ajout du tournoi à la base de données
         self.tournament_repository.add_tournament(new_tournament)
 
+        # Initialisation de la liste des joueurs du tournoi
+        if prompt_add_players():
+            self.add_players_to_tournament(new_tournament)
+
         print(f"\nLe tournoi {new_tournament.name} à {new_tournament.place} avec a bien été enregistré.")
 
         return new_tournament
 
-    def add_director_notes_to_tournament(self):
-        notes = input("Ajouter des notes du directeur (y/n) ? : ")
-        if notes.lower() == "y":
-            notes_text = input("Entrez les notes du directeur : ")
-            return notes_text
-        elif notes.lower() == "n":
-            return ""
-        else:
-            print("Choix invalide.")
-            return self.add_director_notes_to_tournament()
-
-    def resume_unstarted_tournament(self):
-        chosen_tournament = self.tournament_repository.resume_unstarted_tournament()
-        if chosen_tournament:
-            tournament = Tournament.from_json(chosen_tournament)
-            return tournament
-
-    def add_players_to_tournament(self):
+    def add_players_to_tournament(self, tournament):
         """Add players to the tournament."""
-        tournament = self.resume_unstarted_tournament()
         selected_players_index = []
         selected_players = []
         sorted_players_list = self.player_repository.display_players_by_index()
         while True:
-            self.tournament_view.display_add_player_menu(self.num_players)
-            user_choice = self.tournament_view.get_user_choice()
+            display_add_player_menu(self.num_players)
+            user_choice = get_user_choice()
             if user_choice == "1":
-                selected_player, index = self.player_repository.get_selected_player(sorted_players_list)
+                selected_player, index = get_selected_player(sorted_players_list)
                 # Vérifier si le joueur est déjà dans le tournoi
                 if index in selected_players_index:
                     print(selected_players_index)
@@ -114,7 +94,8 @@ class TournamentController:
 
             elif user_choice == "2":
                 # Ajouter un nouveau joueur
-                new_player = self.player_controller.get_player_info_from_user()
+                new_player = self.player_controller.create_new_player()
+                print(f"new_player : {new_player}")
 
                 # Ajouter le joueur au tournoi
                 selected_players.append(new_player)
@@ -134,7 +115,7 @@ class TournamentController:
                         tournament.players_list.append(player)
                     self.tournament_repository.add_tournament(tournament)
                     print("Les joueurs ont bien été ajoutés.")
-                    if self.tournament_view.prompt_play_tournament():
+                    if prompt_play_tournament():
                         self.play_tournament(tournament)
                     break  # Retourner au code appelant après avoir quitté la boucle
                 else:
@@ -142,18 +123,30 @@ class TournamentController:
             else:
                 print("Veuillez indiquer un choix valide.")
 
-    def select_existing_player_for_tournament(self, players):
-        """Allow user to select an existing player."""
-        for i, player in enumerate(players):
-            print(f"{i + 1}. {player.firstname} {player.lastname}")
+    def resume_unstarted_tournament(self):
+        chosen_tournament = self.tournament_repository.resume_unstarted_tournament()
+        if chosen_tournament:
+            tournament = Tournament.from_json(chosen_tournament)
+            self.add_players_to_tournament(tournament)
 
-        while True:
-            try:
-                selection = int(input("Sélectionnez un joueur en entrant son numéro : "))
-                selected_player = players[selection - 1]
-                return selected_player
-            except (ValueError, IndexError):
-                print("Veuillez entrer un numéro valide.")
+    def get_tournament_details(self, tournament_name):
+        tournament_details = self.tournament_repository.get_tournament_details(tournament_name)
+        if tournament_details:
+            # Afficher les détails du tournoi
+            self.tournament_view.display_tournament_details(tournament_details)
+        else:
+            print("Le tournoi spécifié n'existe pas ou n'a pas été trouvé.")
+
+    def add_director_notes_to_tournament(self):
+        notes = input("Ajouter des notes du directeur (y/n) ? : ")
+        if notes.lower() == "y":
+            notes_text = input("Entrez les notes du directeur : ")
+            return notes_text
+        elif notes.lower() == "n":
+            return ""
+        else:
+            print("Choix invalide.")
+            return self.add_director_notes_to_tournament()
 
     def resume_tournament(self):
         """Reprend un tournoi non terminé."""
@@ -202,16 +195,9 @@ class TournamentController:
                 tournament_repository.add_tournament(tournament)
                 break
 
-            if not self.ask_to_play_next_round():
+            if not ask_to_play_next_round():
                 tournament_repository = TournamentRepository()
                 tournament_repository.add_tournament(tournament)
                 break
 
             tournament.current_round += 1
-
-    def ask_to_play_next_round(self):
-        play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")
-        while play_next_round not in ["y", "n"]:
-            print("Veuillez effectuer un choix valide.")
-            play_next_round = input("Voulez-vous jouer le round suivant ? (y/n): ")
-        return play_next_round == "y"
