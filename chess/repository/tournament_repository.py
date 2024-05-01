@@ -5,7 +5,6 @@ from typing import List
 from unidecode import unidecode
 
 from model.tournament import Tournament
-from model.player import Player
 
 
 class TournamentRepository:
@@ -50,7 +49,6 @@ class TournamentRepository:
         for tournament_data in sorted_tournaments:
             tournament = Tournament(**tournament_data)
             formatted_output.append(tournament)
-        # total_tournaments = len(formatted_output)
 
         return formatted_output
 
@@ -87,19 +85,14 @@ class TournamentRepository:
             rounds_json.append(round_json)
         tournament_data["rounds"] = rounds_json
 
-        # # Convertir la valeur de director_note en chaîne de caractères
-        # tournament_data["director_note"] = str(tournament_data["director_note"])
-
         # Recherchez le tournoi existant et mettez à jour ses données s'il existe déjà
         for i, existing_tournament in enumerate(tournaments):
             if existing_tournament["name"] == tournament.name:
                 tournaments[i] = tournament_data
                 break
         else:
-            # Si le tournoi n'existe pas, ajoutez-le simplement à la liste
             tournaments.append(tournament_data)
 
-        # Enregistrez la liste mise à jour des tournois dans le fichier
         with open(self.filename, 'w') as file:
             json.dump(tournaments, file, indent=4)
 
@@ -113,7 +106,7 @@ class TournamentRepository:
             print(f"{idx}. {tournament['name']} à {tournament['place']}")
         choice = int(input("Choisissez le numéro du tournoi dont vous souhaitez renseigner les joueurs : "))
         chosen_tournament = unstarted_tournaments[choice - 1]
-        print(f"Vous avez choisi le tournoi {chosen_tournament['name']} à {chosen_tournament['place']}")
+        print(f"\nVous avez choisi le tournoi {chosen_tournament['name']} à {chosen_tournament['place']}")
         return chosen_tournament
 
     def find_unfinished_tournaments(self):
@@ -123,7 +116,8 @@ class TournamentRepository:
         for tournament in tournaments:
             round_count = len(tournament["rounds"])
             round_count = int(round_count)
-            if tournament["current_round"] < (round_count - 1):
+            if (tournament["current_round"] < round_count and
+                    (tournament["current_round"] != 0 or len(tournament["players_list"]) > 0)):
                 unfinished_tournaments.append(tournament)
         return unfinished_tournaments
 
@@ -161,7 +155,7 @@ class TournamentRepository:
                     "director_note": tournament_data["director_note"],
                     "players_score": tournament_data['players_score'],
                     "rounds": tournament_data['rounds'],
-                    "players_list" : tournament_data['players_list']
+                    "players_list": tournament_data['players_list']
                 }
                 current_round = tournament_data['current_round']
                 rounds_count = len(tournament_data['rounds'])
@@ -182,7 +176,7 @@ class TournamentRepository:
                         "matches": round_data.get('matches', [])
                     }
                     played_rounds_details.append(round_details)
-                # Ajouter les détails des rounds joués à tournament_details
+
                 tournament_details["played_rounds"] = played_rounds_details
                 return tournament_details
         return None

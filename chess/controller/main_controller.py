@@ -20,7 +20,8 @@ class MainController:
         _player_repository = PlayerRepository()
 
         # Création de TournamentController
-        self._tournament_controller = TournamentController(_tournament_repository, None, _player_repository, None)
+        self._tournament_controller = TournamentController(_tournament_repository, None,
+                                                           _player_repository, None)
 
         # Création de TournamentView avec le contrôleur correspondant
         _tournament_view = TournamentView(self._tournament_controller)
@@ -32,13 +33,13 @@ class MainController:
 
         # Création de PlayerController avec le view correspondant
         self._player_controller = PlayerController(_player_repository, _player_view)
-        self._tournament_controller = TournamentController(_tournament_repository, _tournament_view, _player_repository,
-                                                           self._player_controller)
+        self._tournament_controller = TournamentController(_tournament_repository, _tournament_view,
+                                                           _player_repository, self._player_controller)
 
     def run(self):
 
         while True:
-            self._main_view.display_main_menu()  # Afficher le menu principal depuis la vue
+            self._main_view.display_main_menu()
 
             choice = input("Entrez le numéro de votre choix: ")
 

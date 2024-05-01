@@ -73,15 +73,28 @@ class TournamentController:
         selected_players_index = []
         selected_players = []
         sorted_players_list = self.player_repository.display_players_by_index()
+
+        # Ajouter les joueurs déjà présents dans le tournoi
+        for player in tournament.players_list:
+            selected_players.append(player)
+            self.num_players += 1
+
+        if tournament.players_list:
+            print("\nJoueurs déjà inscrits dans le tournoi:")
+            for player in selected_players:
+                print(f"- {player.firstname} {player.lastname}")
+            tournament.players_list = []
+
         while True:
             display_add_player_menu(self.num_players)
             user_choice = get_user_choice()
             if user_choice == "1":
                 selected_player, index = get_selected_player(sorted_players_list)
                 # Vérifier si le joueur est déjà dans le tournoi
-                if index in selected_players_index:
-                    print(selected_players_index)
+                if any(player.firstname == selected_player.firstname and
+                       player.lastname == selected_player.lastname for player in selected_players):
                     print("Ce joueur est déjà ajouté au tournoi.")
+
                     continue
                 # Ajouter le joueur au tournoi
                 selected_players_index.append(index)
@@ -153,7 +166,6 @@ class TournamentController:
         chosen_tournament = self.tournament_repository.resume_tournament()
         if chosen_tournament:
             tournament = Tournament.from_json(chosen_tournament)
-            tournament.current_round += 1
             self.play_tournament(tournament)
 
     def play_tournament(self, tournament):
@@ -191,11 +203,13 @@ class TournamentController:
             # Demander si vous voulez jouer le prochain round
 
             if tournament.current_round == (len(tournament.rounds) - 1):
+                tournament.current_round += 1
                 tournament_repository = TournamentRepository()
                 tournament_repository.add_tournament(tournament)
                 break
 
             if not ask_to_play_next_round():
+                tournament.current_round += 1
                 tournament_repository = TournamentRepository()
                 tournament_repository.add_tournament(tournament)
                 break

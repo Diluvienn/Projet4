@@ -70,14 +70,13 @@ class PlayerRepository:
         players = self.load_players()
         players.append(player.to_json())
 
-        # Écriture de la liste mise à jour dans le fichier JSON
         with open(self.filename, 'w') as file:
             json.dump(players, file, indent=4)
 
     def display_players_by_index(self):
         """Get a player from the repository by index."""
         sorted_players = self.get_player_by_alphabetical_order()
-        print("Liste des joueurs triés par ordre alphabétique:")
+        print("\nListe des joueurs triés par ordre alphabétique:")
         for i, player_data in enumerate(sorted_players):
             print(f"{i + 1} - {player_data['lastname']} {player_data['firstname']}")
         return sorted_players

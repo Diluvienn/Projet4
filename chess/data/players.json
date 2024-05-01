@@ -222,7 +222,7 @@
         "national chess ID": "MC99763"
     },
     {
-        "firstname": "Anne Laure",
+        "firstname": "Anne-Laure",
         "lastname": "Coudray",
         "birth": "01-02-1977",
         "national chess ID": "AL77510"
@@ -270,15 +270,27 @@
         "national chess ID": "LN88403"
     },
     {
-        "firstname": "Lupita",
-        "lastname": "Nyong O",
-        "birth": "01-03-1983",
-        "national chess ID": "LN88421"
+        "firstname": "Yasmina",
+        "lastname": "Reza",
+        "birth": "01-05-1959",
+        "national chess ID": "ER59001"
     },
     {
-        "firstname": "Lupita",
-        "lastname": "Nyong O",
-        "birth": "01-03-1983",
-        "national chess ID": "LN88421"
+        "firstname": "Penelope",
+        "lastname": "Bagieu",
+        "birth": "22-01-1982",
+        "national chess ID": "EB36601"
+    },
+    {
+        "firstname": "Marie-Aude",
+        "lastname": "Murail",
+        "birth": "06-05-1954",
+        "national chess ID": "MM01532"
+    },
+    {
+        "firstname": "Marie-Aude",
+        "lastname": "Murail",
+        "birth": "06-05-1954",
+        "national chess ID": "MM01532"
     }
 ]

@@ -5,10 +5,10 @@ def get_player_info_from_user():
     """Obtient les informations d'un nouveau joueur depuis l'entrée utilisateur."""
     while True:
         firstname = input("\nEntrez le prénom du joueur: ").title()
-        if firstname.replace(' ', '').isalpha():
+        if all(char.isalpha() or char == '-' for char in firstname):
             break
         else:
-            print("Le prénom ne peut contenir que des lettres et des espaces. Veuillez réessayer.")
+            print("Le prénom ne peut contenir que des lettres et des tirets. Veuillez réessayer.")
 
     while True:
         lastname = input("Entrez le nom de famille du joueur: ").title()

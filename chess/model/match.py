@@ -11,9 +11,6 @@ Usage:
     # Get the string representation of the match
 """
 
-import random
-possible_score = [(0, 1), (0.5, 0.5), (1, 0)]
-
 
 class Match:
     """A class representing a match in a chess tournament."""
@@ -41,17 +38,8 @@ class Match:
 
         # Créer un dictionnaire pour stocker les objets Player et leurs scores
         players = {}
-
-        # Convertir les noms des joueurs en objets Player
-        # for player_name, score in players_data.items():
-        #     player_firstname, player_lastname = player_name.split()
-        #     player = find_player(tournament, player_firstname, player_lastname)
-        #     if player:
-        #         players[player] = score
-        #     else:
-        #         print(f"Joueur introuvable dans la liste des joueurs du tournoi : {player_name}")
         for player_name, score in players_data.items():
-            split_index = player_name.rfind(" ")  # Trouver l'index du dernier espace
+            split_index = player_name.find(" ")
             if split_index != -1:
                 player_firstname = player_name[:split_index]
                 player_lastname = player_name[split_index + 1:]
@@ -60,6 +48,7 @@ class Match:
                 player_firstname = player_name
                 player_lastname = ""
             player = find_player(tournament, player_firstname, player_lastname)
+            # player = find_player(tournament, player_name)
             if player:
                 players[player] = score
             else:
@@ -82,7 +71,7 @@ class Match:
         # Afficher les détails du match
         player1_name = f"{list(self.players.keys())[0].firstname} {list(self.players.keys())[0].lastname}"
         player2_name = f"{list(self.players.keys())[1].firstname} {list(self.players.keys())[1].lastname}"
-        print(f"Match: {player1_name}  contre {player2_name}")
+        print(f"Match: {player1_name} contre {player2_name}")
 
         # Demander à l'utilisateur de saisir le résultat
         while True:
@@ -113,12 +102,24 @@ class Match:
         return result
 
 
+# def find_player(tournament, player_firstname, player_lastname):
+#     for p in tournament.players_list:
+#         print(f" p : {p}")
+#         if p.firstname == player_firstname:
+#             print(f"p.firstame : {p.firstname}")
+#             print(f"player_firstname : {player_firstname} ")
+#             if player_lastname and p.lastname != player_lastname:
+#                 print(f"p.lastname : {p.lastname}")
+#                 print(f"player_lastname: {player_lastname}")
+#                 continue
+#             return p
+#     return None
+
 def find_player(tournament, player_firstname, player_lastname):
     for p in tournament.players_list:
         if p.firstname == player_firstname and p.lastname == player_lastname:
             return p
     return None
-
 
 
 if __name__ == "__main__":

@@ -42,7 +42,8 @@ class PlayerController:
         """Obtient les informations du joueur et crée un objet Player."""
         firstname, lastname, birth, national_chess_id = get_player_info_from_user()
         new_player = Player(firstname, lastname, birth, national_chess_id)
-        print(f"La joueuse ou le joueur {new_player.firstname} {new_player.lastname} a bien été ajouté.e à la liste.")
+        print(f"La joueuse ou le joueur {new_player.firstname} {new_player.lastname} "
+              f"a bien été ajouté.e à la liste.")
         self.player_repository.add_player(new_player)
         return new_player
 

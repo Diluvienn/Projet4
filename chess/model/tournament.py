@@ -13,7 +13,7 @@ Classes:
 import random
 import itertools
 
-from typing import Dict, List
+from typing import Dict, List, Optional, Set
 
 from model.round import Round
 from model.match import Match
@@ -24,22 +24,8 @@ class Tournament:
     """A class representing a chess tournament."""
 
     def __init__(self, name: str, place: str, date_start: str, date_end: str, rounds: int = 4,
-                 director_note: str = "", current_round: int = 0, players_score: Dict = {}, played_pairs: set = (),
-                 players_list:List = []):
-        """Initialize a Tournament object.
-
-       Args:
-           name (str): The name of the tournament.
-           place (str): The location of the tournament.
-           date_start (str): The start date of the tournament (format: 'dd-mm-yyyy').
-           date_end (str): The end date of the tournament (format: 'dd-mm-yyyy').
-           rounds (int, optional): The number of rounds in the tournament. Defaults to 4.
-           current_round (int, optional): The current round of the tournament. Defaults to 1.
-
-       Raises:
-           ValueError: If the date formats are invalid.
-       """
-
+                 director_note: str = "", current_round: int = 0, players_score: Optional[Dict] = None,
+                 played_pairs: Optional[Set] = None, players_list: Optional[List] = None):
         self.name: str = name
         self.place: str = place
         self.date_start: str = date_start
@@ -50,6 +36,13 @@ class Tournament:
         self.players_score: Dict[str, int] = {}
         self.players_list: List[str] = list(self.players_score.keys())
         self.played_pairs = set()
+
+        if players_score is None:
+            players_score = {}
+        if played_pairs is None:
+            played_pairs = set()
+        if players_list is None:
+            players_list = []
 
     def __getitem__(self, key):
         """Get an item from the tournament by key.
@@ -116,10 +109,10 @@ class Tournament:
         # Générer les paires pour le premier round
         if self.current_round == 1:
             all_pairs = list(itertools.combinations(self.players_list, 2))
-            random.shuffle(all_pairs)  # Mélanger aléatoirement les paires
+            random.shuffle(all_pairs)
 
             round_matches = []
-            paired_players = set()  # Pour suivre les joueurs déjà appariés
+            paired_players = set()
 
             for pair in all_pairs:
                 player1, player2 = pair
@@ -166,7 +159,7 @@ class Tournament:
                                 min_diff = score_diff
                                 player2 = sorted_players[j]
                     if player2 is None:
-                        break  # Si aucun joueur n'a été trouvé, sortir de la boucle
+                        break
 
                 match_instance = Match({player1: 0, player2: 0})
                 round_matches.append(match_instance)
@@ -175,7 +168,6 @@ class Tournament:
                 # Mettre à jour les paires déjà jouées
                 self.played_pairs.add((player1, player2))
                 self.played_pairs.add((player2, player1))
-                # self.update_played_pairs()
 
                 # Retirer les joueurs associés de la liste des joueurs triés
                 sorted_players.remove(player1)
@@ -184,8 +176,6 @@ class Tournament:
 
             # Enregistrez les paires de matchs générées pour ce round
             self.rounds[self.current_round].matches.extend(round_matches)
-
-
 
     @classmethod
     def from_json(cls, json_data):
@@ -261,6 +251,3 @@ def calculate_leaderboard(tournament, previous_scores):
     # Afficher le classement
     for i, (player, score) in enumerate(sorted_leaderboard, start=1):
         print(f"{i}. {player.firstname} {player.lastname} : {score} points")
-
-
-

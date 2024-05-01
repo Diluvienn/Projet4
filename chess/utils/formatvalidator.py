@@ -1,5 +1,6 @@
 """
-This module contains a function to validate the format of a date string and ensure it conforms to the 'dd-mm-yyyy' format.
+This module contains a function to validate the format of a date string and ensure it conforms to
+the 'dd-mm-yyyy' format.
 
 """
 

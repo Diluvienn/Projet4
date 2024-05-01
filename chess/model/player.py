@@ -21,13 +21,18 @@ class Player:
         self.national_chess_id = national_chess_id
         self.score = 0
 
-    def full_name(self):
+    def __str__(self):
+        return (f"Prénom : {self.firstname} "
+                f"nom : {self.lastname} "
+                f"(Date de naissance: {self.birth}, "                
+                f"Identifiant national: {self.national_chess_id})")
+
+    def fullname(self):
         """Retourne le nom complet du joueur."""
         return f"{self.firstname} {self.lastname}"
 
     def calculate_total_score(self, rounds, previous_scores=None):
         total_score = self.score
-        # total_score = self.score if previous_scores is None else previous_scores.get(self.full_name(), self.score)
 
         for round in rounds:
             for match in round.matches:
@@ -65,7 +70,6 @@ class Player:
         birth = json_data['birth']
         national_chess_id = json_data['national chess ID']
 
-        # Créer l'objet Player avec les données récupérées
         player = cls(firstname, lastname, birth, national_chess_id)
 
         return player
